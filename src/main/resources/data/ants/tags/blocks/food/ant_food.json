@@ -2,6 +2,7 @@
     "_comment": "THIS IS NOT WHERE YOU ADD THINGS. Add them in one of the sub-tags, please",
     "values": [
         "#minecraft:leaves",
+        "#minecraft:saplings",
         "#ants:food/vanilla/acacia_leaf_food",
         "#ants:food/vanilla/azalea_leaf_food",
         "#ants:food/vanilla/birch_leaf_food",

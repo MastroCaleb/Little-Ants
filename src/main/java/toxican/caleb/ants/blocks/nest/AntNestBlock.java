@@ -66,8 +66,8 @@ import org.jetbrains.annotations.Nullable;
 public class AntNestBlock extends BlockWithEntity {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final IntProperty CLAY_LEVEL = IntProperty.of("clay_level", 0, 5);
-    public static final int FULL_HONEY_LEVEL = 5;
-    private static final int DROPPED_HONEYCOMB_COUNT = 3;
+    public static final int FULL_CLAY_LEVEL = 5;
+    private static final int DROPPED_CLAY_COUNT = 3;
 
     public AntNestBlock(AbstractBlock.Settings settings) {
         super(settings);

@@ -29,6 +29,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.ShovelItem;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.nbt.NbtCompound;
@@ -141,7 +142,7 @@ public class AntNestBlock extends BlockWithEntity {
         boolean bl = false;
         if (i >= 5) {
             Item item = itemStack.getItem();
-            if (itemStack.isOf(Items.WOODEN_SHOVEL) || itemStack.isOf(Items.STONE_SHOVEL) || itemStack.isOf(Items.GOLDEN_SHOVEL) || itemStack.isOf(Items.IRON_SHOVEL) || itemStack.isOf(Items.DIAMOND_SHOVEL) || itemStack.isOf(Items.NETHERITE_SHOVEL)) {
+            if (itemStack.getItem() instanceof ShovelItem) {
                 world.playSound(player2, player2.getX(), player2.getY(), player2.getZ(), SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.NEUTRAL, 1.0f, 1.0f);
                 AntNestBlock.dropHoneycomb(world, pos);
                 itemStack.damage(1, player2, player -> player.sendToolBreakStatus(hand));

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "ants",
+  "version": "${version}",
+
+  "name": "Little Ants",
+  "description": "Adds the Ant mobs and features surrounding them",
+  "authors": [
+    "Toxican - Artist",
+    "Caleb - Developer"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC0",
+  "icon": "assets/ants/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "toxican.caleb.ants.AntsMain"
+    ],
+    "client": [
+      "toxican.caleb.ants.AntsClient"
+    ]
+  },
+  "mixins": [
+    "ants.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

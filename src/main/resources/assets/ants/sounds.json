@@ -1,0 +1,26 @@
+{
+    "ant_sound": {
+      "subtitle": "subtitles.ants.ant_sound",
+      "sounds": [
+        "ants:ant_sound"
+      ]
+    },
+    "ant_hurt": {
+        "subtitle": "subtitles.ants.ant_hurt",
+        "sounds": [
+          "ants:ant_hurt"
+        ]
+      },
+    "enter_nest": {
+        "subtitle": "subtitles.ants.enter_nest",
+        "sounds": [
+          "ants:enter"
+        ]
+      },
+    "exit_nest": {
+        "subtitle": "subtitles.ants.exit_nest",
+        "sounds": [
+          "ants:exit"
+        ]
+      }
+  }

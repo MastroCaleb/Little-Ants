@@ -1,0 +1,82 @@
+{
+  "parent": "ants:husbandry/friend_now",
+  "display": {
+    "icon": {
+      "item": "minecraft:glass_bottle"
+    },
+    "title": {
+      "translate": "advancements.husbandry.obtain_ants.title"
+    },
+    "description": {
+      "translate": "advancements.husbandry.obtain_ants.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "ants:brown_ant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ants:brown_ant_bottle"
+            ]
+          }
+        ]
+      }
+    },
+    "ants:red_ant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ants:red_ant_bottle"
+            ]
+          }
+        ]
+      }
+    },
+    "ants:black_ant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ants:black_ant_bottle"
+            ]
+          }
+        ]
+      }
+    },
+    "ants:gold_ant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ants:gold_ant_bottle"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "ants:brown_ant"
+    ],
+    [
+      "ants:red_ant"
+    ],
+    [
+      "ants:black_ant"
+    ],
+    [
+      "ants:gold_ant"
+    ]
+  ]
+}

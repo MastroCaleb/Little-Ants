@@ -1,7 +1,8 @@
 {
   "type": "ants:colony_harvesting",
-  "hive_ingredient": null,
-  "hand_ingredient": "minecraft:bottle",
+  "hand_ingredient": {
+    "item": "minecraft:glass_bottle"
+  },
   "hand_ingredient_count": 1,
   "result" : {
     "item": "ants:clay_bottle",

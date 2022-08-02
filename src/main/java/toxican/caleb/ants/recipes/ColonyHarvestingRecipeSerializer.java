@@ -20,8 +20,14 @@ public class ColonyHarvestingRecipeSerializer implements RecipeSerializer<Colony
 	@Override
 	public ColonyHarvestingRecipe read(Identifier identifier, JsonObject jsonObject) {
 		String group = JsonHelper.getString(jsonObject, "group", "");
-		Ingredient hiveIngredient = Ingredient.fromJson(JsonHelper.getObject(jsonObject, "hive_ingredient"));		
-		Ingredient handIngredient = Ingredient.fromJson(JsonHelper.getObject(jsonObject, "hand_ingredient"));		
+		Ingredient hiveIngredient = Ingredient.EMPTY;
+		if(jsonObject.has("hive_ingredient")) {
+			hiveIngredient = Ingredient.fromJson(JsonHelper.getObject(jsonObject, "hive_ingredient"));
+		}
+		Ingredient handIngredient = Ingredient.EMPTY;
+		if(jsonObject.has("hand_ingredient")) {
+			handIngredient = Ingredient.fromJson(JsonHelper.getObject(jsonObject, "hand_ingredient"));
+		}
 		int handIngredientCount = JsonHelper.getInt(jsonObject, "hand_ingredient_count", 1);
 		ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(jsonObject, "result"));
 		

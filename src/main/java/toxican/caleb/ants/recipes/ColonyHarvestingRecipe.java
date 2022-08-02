@@ -111,11 +111,11 @@ public class ColonyHarvestingRecipe implements Recipe<Inventory> {
 	
 	public static Optional<ColonyHarvestingRecipe> getRecipeFor(ItemStack hiveStack, ItemStack handStack) {
 		for(ColonyHarvestingRecipe recipe : specialRecipes) {
-			if(recipe.hiveIngredient.test(hiveStack) && recipe.handIngredient.test(handStack)) {
+			if(recipe.hiveIngredient.test(hiveStack) && (recipe.handIngredient.isEmpty() || recipe.handIngredient.test(handStack))) {
 				return Optional.of(recipe);
 			}
 		}
-		if(defaultRecipe.hiveIngredient.test(hiveStack) && defaultRecipe.handIngredient.test(handStack)) {
+		if(defaultRecipe.handIngredient.isEmpty() || defaultRecipe.handIngredient.test(handStack)) {
 			return Optional.of(defaultRecipe);
 		} else {
 			return Optional.empty();

@@ -1,6 +1,5 @@
 {
   "type": "ants:colony_shoveling",
-  "hive_ingredient": null,
   "result" : {
     "item": "minecraft:clay_ball",
 	"count": 3

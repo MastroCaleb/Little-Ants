@@ -20,7 +20,10 @@ public class ColonyShovelingRecipeSerializer implements RecipeSerializer<ColonyS
 	@Override
 	public ColonyShovelingRecipe read(Identifier identifier, JsonObject jsonObject) {
 		String group = JsonHelper.getString(jsonObject, "group", "");
-		Ingredient hiveIngredient = Ingredient.fromJson(JsonHelper.getObject(jsonObject, "hive_ingredient"));		
+		Ingredient hiveIngredient = Ingredient.EMPTY;
+		if(jsonObject.has("hive_ingredient")) {
+			hiveIngredient = Ingredient.fromJson(JsonHelper.getObject(jsonObject, "hive_ingredient"));
+		}
 		ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(jsonObject, "result"));
 		
 		return this.recipeFactory.create(identifier, group, hiveIngredient, output);

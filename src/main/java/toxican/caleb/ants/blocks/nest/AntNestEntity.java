@@ -12,13 +12,18 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.annotation.Debug;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import toxican.caleb.ants.blocks.AntsBlocks;
 import toxican.caleb.ants.blocks.NestTag;
@@ -39,6 +44,7 @@ extends BlockEntity {
     public static final String TICKS_IN_HIVE_KEY = "TicksInHive";
     public static final String HAS_CLAY_KEY = "HasClay";
     public static final String ANTS_KEY = "Ants";
+    public static final String LAST_HARVESTED_LEAF_ID_KEY = "LastHarvestedLeafID";
     private static final List<String> IRRELEVANT_ANT_NBT_KEYS = Arrays.asList("Air", "ArmorDropChances", "ArmorItems", "Brain", "CanPickUpLoot", "DeathTime", "FallDistance", "FallFlying", "Fire", "HandDropChances", "HandItems", "HurtByTimestamp", "HurtTime", "LeftHanded", "Motion", "OnGround", "PortalCooldown", "Pos", "Rotation", "CannotEnterHiveTicks", "TicksSinceNutrition", "HivePos", "Passengers", "Leash", "UUID");
     public static final int MAX_ANT_COUNT = 8;
     private static final int ANGERED_CANNOT_ENTER_HIVE_TICKS = 400;
@@ -47,7 +53,9 @@ extends BlockEntity {
     private final List<Ant> ants = Lists.newArrayList();
     @Nullable
     private BlockPos leafPos;
-
+    @Nullable
+    public Identifier lastHarvestedLeafID = null;
+    
     public AntNestEntity(BlockPos pos, BlockState state) {
         super(AntsBlocks.NEST_BLOCK_ENTITY, pos, state);
     }
@@ -135,6 +143,14 @@ extends BlockEntity {
             AntEntity antEntity;
             if (entity instanceof AntEntity && (antEntity = (AntEntity)entity).hasLeaves() && (!this.hasLeavesPos() || this.world.random.nextBoolean())) {
                 this.leafPos = antEntity.getLeafPos();
+    
+                BlockState leafBlockState = antEntity.getLeaf();
+                if(leafBlockState != null) {
+                    Item leafBlockItem = leafBlockState.getBlock().asItem();
+                    if(leafBlockItem != null && leafBlockItem != Items.AIR) {
+                        this.lastHarvestedLeafID = Registry.ITEM.getId(leafBlockItem);
+                    }
+                }
             }
             BlockPos blockPos = this.getPos();
             this.world.playSound(null, (double)blockPos.getX(), (double)blockPos.getY(), blockPos.getZ(), AntsSounds.ENTER_NEST_EVENT, SoundCategory.BLOCKS, 1.0f, 1.0f);
@@ -265,6 +281,10 @@ extends BlockEntity {
         if (nbt.contains(LEAF_POS_KEY)) {
             this.leafPos = NbtHelper.toBlockPos(nbt.getCompound(LEAF_POS_KEY));
         }
+        this.lastHarvestedLeafID = null;
+        if(nbt.contains(LAST_HARVESTED_LEAF_ID_KEY, NbtElement.STRING_TYPE)) {
+            this.lastHarvestedLeafID = Identifier.tryParse(nbt.getString(LAST_HARVESTED_LEAF_ID_KEY));
+        }
     }
 
     @Override
@@ -274,6 +294,13 @@ extends BlockEntity {
         if (this.hasLeavesPos()) {
             nbt.put(LEAF_POS_KEY, NbtHelper.fromBlockPos(this.leafPos));
         }
+        if(this.lastHarvestedLeafID != null) {
+            nbt.putString(LAST_HARVESTED_LEAF_ID_KEY, this.lastHarvestedLeafID.toString());
+        }
+    }
+    
+    public @Nullable Identifier getLastHarvestedLeafID() {
+        return this.lastHarvestedLeafID;
     }
 
     public NbtList getAnts() {

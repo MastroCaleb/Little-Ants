@@ -1,6 +1,7 @@
 package toxican.caleb.ants.blocks.nest;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -43,11 +44,13 @@ import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
@@ -60,6 +63,8 @@ import toxican.caleb.ants.enchantment.AntHelper;
 import toxican.caleb.ants.entities.AntEntity;
 import toxican.caleb.ants.items.AntsItems;
 import org.jetbrains.annotations.Nullable;
+import toxican.caleb.ants.recipes.ColonyHarvestingRecipe;
+import toxican.caleb.ants.recipes.ColonyShovelingRecipe;
 
 //The Colony Block. Once upon a time they were called Nests and im too lazy to change that in the code
 
@@ -130,9 +135,51 @@ public class AntNestBlock extends BlockWithEntity {
             }
         }
     }
+    
+    public static ItemStack getLastLeavesStack(World world, BlockPos pos) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if(blockEntity instanceof AntNestEntity antNestEntity) {
+            Identifier id = antNestEntity.getLastHarvestedLeafID();
+            Item item = Registry.ITEM.get(id);
+            if(item != Items.AIR) {
+                return item.getDefaultStack();
+            }
+        }
+        return ItemStack.EMPTY;
+    }
 
     public static void dropHoneycomb(World world, BlockPos pos) {
-        AntNestBlock.dropStack(world, pos, new ItemStack(Items.CLAY_BALL, 3));
+        ItemStack leavesStack = getLastLeavesStack(world, pos);
+        if(leavesStack.isEmpty()) {
+            return;
+        }
+    
+        ColonyShovelingRecipe recipe = ColonyShovelingRecipe.getRecipeFor(leavesStack);
+        if(recipe != null) { // someone might have removed the default recipe? => weird flex, but ok. No drop for you, then
+            AntNestBlock.dropStack(world, pos, recipe.getOutput().copy());
+        }
+    }
+    
+    public static boolean tryHarvest(World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack handStack) {
+        ItemStack leavesStack = getLastLeavesStack(world, pos);
+        if(leavesStack.isEmpty()) {
+            return false;
+        }
+        
+        Optional<ColonyHarvestingRecipe> recipe = ColonyHarvestingRecipe.getRecipeFor(leavesStack, handStack);
+        if(recipe.isEmpty()) {
+            return false;
+        }
+        
+        handStack.decrement(recipe.get().getHandIngredientCount());
+        
+        ItemStack outputStack = recipe.get().getOutput().copy();
+        if (handStack.isEmpty()) {
+            player.setStackInHand(hand, outputStack);
+        } else if (!player.getInventory().insertStack(outputStack)) {
+            player.dropItem(outputStack, false);
+        }
+        return true;
     }
 
     @Override
@@ -148,14 +195,8 @@ public class AntNestBlock extends BlockWithEntity {
                 itemStack.damage(1, player2, player -> player.sendToolBreakStatus(hand));
                 bl = true;
                 world.emitGameEvent((Entity)player2, GameEvent.SHEAR, pos);
-            } else if (itemStack.isOf(Items.GLASS_BOTTLE)) {
-                itemStack.decrement(1);
+            } else if (tryHarvest(world, pos, player2, hand, itemStack)) {
                 world.playSound(player2, player2.getX(), player2.getY(), player2.getZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0f, 1.0f);
-                if (itemStack.isEmpty()) {
-                    player2.setStackInHand(hand, new ItemStack(AntsItems.CLAY_BOTTLE));
-                } else if (!player2.getInventory().insertStack(new ItemStack(AntsItems.CLAY_BOTTLE))) {
-                    player2.dropItem(new ItemStack(AntsItems.CLAY_BOTTLE), false);
-                }
                 bl = true;
                 world.emitGameEvent((Entity)player2, GameEvent.FLUID_PICKUP, pos);
             }

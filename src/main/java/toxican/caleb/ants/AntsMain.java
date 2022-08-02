@@ -10,6 +10,7 @@ import toxican.caleb.ants.features.bushes.AntsBushes;
 import toxican.caleb.ants.features.bushes.nest_decorator.AntsDecorations;
 import toxican.caleb.ants.items.AntsItems;
 import toxican.caleb.ants.particles.AntsParticles;
+import toxican.caleb.ants.recipes.AntsRecipeTypes;
 import toxican.caleb.ants.sounds.AntsSounds;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.util.Identifier;
@@ -25,28 +26,30 @@ public class AntsMain implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		GeckoLib.initialize();
 		LOGGER.info("Loading models...");
-		AntsEntities.init();
+		GeckoLib.initialize();
 		LOGGER.info("Loading ants...");
-		AntsItems.init();
+		AntsEntities.init();
 		LOGGER.info("Loading items...");
-		AntsBlocks.init();
+		AntsItems.init();
 		LOGGER.info("Loading blocks...");
-		AntsParticles.init();
+		AntsBlocks.init();
 		LOGGER.info("Loading particles...");
-		NEST = PointOfInterestHelper.register(new Identifier("ants", "nest"), 0, 1, AntsBlocks.DIRT_ANT_NEST, AntsBlocks.SAND_ANT_NEST);
+		AntsParticles.init();
 		LOGGER.info("Loading points of interest...");
-		AntsSounds.init();
+		NEST = PointOfInterestHelper.register(new Identifier("ants", "nest"), 0, 1, AntsBlocks.DIRT_ANT_NEST, AntsBlocks.SAND_ANT_NEST);
 		LOGGER.info("Loading sounds...");
-		AntsBushes.init();
+		AntsSounds.init();
 		LOGGER.info("Loading bushes...");
-		AntsDecorations.init();
+		AntsBushes.init();
 		LOGGER.info("Loading decorations...");
-		AntsEnchantments.init();
+		AntsDecorations.init();
 		LOGGER.info("Loading enchantments...");
-		AntsDamageSource.init();
+		AntsEnchantments.init();
 		LOGGER.info("Loading damage sources...");
+		AntsDamageSource.init();
+		LOGGER.info("Loading recipe types...");
+		AntsRecipeTypes.init();
 
 		LOGGER.info("Loaded!");
 	}

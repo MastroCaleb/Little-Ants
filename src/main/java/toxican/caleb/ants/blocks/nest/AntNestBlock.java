@@ -1,16 +1,6 @@
 package toxican.caleb.ants.blocks.nest;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
-import net.minecraft.block.CampfireBlock;
-import net.minecraft.block.FireBlock;
-import net.minecraft.block.HorizontalFacingBlock;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
@@ -25,12 +15,7 @@ import net.minecraft.entity.mob.CreeperEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.WitherSkullEntity;
 import net.minecraft.entity.vehicle.TntMinecartEntity;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.*;
 import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.nbt.NbtCompound;
@@ -56,15 +41,18 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.event.GameEvent;
+import org.jetbrains.annotations.Nullable;
 import toxican.caleb.ants.blocks.AntsBlocks;
 import toxican.caleb.ants.blocks.NestTag;
 import toxican.caleb.ants.damage.AntsDamageSource;
 import toxican.caleb.ants.enchantment.AntHelper;
 import toxican.caleb.ants.entities.AntEntity;
-import toxican.caleb.ants.items.AntsItems;
-import org.jetbrains.annotations.Nullable;
 import toxican.caleb.ants.recipes.ColonyHarvestingRecipe;
 import toxican.caleb.ants.recipes.ColonyShovelingRecipe;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.Random;
 
 //The Colony Block. Once upon a time they were called Nests and im too lazy to change that in the code
 
@@ -72,7 +60,6 @@ public class AntNestBlock extends BlockWithEntity {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final IntProperty CLAY_LEVEL = IntProperty.of("clay_level", 0, 5);
     public static final int FULL_CLAY_LEVEL = 5;
-    private static final int DROPPED_CLAY_COUNT = 3;
 
     public AntNestBlock(AbstractBlock.Settings settings) {
         super(settings);

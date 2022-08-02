@@ -1,6 +1,11 @@
 package toxican.caleb.ants;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
+import net.minecraft.util.Identifier;
+import net.minecraft.world.poi.PointOfInterestType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import software.bernie.geckolib3.GeckoLib;
 import toxican.caleb.ants.blocks.AntsBlocks;
 import toxican.caleb.ants.damage.AntsDamageSource;
@@ -12,12 +17,6 @@ import toxican.caleb.ants.items.AntsItems;
 import toxican.caleb.ants.particles.AntsParticles;
 import toxican.caleb.ants.recipes.AntsRecipeTypes;
 import toxican.caleb.ants.sounds.AntsSounds;
-import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.poi.PointOfInterestType;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class AntsMain implements ModInitializer {
 	public static final String MOD_ID = "ants";

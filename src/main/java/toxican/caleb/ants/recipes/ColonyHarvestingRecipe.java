@@ -13,7 +13,6 @@ import toxican.caleb.ants.blocks.AntsBlocks;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 /**
  * Specifies the drop a player gets when using a shovel on a completely filled colony

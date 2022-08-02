@@ -1,10 +1,6 @@
 package toxican.caleb.ants.blocks.nest;
 
 import com.google.common.collect.Lists;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.FireBlock;
@@ -25,14 +21,18 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import toxican.caleb.ants.blocks.AntsBlocks;
 import toxican.caleb.ants.blocks.NestTag;
 import toxican.caleb.ants.debug.DebugAntSender;
-import toxican.caleb.ants.entities.AntsEntities;
 import toxican.caleb.ants.entities.AntEntity;
+import toxican.caleb.ants.entities.AntsEntities;
 import toxican.caleb.ants.sounds.AntsSounds;
 
-import org.jetbrains.annotations.Nullable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 //The Colony Block Entity. Once upon a time they were called Nests and im too lazy to change that in the code
 
@@ -105,7 +105,7 @@ extends BlockEntity {
 
     private List<Entity> tryReleaseAnt(BlockState state, AntState antState) {
         ArrayList<Entity> list = Lists.newArrayList();
-        this.ants.removeIf(ant -> AntNestEntity.releaseAnt(this.world, this.pos, state, ant, list, antState, this.leafPos));
+        this.ants.removeIf(ant -> AntNestEntity.releaseAnt(this.world, this.pos, this, state, ant, list, antState, this.leafPos));
         if (!list.isEmpty()) {
             super.markDirty();
         }
@@ -143,14 +143,6 @@ extends BlockEntity {
             AntEntity antEntity;
             if (entity instanceof AntEntity && (antEntity = (AntEntity)entity).hasLeaves() && (!this.hasLeavesPos() || this.world.random.nextBoolean())) {
                 this.leafPos = antEntity.getLeafPos();
-    
-                BlockState leafBlockState = antEntity.getLeaf();
-                if(leafBlockState != null) {
-                    Item leafBlockItem = leafBlockState.getBlock().asItem();
-                    if(leafBlockItem != null && leafBlockItem != Items.AIR) {
-                        this.lastHarvestedLeafID = Registry.ITEM.getId(leafBlockItem);
-                    }
-                }
             }
             BlockPos blockPos = this.getPos();
             this.world.playSound(null, (double)blockPos.getX(), (double)blockPos.getY(), blockPos.getZ(), AntsSounds.ENTER_NEST_EVENT, SoundCategory.BLOCKS, 1.0f, 1.0f);
@@ -163,7 +155,7 @@ extends BlockEntity {
         this.ants.add(new Ant(nbtCompound, ticksInNest, hasNectar ? 2400 : 600));
     }
 
-    private static boolean releaseAnt(World world, BlockPos pos, BlockState state2, Ant ant, @Nullable List<Entity> entities, AntState antState, @Nullable BlockPos leafPos) {
+    private static boolean releaseAnt(World world, BlockPos pos, AntNestEntity antNestEntity, BlockState state2, Ant ant, @Nullable List<Entity> entities, AntState antState, @Nullable BlockPos leafPos) {
         boolean bl;
         if ((world.isNight() || world.isRaining()) && antState != AntState.EMERGENCY) {
             return false;
@@ -189,13 +181,14 @@ extends BlockEntity {
                 }
                 if (antState == AntState.CLAY_DELIVERED) {
                     int i;
-                    antEntity.onLeafDelivered();
+                    deliverLeaf(antNestEntity, antEntity);
                     if (state2.isIn(NestTag.NEST, state -> state.contains(AntNestBlock.CLAY_LEVEL)) && (i = AntNestEntity.getClayLevel(state2)) < 5) {
                         int j;
                         int n = j = world.random.nextInt(100) == 0 ? 2 : 1;
                         if (i + j > 5) {
                             --j;
                         }
+                        
                         world.setBlockState(pos, (BlockState)state2.with(AntNestBlock.CLAY_LEVEL, i + j));
                     }
                 }
@@ -215,7 +208,18 @@ extends BlockEntity {
         }
         return false;
     }
-
+    
+    private static void deliverLeaf(AntNestEntity antNestEntity, AntEntity antEntity) {
+        BlockState leafBlockState = antEntity.getLeaf();
+        if(leafBlockState != null) {
+            Item leafBlockItem = leafBlockState.getBlock().asItem();
+            if(leafBlockItem != null && leafBlockItem != Items.AIR) {
+                antNestEntity.lastHarvestedLeafID = Registry.ITEM.getId(leafBlockItem);
+            }
+        }
+        antEntity.onLeafDelivered();
+    }
+    
     static void removeIrrelevantNbtKeys(NbtCompound compound) {
         for (String string : IRRELEVANT_ANT_NBT_KEYS) {
             compound.remove(string);
@@ -236,7 +240,7 @@ extends BlockEntity {
         return this.leafPos != null;
     }
 
-    private static void tickAnts(World world, BlockPos pos, BlockState state, List<Ant> ants, @Nullable BlockPos leafPos) {
+    private static void tickAnts(World world, BlockPos pos, AntNestEntity blockEntity, BlockState state, List<Ant> ants, @Nullable BlockPos leafPos) {
         boolean bl = false;
         Iterator<Ant> iterator = ants.iterator();
         while (iterator.hasNext()) {
@@ -244,7 +248,7 @@ extends BlockEntity {
             if (ant.ticksInNest > ant.minOccupationTicks) {
                 AntState antState;
                 AntState antState2 = antState = ant.entityData.getBoolean(HAS_CLAY_KEY) ? AntState.CLAY_DELIVERED : AntState.ANT_RELEASED;
-                if (AntNestEntity.releaseAnt(world, pos, state, ant, null, antState, leafPos)) {
+                if (AntNestEntity.releaseAnt(world, pos, blockEntity, state, ant, null, antState, leafPos)) {
                     bl = true;
                     iterator.remove();
                 }
@@ -257,7 +261,7 @@ extends BlockEntity {
     }
 
     public static void serverTick(World world, BlockPos pos, BlockState state, AntNestEntity blockEntity) {
-        AntNestEntity.tickAnts(world, pos, state, blockEntity.ants, blockEntity.leafPos);
+        AntNestEntity.tickAnts(world, pos, blockEntity, state, blockEntity.ants, blockEntity.leafPos);
         if (!blockEntity.ants.isEmpty() && world.getRandom().nextDouble() < 0.005) {
             double d = (double)pos.getX() + 0.5;
             double e = pos.getY();

@@ -1,10 +1,6 @@
 package toxican.caleb.ants.blocks.nest;
 
 import com.google.common.collect.Lists;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.FireBlock;
@@ -12,22 +8,31 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.annotation.Debug;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 import toxican.caleb.ants.blocks.AntsBlocks;
 import toxican.caleb.ants.blocks.NestTag;
 import toxican.caleb.ants.debug.DebugAntSender;
-import toxican.caleb.ants.entities.AntsEntities;
 import toxican.caleb.ants.entities.AntEntity;
+import toxican.caleb.ants.entities.AntsEntities;
 import toxican.caleb.ants.sounds.AntsSounds;
 
-import org.jetbrains.annotations.Nullable;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
 
 //The Colony Block Entity. Once upon a time they were called Nests and im too lazy to change that in the code
 
@@ -39,6 +44,7 @@ extends BlockEntity {
     public static final String TICKS_IN_HIVE_KEY = "TicksInHive";
     public static final String HAS_CLAY_KEY = "HasClay";
     public static final String ANTS_KEY = "Ants";
+    public static final String LAST_HARVESTED_LEAF_ID_KEY = "LastHarvestedLeafID";
     private static final List<String> IRRELEVANT_ANT_NBT_KEYS = Arrays.asList("Air", "ArmorDropChances", "ArmorItems", "Brain", "CanPickUpLoot", "DeathTime", "FallDistance", "FallFlying", "Fire", "HandDropChances", "HandItems", "HurtByTimestamp", "HurtTime", "LeftHanded", "Motion", "OnGround", "PortalCooldown", "Pos", "Rotation", "CannotEnterHiveTicks", "TicksSinceNutrition", "HivePos", "Passengers", "Leash", "UUID");
     public static final int MAX_ANT_COUNT = 8;
     private static final int ANGERED_CANNOT_ENTER_HIVE_TICKS = 400;
@@ -47,7 +53,9 @@ extends BlockEntity {
     private final List<Ant> ants = Lists.newArrayList();
     @Nullable
     private BlockPos leafPos;
-
+    @Nullable
+    public Identifier lastHarvestedLeafID = null;
+    
     public AntNestEntity(BlockPos pos, BlockState state) {
         super(AntsBlocks.NEST_BLOCK_ENTITY, pos, state);
     }
@@ -97,7 +105,7 @@ extends BlockEntity {
 
     private List<Entity> tryReleaseAnt(BlockState state, AntState antState) {
         ArrayList<Entity> list = Lists.newArrayList();
-        this.ants.removeIf(ant -> AntNestEntity.releaseAnt(this.world, this.pos, state, ant, list, antState, this.leafPos));
+        this.ants.removeIf(ant -> AntNestEntity.releaseAnt(this.world, this.pos, this, state, ant, list, antState, this.leafPos));
         if (!list.isEmpty()) {
             super.markDirty();
         }
@@ -147,7 +155,7 @@ extends BlockEntity {
         this.ants.add(new Ant(nbtCompound, ticksInNest, hasNectar ? 2400 : 600));
     }
 
-    private static boolean releaseAnt(World world, BlockPos pos, BlockState state2, Ant ant, @Nullable List<Entity> entities, AntState antState, @Nullable BlockPos leafPos) {
+    private static boolean releaseAnt(World world, BlockPos pos, AntNestEntity antNestEntity, BlockState state2, Ant ant, @Nullable List<Entity> entities, AntState antState, @Nullable BlockPos leafPos) {
         boolean bl;
         if ((world.isNight() || world.isRaining()) && antState != AntState.EMERGENCY) {
             return false;
@@ -173,13 +181,14 @@ extends BlockEntity {
                 }
                 if (antState == AntState.CLAY_DELIVERED) {
                     int i;
-                    antEntity.onLeafDelivered();
+                    deliverLeaf(antNestEntity, antEntity);
                     if (state2.isIn(NestTag.NEST, state -> state.contains(AntNestBlock.CLAY_LEVEL)) && (i = AntNestEntity.getClayLevel(state2)) < 5) {
                         int j;
                         int n = j = world.random.nextInt(100) == 0 ? 2 : 1;
                         if (i + j > 5) {
                             --j;
                         }
+                        
                         world.setBlockState(pos, (BlockState)state2.with(AntNestBlock.CLAY_LEVEL, i + j));
                     }
                 }
@@ -199,7 +208,18 @@ extends BlockEntity {
         }
         return false;
     }
-
+    
+    private static void deliverLeaf(AntNestEntity antNestEntity, AntEntity antEntity) {
+        BlockState leafBlockState = antEntity.getLeaf();
+        if(leafBlockState != null) {
+            Item leafBlockItem = leafBlockState.getBlock().asItem();
+            if(leafBlockItem != null && leafBlockItem != Items.AIR) {
+                antNestEntity.lastHarvestedLeafID = Registry.ITEM.getId(leafBlockItem);
+            }
+        }
+        antEntity.onLeafDelivered();
+    }
+    
     static void removeIrrelevantNbtKeys(NbtCompound compound) {
         for (String string : IRRELEVANT_ANT_NBT_KEYS) {
             compound.remove(string);
@@ -220,7 +240,7 @@ extends BlockEntity {
         return this.leafPos != null;
     }
 
-    private static void tickAnts(World world, BlockPos pos, BlockState state, List<Ant> ants, @Nullable BlockPos leafPos) {
+    private static void tickAnts(World world, BlockPos pos, AntNestEntity blockEntity, BlockState state, List<Ant> ants, @Nullable BlockPos leafPos) {
         boolean bl = false;
         Iterator<Ant> iterator = ants.iterator();
         while (iterator.hasNext()) {
@@ -228,7 +248,7 @@ extends BlockEntity {
             if (ant.ticksInNest > ant.minOccupationTicks) {
                 AntState antState;
                 AntState antState2 = antState = ant.entityData.getBoolean(HAS_CLAY_KEY) ? AntState.CLAY_DELIVERED : AntState.ANT_RELEASED;
-                if (AntNestEntity.releaseAnt(world, pos, state, ant, null, antState, leafPos)) {
+                if (AntNestEntity.releaseAnt(world, pos, blockEntity, state, ant, null, antState, leafPos)) {
                     bl = true;
                     iterator.remove();
                 }
@@ -241,7 +261,7 @@ extends BlockEntity {
     }
 
     public static void serverTick(World world, BlockPos pos, BlockState state, AntNestEntity blockEntity) {
-        AntNestEntity.tickAnts(world, pos, state, blockEntity.ants, blockEntity.leafPos);
+        AntNestEntity.tickAnts(world, pos, blockEntity, state, blockEntity.ants, blockEntity.leafPos);
         if (!blockEntity.ants.isEmpty() && world.getRandom().nextDouble() < 0.005) {
             double d = (double)pos.getX() + 0.5;
             double e = pos.getY();
@@ -265,6 +285,10 @@ extends BlockEntity {
         if (nbt.contains(LEAF_POS_KEY)) {
             this.leafPos = NbtHelper.toBlockPos(nbt.getCompound(LEAF_POS_KEY));
         }
+        this.lastHarvestedLeafID = null;
+        if(nbt.contains(LAST_HARVESTED_LEAF_ID_KEY, NbtElement.STRING_TYPE)) {
+            this.lastHarvestedLeafID = Identifier.tryParse(nbt.getString(LAST_HARVESTED_LEAF_ID_KEY));
+        }
     }
 
     @Override
@@ -274,6 +298,13 @@ extends BlockEntity {
         if (this.hasLeavesPos()) {
             nbt.put(LEAF_POS_KEY, NbtHelper.fromBlockPos(this.leafPos));
         }
+        if(this.lastHarvestedLeafID != null) {
+            nbt.putString(LAST_HARVESTED_LEAF_ID_KEY, this.lastHarvestedLeafID.toString());
+        }
+    }
+    
+    public @Nullable Identifier getLastHarvestedLeafID() {
+        return this.lastHarvestedLeafID;
     }
 
     public NbtList getAnts() {

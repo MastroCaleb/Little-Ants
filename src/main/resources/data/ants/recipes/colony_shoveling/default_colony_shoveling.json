@@ -1,0 +1,7 @@
+{
+  "type": "ants:colony_shoveling",
+  "result" : {
+    "item": "minecraft:clay_ball",
+	"count": 3
+  }
+}

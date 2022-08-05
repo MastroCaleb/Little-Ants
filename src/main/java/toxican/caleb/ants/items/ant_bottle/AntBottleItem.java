@@ -8,6 +8,8 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsage;
+import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -60,6 +62,9 @@ extends Item {
 
     public void onEmptied(@Nullable PlayerEntity player, World world, ItemStack stack, BlockPos pos) {
         if (world instanceof ServerWorld) {
+            if (player != null && !player.getAbilities().creativeMode) {
+                player.setStackInHand(player.getActiveHand(), new ItemStack(Items.GLASS_BOTTLE));
+            }
             this.spawnEntity((ServerWorld)world, stack, pos);
             world.emitGameEvent((Entity)player, GameEvent.ENTITY_PLACE, pos);
         }
@@ -73,6 +78,9 @@ extends Item {
         Entity entity = this.entityType.spawnFromItemStack(world, stack, null, pos, SpawnReason.BUCKET, true, false);
         if (entity instanceof Bottleable) {
             Bottleable bottleable = (Bottleable)((Object)entity);
+            if (stack.hasCustomName()) {
+                entity.setCustomName(stack.getName());
+            }
             bottleable.copyDataFromNbt(stack.getOrCreateNbt());
             bottleable.setFromBottle(true);
         }

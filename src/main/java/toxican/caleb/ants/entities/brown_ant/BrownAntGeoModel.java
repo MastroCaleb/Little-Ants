@@ -1,6 +1,5 @@
 package toxican.caleb.ants.entities.brown_ant;
 
-import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 import toxican.caleb.ants.AntsMain;

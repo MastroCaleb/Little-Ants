@@ -1,6 +1,5 @@
 package toxican.caleb.ants.entities.gold_ant;
 
-import java.util.Random;
 import java.util.UUID;
 
 import javax.annotation.Nullable;

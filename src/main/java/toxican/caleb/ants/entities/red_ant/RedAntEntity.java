@@ -5,65 +5,57 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtHelper;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import toxican.caleb.ants.entities.AntsEntities;
+import toxican.caleb.ants.blocks.interfaces.Bottleable;
 import toxican.caleb.ants.entities.AntEntity;
 import toxican.caleb.ants.items.AntsItems;
 
-public class RedAntEntity extends AntEntity{
+public class RedAntEntity extends AntEntity implements Bottleable{
+
+    private static final TrackedData<Boolean> FROM_BOTTLE = DataTracker.registerData(RedAntEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     public RedAntEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
     @Override
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(FROM_BOTTLE, false);
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putBoolean("FromBottle", this.isFromBottle());
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        this.setFromBottle(nbt.getBoolean("FromBottle"));
+    }
+
+    @Override
     public ActionResult interactMob(PlayerEntity player, Hand hand) {
-        if (player.getStackInHand(hand).getItem() == Items.GLASS_BOTTLE) {
-            Item item = Items.GLASS_BOTTLE;
-            EntityType<RedAntEntity> ant = (EntityType<RedAntEntity>) this.getType();
-
-            if(ant == this.getType()){
-                item=AntsItems.RED_ANT_BOTTLE;
-            }
-
-            ItemStack itemStack = new ItemStack(item);
-            if (this.hasCustomName()) {
-                itemStack.setCustomName(this.getCustomName());
-            }
-
-            if (!player.getAbilities().creativeMode) {
-                if (player.getStackInHand(hand).getCount() > 1) {
-                    player.getStackInHand(hand).decrement(1);
-                    if (!player.getInventory().insertStack(itemStack)) {
-                        player.dropItem(itemStack, true);
-                    }
-                } else {
-                    player.setStackInHand(hand, itemStack);
-                }
-            } else {
-                if (!player.getInventory().insertStack(itemStack)) {
-                    player.dropItem(itemStack, true);
-                }
-            }
-
-            this.getWorld().playSound(player, player.getBlockPos(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0f, 1.0f);
-            this.discard();
-            return ActionResult.SUCCESS;
-        }
-
-        return super.interactMob(player, hand);
+        return Bottleable.tryBottle(player, hand, this).orElse(super.interactMob(player, hand));
     }
 
     @Override
@@ -100,6 +92,56 @@ public class RedAntEntity extends AntEntity{
             return AntsEntities.GOLD_ANT.create(world);
         }
         return AntsEntities.RED_ANT.create(world);
+    }
+
+    @Override
+    public boolean isFromBottle() {
+        return this.dataTracker.get(FROM_BOTTLE);
+    }
+
+    @Override
+    public void setFromBottle(boolean var1) {
+        this.dataTracker.set(FROM_BOTTLE, fromBottle);
+    }
+
+    @Override
+    public void copyDataToStack(ItemStack stack) {
+        Bottleable.copyDataToStack(this, stack);
+        NbtCompound nbtCompound = stack.getOrCreateNbt();
+        nbtCompound.putInt("Age", this.getBreedingAge());
+        if(this.hasClay()){
+            nbtCompound.putBoolean("HasClay", this.hasClay());
+        }
+        BlockState blockState = this.getLeaf();
+        if (blockState != null) {
+            nbtCompound.put("carriedLeaf", NbtHelper.fromBlockState(blockState));
+        }
+    }
+
+    @Override
+    public void copyDataFromNbt(NbtCompound nbt) {
+        Bottleable.copyDataFromNbt(this, nbt);
+        if (nbt.contains("Age")) {
+            this.setBreedingAge(nbt.getInt("Age"));
+        }
+        if (nbt.contains("HasClay")) {
+            this.setHasClay(nbt.getBoolean("HasClay"));
+        }
+        BlockState blockState = null;
+        if (nbt.contains("carriedLeaf", 10) && (blockState = NbtHelper.toBlockState(nbt.getCompound("carriedLeaf"))).isAir()) {
+            blockState = null;
+        }
+        this.setLeaf(blockState);
+    }
+
+    @Override
+    public ItemStack getBottleItem() {
+        return AntsItems.RED_ANT_BOTTLE.getDefaultStack();
+    }
+
+    @Override
+    public SoundEvent getBottledSound() {
+        return SoundEvents.ITEM_BOTTLE_FILL_DRAGONBREATH;
     }
 
 }

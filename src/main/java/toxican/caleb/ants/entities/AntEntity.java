@@ -96,7 +96,7 @@ implements Angerable, IAnimatable {
     public static final TrackedData<Integer> ANGER = DataTracker.registerData(AntEntity.class, TrackedDataHandlerRegistry.INTEGER);
     public static final TrackedData<Optional<BlockState>> LEAF = DataTracker.registerData(AntEntity.class, TrackedDataHandlerRegistry.OPTIONAL_BLOCK_STATE);
     private static final int NEAR_TARGET_FLAG = 2;
-    private static final int HAS_NECTAR_FLAG = 8;
+    private static final int HAS_CLAY_FLAG = 8;
     private static final int MAX_LIFETIME_AFTER_STINGING = 1200;
     private static final int LEAVES_NAVIGATION_START_TICKS = 2400;
     private static final int NUTRITION_FAIL_TICKS = 3600;
@@ -107,7 +107,7 @@ implements Angerable, IAnimatable {
     private static final int field_30294 = 20;
     public static final String CANNOT_ENTER_HIVE_TICKS_KEY = "CannotEnterHiveTicks";
     public static final String TICKS_SINCE_NUTRITION_KEY = "TicksSinceNutrition";
-    public static final String HAS_NECTAR_KEY = "HasClay";
+    public static final String HAS_CLAY_KEY = "HasClay";
     public static final String LEAVES_POS_KEY = "LeavesPos";
     public static final String HIVE_POS_KEY = "HivePos";
     public static final UniformIntProvider ANGER_TIME_RANGE = TimeHelper.betweenSeconds(20, 39);
@@ -212,7 +212,7 @@ implements Angerable, IAnimatable {
         if (blockState != null) {
             nbt.put("carriedLeaf", NbtHelper.fromBlockState(blockState));
         }
-        nbt.putBoolean(HAS_NECTAR_KEY, this.hasClay());
+        nbt.putBoolean(HAS_CLAY_KEY, this.hasClay());
         nbt.putInt(TICKS_SINCE_NUTRITION_KEY, this.ticksSinceNutrition);
         nbt.putInt(CANNOT_ENTER_HIVE_TICKS_KEY, this.cannotEnterHiveTicks);
         this.writeAngerToNbt(nbt);
@@ -234,7 +234,7 @@ implements Angerable, IAnimatable {
         }
         this.setLeaf(blockState);
         super.readCustomDataFromNbt(nbt);
-        this.setHasClay(nbt.getBoolean(HAS_NECTAR_KEY));
+        this.setHasClay(nbt.getBoolean(HAS_CLAY_KEY));
         this.ticksSinceNutrition = nbt.getInt(TICKS_SINCE_NUTRITION_KEY);
         this.cannotEnterHiveTicks = nbt.getInt(CANNOT_ENTER_HIVE_TICKS_KEY);
         this.readAngerFromNbt(this.world, nbt);
@@ -460,14 +460,14 @@ implements Angerable, IAnimatable {
     }
 
     public boolean hasClay() {
-        return this.getAntFlag(HAS_NECTAR_FLAG);
+        return this.getAntFlag(HAS_CLAY_FLAG);
     }
 
-    void setHasClay(boolean hasClay) {
+    public void setHasClay(boolean hasClay) {
         if (hasClay) {
             this.resetNutritionTicks();
         }
-        this.setAntFlag(HAS_NECTAR_FLAG, hasClay);
+        this.setAntFlag(HAS_CLAY_FLAG, hasClay);
     }
 
     private boolean isNearTarget() {

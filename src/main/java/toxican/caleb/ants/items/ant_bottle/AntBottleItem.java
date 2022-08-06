@@ -1,18 +1,24 @@
 package toxican.caleb.ants.items.ant_bottle;
 
+import net.minecraft.block.BlockState;
+import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.fluid.Fluid;
 import net.minecraft.item.BucketItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsage;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtHelper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.hit.BlockHitResult;
@@ -24,6 +30,8 @@ import net.minecraft.world.WorldAccess;
 import net.minecraft.world.event.GameEvent;
 import toxican.caleb.ants.blocks.interfaces.Bottleable;
 import net.minecraft.world.RaycastContext;
+
+import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -83,6 +91,19 @@ extends Item {
             }
             bottleable.copyDataFromNbt(stack.getOrCreateNbt());
             bottleable.setFromBottle(true);
+        }
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+        NbtCompound nbtCompound;
+        BlockState blockState = null;
+        if ((nbtCompound = stack.getNbt()) != null && nbtCompound.contains("HasClay")) {
+            tooltip.add(new LiteralText("Has Clay: true").formatted(Formatting.DARK_GRAY));
+            if (nbtCompound.contains("carriedLeaf", 10)) {
+                blockState = NbtHelper.toBlockState(nbtCompound.getCompound("carriedLeaf"));
+                tooltip.add(new LiteralText("Carrying Leaf of: " + I18n.translate(blockState.getBlock().asItem().getTranslationKey())).formatted(Formatting.DARK_GRAY));
+            }
         }
     }
 }

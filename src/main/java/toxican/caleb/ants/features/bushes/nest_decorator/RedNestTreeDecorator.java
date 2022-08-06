@@ -40,14 +40,12 @@ public class RedNestTreeDecorator extends TreeDecorator {
 
     @Override
     public void generate(TestableWorld var1, BiConsumer<BlockPos, BlockState> var2, java.util.Random var3, List<BlockPos> var4, List<BlockPos> var5) {
-        // Iterate through block positions
+        
         if (var3.nextFloat() >= this.probability) {
             return;
         }
             for (BlockPos logPosition : var4) {
-                // Pick a value from 0 (inclusive) to 4 (exclusive) and if it's 0, continue
                 if (var3.nextInt(4) == 0) {
-                    // Pick a random value from 0 to 4 and determine the side where the gold block will be placed using it
                     int sideRaw = var3.nextInt(4);
                     Direction side = switch (sideRaw) {
                         case 0 -> Direction.NORTH;
@@ -57,11 +55,8 @@ public class RedNestTreeDecorator extends TreeDecorator {
                         default -> throw new ArithmeticException("The picked side value doesn't fit in the 0 to 4 bounds");
                     };
      
-                    // Offset the log position by the resulting side
                     BlockPos targetPosition = logPosition.offset(side, 1);
      
-                    // Place the gold block using the replacer BiConsumer
-                    // This is the standard way of placing blocks in TrunkPlacers, FoliagePlacers and TreeDecorators
                     var2.accept(targetPosition, AntsBlocks.DIRT_ANT_NEST.getDefaultState());
                 }
                 int i = !var5.isEmpty() ? Math.max(var5.get(0).getY() - 1, var4.get(0).getY() + 1) : Math.min(var4.get(0).getY() + 1 + var3.nextInt(3), var4.get(var4.size() - 1).getY());

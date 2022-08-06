@@ -29,5 +29,4 @@ public class AntsClient implements ClientModInitializer{
         BlockRenderLayerMap.INSTANCE.putBlock(AntsBlocks.WINDY_DANDELION, RenderLayer.getCutout());
         ParticleFactoryRegistry.getInstance().register(AntsParticles.WINDY_DANDELION_PARTICLE, WindyDandelionParticle.Factory::new);
     }
-    
 }

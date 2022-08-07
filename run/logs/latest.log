@@ -1,54 +1,29 @@
-[20:19:35] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.2 with Fabric Loader 0.14.9
-[20:19:35] [ForkJoinPool-1-worker-1/WARN] (FabricLoader/Metadata) Mod ants uses the version ${version} which isn't compatible with Loader's extended semantic version format (Could not parse version number component '${version}'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
-[20:19:35] [main/INFO] (FabricLoader) Loading 45 mods:
-	- ants ${version}
-	- fabric-api 0.59.0+1.19.2
-	- fabric-api-base 0.4.10+e62f51a390
-	- fabric-api-lookup-api-v1 1.6.8+9ff28f4090
-	- fabric-biome-api-v1 9.0.16+83a8659290
-	- fabric-blockrenderlayer-v1 1.1.19+9ff28f4090
-	- fabric-client-tags-api-v1 1.0.0+b35fea8390
-	- fabric-command-api-v2 2.1.6+0c17ea9690
-	- fabric-content-registries-v0 3.2.2+83a8659290
-	- fabric-convention-tags-v1 1.1.0+7cd20a1490
-	- fabric-crash-report-info-v1 0.2.4+bd0a0d4a90
-	- fabric-data-generation-api-v1 5.1.7+a680b9b490
-	- fabric-dimensions-v1 2.1.29+a6d2f78590
-	- fabric-entity-events-v1 1.4.17+9ff28f4090
-	- fabric-events-interaction-v0 0.4.27+9ff28f4090
-	- fabric-game-rule-api-v1 1.0.20+1899036190
-	- fabric-gametest-api-v1 1.0.34+e62f51a390
-	- fabric-item-api-v1 1.5.6+35a03c4390
-	- fabric-item-groups-v0 0.3.27+6bee109e90
-	- fabric-key-binding-api-v1 1.0.19+9ff28f4090
-	- fabric-lifecycle-events-v1 2.1.1+83a8659290
-	- fabric-loot-api-v2 1.1.2+83a8659290
-	- fabric-message-api-v1 5.0.2+176380a290
-	- fabric-mining-level-api-v1 2.1.13+33fbc73890
-	- fabric-models-v0 0.3.16+9ff28f4090
-	- fabric-networking-api-v1 1.2.3+5eb68ef290
-	- fabric-object-builder-api-v1 4.0.10+7675279690
-	- fabric-particles-v1 1.0.9+dc39553a90
-	- fabric-registry-sync-v0 0.9.23+23c4cfef90
-	- fabric-renderer-api-v1 1.0.9+84f79e9d90
-	- fabric-renderer-indigo 0.6.11+5187d39f90
-	- fabric-rendering-data-attachment-v1 0.3.13+9ff28f4090
-	- fabric-rendering-fluids-v1 3.0.6+9ff28f4090
-	- fabric-rendering-v1 1.10.15+9ff28f4090
-	- fabric-resource-conditions-api-v1 2.0.10+e62f51a390
-	- fabric-resource-loader-v0 0.6.0+6bee109e90
-	- fabric-screen-api-v1 1.0.25+f05effaf90
-	- fabric-screen-handler-api-v1 1.2.12+9ff28f4090
-	- fabric-textures-v0 1.0.19+9ff28f4090
-	- fabric-transfer-api-v1 2.0.10+83a8659290
-	- fabric-transitive-access-wideners-v1 1.2.0+1e232e1390
+[21:36:04] [main/INFO]: Loading Minecraft 1.19.2 with Fabric Loader 0.14.9
+[21:36:04] [main/INFO]: Fabric is preparing JARs on first launch, this may take a few seconds...
+[21:36:04] [main/INFO]: Loading 3 mods:
 	- fabricloader 0.14.9
-	- geckolib3 3.1.12
 	- java 17
 	- minecraft 1.19.2
-[20:19:35] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/mastr/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.11.4+mixin.0.8.5/c1dc27696aa4006e492c2485c9ccbcb26045a971/sponge-mixin-0.11.4+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
-[20:19:35] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[20:19:35] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[20:19:35] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[20:19:37] [main/WARN] (FileUtil) Configuration conflict: there is more than one oshi.properties file on the classpath
-[20:19:37] [main/WARN] (FileUtil) Configuration conflict: there is more than one oshi.architecture.properties file on the classpath
+[21:36:05] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/mastr/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.11.4+mixin.0.8.5/c1dc27696aa4006e492c2485c9ccbcb26045a971/sponge-mixin-0.11.4+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[21:36:05] [main/WARN]: Configuration conflict: there is more than one oshi.properties file on the classpath
+[21:36:06] [main/WARN]: Configuration conflict: there is more than one oshi.architecture.properties file on the classpath
+[21:36:09] [main/INFO]: Building optimized datafixer
+[21:36:11] [main/ERROR]: Minecraft has crashed!
+net.fabricmc.loader.impl.FormattedException: java.lang.IllegalAccessError: class net.minecraft.world.gen.chunk.ChunkGeneratorSettings tried to access protected method 'net.minecraft.world.gen.noise.NoiseRouter net.minecraft.world.gen.densityfunction.DensityFunctions.createSurfaceNoiseRouter(net.minecraft.util.registry.Registry, boolean, boolean)' (net.minecraft.world.gen.chunk.ChunkGeneratorSettings and net.minecraft.world.gen.densityfunction.DensityFunctions are in unnamed module of loader net.fabricmc.loader.impl.launch.knot.KnotClassLoader @2d2e5f00)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:463) ~[fabric-loader-0.14.9.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) [fabric-loader-0.14.9.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) [fabric-loader-0.14.9.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) [dev-launch-injector-0.2.1+build.8.jar:?]
+Caused by: java.lang.IllegalAccessError: class net.minecraft.world.gen.chunk.ChunkGeneratorSettings tried to access protected method 'net.minecraft.world.gen.noise.NoiseRouter net.minecraft.world.gen.densityfunction.DensityFunctions.createSurfaceNoiseRouter(net.minecraft.util.registry.Registry, boolean, boolean)' (net.minecraft.world.gen.chunk.ChunkGeneratorSettings and net.minecraft.world.gen.densityfunction.DensityFunctions are in unnamed module of loader net.fabricmc.loader.impl.launch.knot.KnotClassLoader @2d2e5f00)
+	at net.minecraft.world.gen.chunk.ChunkGeneratorSettings.createSurfaceSettings(ChunkGeneratorSettings.java:63) ~[minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.world.gen.chunk.ChunkGeneratorSettings.initAndGetDefault(ChunkGeneratorSettings.java:57) ~[minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.util.registry.BuiltinRegistries.method_44104(BuiltinRegistries.java:91) ~[minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.util.registry.BuiltinRegistries.method_30566(BuiltinRegistries.java:118) ~[minecraft-project-@-merged-named.jar:?]
+	at java.util.LinkedHashMap.forEach(Unknown Source) ~[?:?]
+	at net.minecraft.util.registry.BuiltinRegistries.<clinit>(BuiltinRegistries.java:117) ~[minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.util.registry.Registry.<clinit>(Registry.java:553) ~[minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.Bootstrap.initialize(Bootstrap.java:50) ~[minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:154) ~[minecraft-project-@-merged-named.jar:?]
+	at net.minecraft.client.main.Main.main(Main.java:56) ~[minecraft-project-@-merged-named.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461) ~[fabric-loader-0.14.9.jar:?]
+	... 3 more

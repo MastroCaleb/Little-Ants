@@ -82,6 +82,7 @@ import toxican.caleb.ants.blocks.NestTag;
 import toxican.caleb.ants.blocks.nest.AntNestEntity;
 import toxican.caleb.ants.debug.DebugAntSender;
 import toxican.caleb.ants.enchantment.AntHelper;
+import toxican.caleb.ants.poi.POITags;
 import toxican.caleb.ants.sounds.AntsSounds;
 
 import org.jetbrains.annotations.Nullable;
@@ -878,7 +879,7 @@ implements Angerable, IAnimatable {
         private List<BlockPos> getNearbyFreeHives() {
             BlockPos blockPos = AntEntity.this.getBlockPos();
             PointOfInterestStorage pointOfInterestStorage = ((ServerWorld)AntEntity.this.world).getPointOfInterestStorage();
-            Stream<PointOfInterest> stream = pointOfInterestStorage.getInCircle(poiType -> poiType == AntsMain.NEST, blockPos, 20, PointOfInterestStorage.OccupationStatus.ANY);
+            Stream<PointOfInterest> stream = pointOfInterestStorage.getInCircle(poiType -> poiType.isIn(POITags.ANT_HOME), blockPos, 20, PointOfInterestStorage.OccupationStatus.ANY);
             return stream.map(PointOfInterest::getPos).filter(AntEntity.this::doesHiveHaveSpace).sorted(Comparator.comparingDouble(blockPos2 -> blockPos2.getSquaredDistance(blockPos))).collect(Collectors.toList());
         }
     }

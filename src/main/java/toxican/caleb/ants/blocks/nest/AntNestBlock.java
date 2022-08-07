@@ -49,10 +49,9 @@ import toxican.caleb.ants.enchantment.AntHelper;
 import toxican.caleb.ants.entities.AntEntity;
 import toxican.caleb.ants.recipes.ColonyHarvestingRecipe;
 import toxican.caleb.ants.recipes.ColonyShovelingRecipe;
-
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
+import net.minecraft.util.math.random.Random;
 
 //The Colony Block. Once upon a time they were called Nests and im too lazy to change that in the code
 

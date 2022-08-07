@@ -9,17 +9,17 @@ import toxican.caleb.ants.blocks.NestTag;
 public class BrownAntGeoModel extends AnimatedGeoModel<BrownAntEntity>{
 
     @Override
-    public Identifier getAnimationFileLocation(BrownAntEntity animatable) {
+    public Identifier getAnimationResource(BrownAntEntity animatable) {
         return new Identifier(AntsMain.MOD_ID, "animations/ant.animation.json");
     }
 
     @Override
-    public Identifier getModelLocation(BrownAntEntity object) {
+    public Identifier getModelResource(BrownAntEntity object) {
         return new Identifier(AntsMain.MOD_ID, "geo/ants.geo.json");
     }
 
     @Override
-    public Identifier getTextureLocation(BrownAntEntity object) {
+    public Identifier getTextureResource(BrownAntEntity object) {
         if(object.hasClay() && object.getLeaf() != null){
             if(object.getLeaf().isIn(NestTag.FLOWERING_AZALEA_LEAF_FOOD)){
                 return new Identifier(AntsMain.MOD_ID, "textures/entity/brown_ant/brown_ant_flowering.png");

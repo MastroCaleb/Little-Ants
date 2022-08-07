@@ -1,0 +1,32 @@
+{
+  "parent": "ants:husbandry/dirt_colony",
+  "display": {
+    "icon": {
+      "item": "ants:sand_ant_nest"
+    },
+    "title": {
+      "translate": "advancements.husbandry.sand_colony.title"
+    },
+    "description": {
+      "translate": "advancements.husbandry.sand_colony.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "sand_colony": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ants:sand_ant_nest"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

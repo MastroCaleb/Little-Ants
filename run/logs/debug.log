@@ -1,0 +1,636 @@
+[20:19:35] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.19.2 with Fabric Loader 0.14.9
+[20:19:35] [main/DEBUG] (FabricLoader/GamePatch) Found game constructor: net.minecraft.client.main.Main -> net.minecraft.client.MinecraftClient
+[20:19:35] [main/DEBUG] (FabricLoader/GamePatch) Patching game constructor <init>(Lnet/minecraft/client/RunArgs;)V
+[20:19:35] [main/DEBUG] (FabricLoader/GamePatch) Run directory field is thought to be net/minecraft/client/MinecraftClient/runDirectory
+[20:19:35] [main/DEBUG] (FabricLoader/GamePatch) Applying brand name hook to net/minecraft/client/ClientBrandRetriever::getClientModName
+[20:19:35] [main/DEBUG] (FabricLoader/GamePatch) Applying brand name hook to net/minecraft/server/MinecraftServer::getServerModName
+[20:19:35] [main/DEBUG] (FabricLoader/GamePatch) Patched 3 classs
+[20:19:35] [ForkJoinPool-1-worker-1/WARN] (FabricLoader/Metadata) Mod ants uses the version ${version} which isn't compatible with Loader's extended semantic version format (Could not parse version number component '${version}'!), SemVer is recommended for reliably evaluating dependencies and prioritizing newer version
+[20:19:35] [main/DEBUG] (FabricLoader/Discovery) Mod discovery time: 65,7 ms
+[20:19:35] [main/DEBUG] (FabricLoader/Resolution) Mod resolution time: 46,0 ms
+[20:19:35] [main/INFO] (FabricLoader) Loading 45 mods:
+	- ants ${version}
+	- fabric-api 0.59.0+1.19.2
+	- fabric-api-base 0.4.10+e62f51a390
+	- fabric-api-lookup-api-v1 1.6.8+9ff28f4090
+	- fabric-biome-api-v1 9.0.16+83a8659290
+	- fabric-blockrenderlayer-v1 1.1.19+9ff28f4090
+	- fabric-client-tags-api-v1 1.0.0+b35fea8390
+	- fabric-command-api-v2 2.1.6+0c17ea9690
+	- fabric-content-registries-v0 3.2.2+83a8659290
+	- fabric-convention-tags-v1 1.1.0+7cd20a1490
+	- fabric-crash-report-info-v1 0.2.4+bd0a0d4a90
+	- fabric-data-generation-api-v1 5.1.7+a680b9b490
+	- fabric-dimensions-v1 2.1.29+a6d2f78590
+	- fabric-entity-events-v1 1.4.17+9ff28f4090
+	- fabric-events-interaction-v0 0.4.27+9ff28f4090
+	- fabric-game-rule-api-v1 1.0.20+1899036190
+	- fabric-gametest-api-v1 1.0.34+e62f51a390
+	- fabric-item-api-v1 1.5.6+35a03c4390
+	- fabric-item-groups-v0 0.3.27+6bee109e90
+	- fabric-key-binding-api-v1 1.0.19+9ff28f4090
+	- fabric-lifecycle-events-v1 2.1.1+83a8659290
+	- fabric-loot-api-v2 1.1.2+83a8659290
+	- fabric-message-api-v1 5.0.2+176380a290
+	- fabric-mining-level-api-v1 2.1.13+33fbc73890
+	- fabric-models-v0 0.3.16+9ff28f4090
+	- fabric-networking-api-v1 1.2.3+5eb68ef290
+	- fabric-object-builder-api-v1 4.0.10+7675279690
+	- fabric-particles-v1 1.0.9+dc39553a90
+	- fabric-registry-sync-v0 0.9.23+23c4cfef90
+	- fabric-renderer-api-v1 1.0.9+84f79e9d90
+	- fabric-renderer-indigo 0.6.11+5187d39f90
+	- fabric-rendering-data-attachment-v1 0.3.13+9ff28f4090
+	- fabric-rendering-fluids-v1 3.0.6+9ff28f4090
+	- fabric-rendering-v1 1.10.15+9ff28f4090
+	- fabric-resource-conditions-api-v1 2.0.10+e62f51a390
+	- fabric-resource-loader-v0 0.6.0+6bee109e90
+	- fabric-screen-api-v1 1.0.25+f05effaf90
+	- fabric-screen-handler-api-v1 1.2.12+9ff28f4090
+	- fabric-textures-v0 1.0.19+9ff28f4090
+	- fabric-transfer-api-v1 2.0.10+83a8659290
+	- fabric-transitive-access-wideners-v1 1.2.0+1e232e1390
+	- fabricloader 0.14.9
+	- geckolib3 3.1.12
+	- java 17
+	- minecraft 1.19.2
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-dimensions-v1\2.1.29+a6d2f78590\fabric-dimensions-v1-2.1.29+a6d2f78590.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-crash-report-info-v1\0.2.4+bd0a0d4a90\fabric-crash-report-info-v1-0.2.4+bd0a0d4a90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\software\bernie\geckolib\geckolib-fabric-1.19\3.1.12\geckolib-fabric-1.19-3.1.12.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-client-tags-api-v1\1.0.0+b35fea8390\fabric-client-tags-api-v1-1.0.0+b35fea8390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-events-interaction-v0\0.4.27+9ff28f4090\fabric-events-interaction-v0-0.4.27+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-transitive-access-wideners-v1\1.2.0+1e232e1390\fabric-transitive-access-wideners-v1-1.2.0+1e232e1390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-rendering-data-attachment-v1\0.3.13+9ff28f4090\fabric-rendering-data-attachment-v1-0.3.13+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-message-api-v1\5.0.2+176380a290\fabric-message-api-v1-5.0.2+176380a290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-game-rule-api-v1\1.0.20+1899036190\fabric-game-rule-api-v1-1.0.20+1899036190.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-key-binding-api-v1\1.0.19+9ff28f4090\fabric-key-binding-api-v1-1.0.19+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-registry-sync-v0\0.9.23+23c4cfef90\fabric-registry-sync-v0-0.9.23+23c4cfef90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-api-lookup-api-v1\1.6.8+9ff28f4090\fabric-api-lookup-api-v1-1.6.8+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-renderer-api-v1\1.0.9+84f79e9d90\fabric-renderer-api-v1-1.0.9+84f79e9d90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-networking-api-v1\1.2.3+5eb68ef290\fabric-networking-api-v1-1.2.3+5eb68ef290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-command-api-v2\2.1.6+0c17ea9690\fabric-command-api-v2-2.1.6+0c17ea9690.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-object-builder-api-v1\4.0.10+7675279690\fabric-object-builder-api-v1-4.0.10+7675279690.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-data-generation-api-v1\5.1.7+a680b9b490\fabric-data-generation-api-v1-5.1.7+a680b9b490.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-item-api-v1\1.5.6+35a03c4390\fabric-item-api-v1-1.5.6+35a03c4390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-screen-api-v1\1.0.25+f05effaf90\fabric-screen-api-v1-1.0.25+f05effaf90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-blockrenderlayer-v1\1.1.19+9ff28f4090\fabric-blockrenderlayer-v1-1.1.19+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-screen-handler-api-v1\1.2.12+9ff28f4090\fabric-screen-handler-api-v1-1.2.12+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-entity-events-v1\1.4.17+9ff28f4090\fabric-entity-events-v1-1.4.17+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-api\0.59.0+1.19.2\fabric-api-0.59.0+1.19.2.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-api-base\0.4.10+e62f51a390\fabric-api-base-0.4.10+e62f51a390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-item-groups-v0\0.3.27+6bee109e90\fabric-item-groups-v0-0.3.27+6bee109e90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-transfer-api-v1\2.0.10+83a8659290\fabric-transfer-api-v1-2.0.10+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-lifecycle-events-v1\2.1.1+83a8659290\fabric-lifecycle-events-v1-2.1.1+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-particles-v1\1.0.9+dc39553a90\fabric-particles-v1-1.0.9+dc39553a90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-textures-v0\1.0.19+9ff28f4090\fabric-textures-v0-1.0.19+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-loot-api-v2\1.1.2+83a8659290\fabric-loot-api-v2-1.1.2+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-renderer-indigo\0.6.11+5187d39f90\fabric-renderer-indigo-0.6.11+5187d39f90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-models-v0\0.3.16+9ff28f4090\fabric-models-v0-0.3.16+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-resource-loader-v0\0.6.0+6bee109e90\fabric-resource-loader-v0-0.6.0+6bee109e90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\bin\main to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-biome-api-v1\9.0.16+83a8659290\fabric-biome-api-v1-9.0.16+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-mining-level-api-v1\2.1.13+33fbc73890\fabric-mining-level-api-v1-2.1.13+33fbc73890.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-gametest-api-v1\1.0.34+e62f51a390\fabric-gametest-api-v1-1.0.34+e62f51a390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-rendering-fluids-v1\3.0.6+9ff28f4090\fabric-rendering-fluids-v1-3.0.6+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-convention-tags-v1\1.1.0+7cd20a1490\fabric-convention-tags-v1-1.1.0+7cd20a1490.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-resource-conditions-api-v1\2.0.10+e62f51a390\fabric-resource-conditions-api-v1-2.0.10+e62f51a390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-rendering-v1\1.10.15+9ff28f4090\fabric-rendering-v1-1.10.15+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-content-registries-v0\3.2.2+83a8659290\fabric-content-registries-v0-3.2.2+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer software.bernie.example.ClientListener for mod geckolib3 (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer software.bernie.geckolib3.network.ClientPackets for mod geckolib3 (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer software.bernie.example.GeckoLibMod for mod geckolib3 (key main)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.event.interaction.InteractionEventsRouterClient for mod fabric-events-interaction-v0 (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.event.interaction.InteractionEventsRouter for mod fabric-events-interaction-v0 (key main)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.registry.sync.FabricRegistryClientInit for mod fabric-registry-sync-v0 (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.registry.sync.FabricRegistryInit for mod fabric-registry-sync-v0 (key main)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.lookup.ApiLookupImpl for mod fabric-api-lookup-api-v1 (key main)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.networking.client.ClientNetworkingImpl::clientInit for mod fabric-networking-api-v1 (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.networking.NetworkingImpl::init for mod fabric-networking-api-v1 (key main)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.screenhandler.client.ClientNetworking for mod fabric-screen-handler-api-v1 (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.event.lifecycle.ClientLifecycleEventsImpl for mod fabric-lifecycle-events-v1 (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.event.lifecycle.LifecycleEventsImpl for mod fabric-lifecycle-events-v1 (key main)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.client.indigo.Indigo for mod fabric-renderer-indigo (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer toxican.caleb.ants.AntsClient for mod ants (key client)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer toxican.caleb.ants.AntsMain for mod ants (key main)
+[20:19:35] [main/DEBUG] (FabricLoader/Entrypoint) Registering new-style initializer net.fabricmc.fabric.impl.gametest.FabricGameTestModInitializer for mod fabric-gametest-api-v1 (key main)
+[20:19:35] [main/DEBUG] (FabricLoader/Mappings) Loading mappings took 179 ms
+[20:19:35] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.5 Source=file:/C:/Users/mastr/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.11.4+mixin.0.8.5/c1dc27696aa4006e492c2485c9ccbcb26045a971/sponge-mixin-0.11.4+mixin.0.8.5.jar Service=Knot/Fabric Env=CLIENT
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Error cleaning class output directory: .mixin.out
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Initialising Mixin Platform Manager
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Adding mixin platform agents for container ContainerHandleURI(file:///C:/Users/mastr/Desktop/AntsMod%201.19.2/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2/net/fabricmc/fabric-loader/0.14.9/fabric-loader-0.14.9.jar)
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Instancing new MixinPlatformAgentDefault for ContainerHandleURI(file:///C:/Users/mastr/Desktop/AntsMod%201.19.2/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2/net/fabricmc/fabric-loader/0.14.9/fabric-loader-0.14.9.jar)
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) MixinPlatformAgentDefault accepted container ContainerHandleURI(file:///C:/Users/mastr/Desktop/AntsMod%201.19.2/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2/net/fabricmc/fabric-loader/0.14.9/fabric-loader-0.14.9.jar)
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Instancing new MixinPlatformAgentDefault for ContainerHandleURI(file:///C:/Users/mastr/Desktop/AntsMod%201.19.2/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2/net/fabricmc/fabric-loader/0.14.9/fabric-loader-0.14.9.jar)
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) MixinPlatformAgentDefault accepted container ContainerHandleURI(file:///C:/Users/mastr/Desktop/AntsMod%201.19.2/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2/net/fabricmc/fabric-loader/0.14.9/fabric-loader-0.14.9.jar)
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:ContainerHandleURI(file:///C:/Users/mastr/Desktop/AntsMod%201.19.2/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2/net/fabricmc/fabric-loader/0.14.9/fabric-loader-0.14.9.jar)]
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Processing prepare() for PlatformAgent[MixinPlatformAgentDefault:ContainerHandleURI(file:///C:/Users/mastr/Desktop/AntsMod%201.19.2/.gradle/loom-cache/remapped_mods/net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2/net/fabricmc/fabric-loader/0.14.9/fabric-loader-0.14.9.jar)]
+[20:19:35] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-dimensions-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-dimensions-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-crash-report-info-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_17 specified by geckolib3.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config geckolib3.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-events-interaction-v0.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-events-interaction-v0.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-events-interaction-v0.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-events-interaction-v0.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-rendering-data-attachment-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-rendering-data-attachment-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-rendering-data-attachment-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-rendering-data-attachment-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-message-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-message-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-game-rule-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-game-rule-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-game-rule-api-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-game-rule-api-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-key-binding-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-key-binding-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-registry-sync-v0.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-registry-sync-v0.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-registry-sync-v0.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-registry-sync-v0.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-api-lookup-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-api-lookup-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-renderer-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-renderer-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-renderer-api-v1.debughud.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-renderer-api-v1.debughud.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-networking-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-networking-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-networking-api-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-networking-api-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-command-api-v2.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-command-api-v2.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-command-api-v2.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-command-api-v2.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-object-builder-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-object-builder-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-object-builder-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-object-builder-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-data-generation-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-data-generation-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-data-generation-api-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-data-generation-api-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-item-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-item-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-item-api-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-item-api-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-screen-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-screen-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-blockrenderlayer-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-blockrenderlayer-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-screen-handler-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-screen-handler-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-entity-events-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-entity-events-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-entity-events-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-entity-events-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-item-groups-v0.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-item-groups-v0.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-item-groups-v0.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-item-groups-v0.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-transfer-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-transfer-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-lifecycle-events-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-lifecycle-events-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-lifecycle-events-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-lifecycle-events-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-particles-v1.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-particles-v1.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-textures-v0.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-textures-v0.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-loot-api-v2.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-renderer-indigo.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-renderer-indigo.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-models-v0.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-models-v0.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-resource-loader-v0.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-resource-loader-v0.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-resource-loader-v0.client.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-resource-loader-v0.client.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-biome-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-biome-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-mining-level-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-mining-level-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-gametest-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-gametest-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-rendering-fluids-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-rendering-fluids-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-resource-conditions-api-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-resource-conditions-api-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-rendering-v1.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-rendering-v1.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Compatibility level JAVA_16 specified by fabric-content-registries-v0.mixins.json is higher than the maximum level supported by this version of mixin (JAVA_13).
+[20:19:35] [main/DEBUG] (FabricLoader/Mixin) Mixin config fabric-content-registries-v0.mixins.json does not specify "minVersion" property
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\1.19.2\net.fabricmc.yarn.1_19_2.1.19.2+build.1-v2\minecraft-project-@-merged-named.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\bin\main to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\23.0.0\8cc20c07506ec18e0834947b84a864bfc094484e\annotations-23.0.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.datatype\jackson-datatype-jsr310\2.9.0\65fd41b086a7451903c9ee216c7699030c449d9c\jackson-datatype-jsr310-2.9.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.9.0\14fb5f088cc0b0dc90a73ba745bcade4961a3ee3\jackson-databind-2.9.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.eliotlash.molang\molang\18\5708ddbbf56c10e76fcc772c9681e55cbd6870e6\molang-18.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.eliotlash.mclib\mclib\18\8d9cd8a401ec25234eee425fbfab2d9a92cdf4ed\mclib-18.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\software.bernie.geckolib\geckolib-core\1.0.14\fc195c9aa4a87f8aec3abdb603405f5a26991ec6\geckolib-core-1.0.14.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.mojang\datafixerupper\5.0.28\e2157e236e529aff80a5fc3ccb506e56d46b130b\datafixerupper-5.0.28.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.google.guava\guava\31.0.1-jre\119ea2b2bc205b138974d351777b20f02b92704b\guava-31.0.1-jre.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\3.0.2\25ea2e8b0c338a877313bd4672d3fe056ea78f0d\jsr305-3.0.2.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.9.0\7c10d545325e3a6e72e06381afe469fd40eb701\jackson-annotations-2.9.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.9.0\88e7c6220be3b3497b3074d3fc7754213289b987\jackson-core-2.9.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\net.fabricmc\yarn\1.19.2+build.1\64a9d119c19646df6f681e2ae265cfa52e1e0a00\yarn-1.19.2+build.1-constants.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.mojang\blocklist\1.0.10\5c685c5ffa94c4cd39496c7184c1d122e515ecef\blocklist-1.0.10.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.mojang\patchy\2.2.10\da05971b07cbb379d002cf7eaec6a2048211fefc\patchy-2.2.10.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.ibm.icu\icu4j\70.1\dfa3a1fbc55bf5db8c6e79fc0935ac7ab1202950\icu4j-70.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient\4.5.13\e5f6cae5ca7ecaac1ec2827a9e2d65ae2869cada\httpclient-4.5.13.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.15\49d94806b6e3dc933dacbd8acb0fdbab8ebd1e5d\commons-codec-1.15.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-compress\1.21\4ec95b60d4e86b5c95a0e919cb172a0af98011ef\commons-compress-1.21.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\commons-logging\commons-logging\1.2\4bfc12adfe4842bf07b657f0369c4cb522955686\commons-logging-1.2.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpcore\4.4.14\9dd1a631c082d92ecd4bd8fd4cf55026c720a8c1\httpcore-4.4.14.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\a817bcf213db49f710603677457567c37d53e103\lwjgl-jemalloc-3.3.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\948a89b76a16aa324b046ae9308891216ffce5f9\lwjgl-jemalloc-3.3.1-natives-windows.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-jemalloc\3.3.1\fb476c8ec110e1c137ad3ce8a7f7bfe6b11c6324\lwjgl-jemalloc-3.3.1-natives-windows-x86.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\2623a6b8ae1dfcd880738656a9f0243d2e6840bd\lwjgl-openal-3.3.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\30a474d0e57193d7bc128849a3ab66bc9316fdb1\lwjgl-openal-3.3.1-natives-windows.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-openal\3.3.1\888349f7b1be6fbae58bf8edfb9ef12def04c4e3\lwjgl-openal-3.3.1-natives-windows-x86.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\831a5533a21a5f4f81bbc51bb13e9899319b5411\lwjgl-opengl-3.3.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\c1807e9bd571402787d7e37e3029776ae2513bb8\lwjgl-opengl-3.3.1-natives-windows.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-opengl\3.3.1\deef3eb9b178ff2ff3ce893cc72ae741c3a17974\lwjgl-opengl-3.3.1-natives-windows-x86.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\cbac1b8d30cb4795149c1ef540f912671a8616d0\lwjgl-glfw-3.3.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\ed892f945cf7e79c8756796f32d00fa4ceaf573b\lwjgl-glfw-3.3.1-natives-windows.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-glfw\3.3.1\b997e3391d6ce8f05487e7335d95c606043884a1\lwjgl-glfw-3.3.1-natives-windows-x86.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\b119297cf8ed01f247abe8685857f8e7fcf5980f\lwjgl-stb-3.3.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\86315914ac119efdb02dc9e8e978ade84f1702af\lwjgl-stb-3.3.1-natives-windows.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-stb\3.3.1\a8d41f419eecb430b7c91ea2ce2c5c451cae2091\lwjgl-stb-3.3.1-natives-windows-x86.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\ff1914111ef2e3e0110ef2dabc8d8cdaad82347\lwjgl-tinyfd-3.3.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\a5d830475ec0958d9fdba1559efa99aef211e6ff\lwjgl-tinyfd-3.3.1-natives-windows.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl-tinyfd\3.3.1\842eedd876fae354abc308c98a263f6bbc9e8a4d\lwjgl-tinyfd-3.3.1-natives-windows-x86.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\ae58664f88e18a9bb2c77b063833ca7aaec484cb\lwjgl-3.3.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\36c37f16ab611b3aa11f3bcf80b1d509b4ce6b\lwjgl-3.3.1-natives-windows.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.lwjgl\lwjgl\3.3.1\3b14f4beae9dd39791ec9e12190a9380cd8a3ce6\lwjgl-3.3.1-natives-windows-x86.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.13.9\5f4e3a6ef86cb021f7ca87ca192cddb50c26eb59\text2speech-1.13.9.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.mojang\text2speech\1.13.9\7a90898b29e5c72f90ba6ebe86fa78a6afd7d3eb\text2speech-1.13.9-natives-windows.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.github.oshi\oshi-core\5.8.5\1d0ec654d820741327f5a9229d513732a4b7ce50\oshi-core-5.8.5.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna-platform\5.10.0\fbed7d9669dba47714ad0d4f4454290a997aee69\jna-platform-5.10.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.10.0\7cf4c87dd802db50721db66947aa237d7ad09418\jna-5.10.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.mojang\javabridge\1.2.24\c876796229b2ef5120f186eab5acc870699d3b9\javabridge-1.2.24.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\net.sf.jopt-simple\jopt-simple\5.0.4\4fdac2fbe92dfad86aa6e9301736f6b4342a3f5c\jopt-simple-5.0.4.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\io.netty\netty-handler\4.1.77.Final\47a81089de03635a27f509f3e4e13386ae1db275\netty-handler-4.1.77.Final.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\io.netty\netty-codec\4.1.77.Final\4efc5f59335301d6ba0d7cd31dd10651119b03c8\netty-codec-4.1.77.Final.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-classes-epoll\4.1.77.Final\dd70dbccbcf98382223a59044f3c08d8e9920cad\netty-transport-classes-epoll-4.1.77.Final.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport-native-unix-common\4.1.77.Final\c95d53486414b3270d08057957c5da8e0c37e4eb\netty-transport-native-unix-common-4.1.77.Final.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\io.netty\netty-transport\4.1.77.Final\2a3373bbd20d520c821f210bd5ee886788512043\netty-transport-4.1.77.Final.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\io.netty\netty-buffer\4.1.77.Final\d97571f99e5e739d86824d0df99f35d295276b5f\netty-buffer-4.1.77.Final.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\io.netty\netty-resolver\4.1.77.Final\4a239dbf8d8bb5f98aa51462c35011c0516395fd\netty-resolver-4.1.77.Final.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\io.netty\netty-common\4.1.77.Final\ea0fc20f4e6178966b9d62017b7fcb83dfe0e713\netty-common-4.1.77.Final.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.google.guava\failureaccess\1.0.1\1dcf1de382a0bf95a3d8b0849546c88bac1292c9\failureaccess-1.0.1.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.apache.commons\commons-lang3\3.12.0\c6842c86792ff03b9f1d1fe2aab8dc23aa6c6f0e\commons-lang3-3.12.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.11.0\a2503f302b11ebde7ebc3df41daebe0e4eea3689\commons-io-2.11.0.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.mojang\brigadier\1.0.18\c1ef1234282716483c92183f49bef47b1a89bfa9\brigadier-1.0.18.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\it.unimi.dsi\fastutil\8.5.6\76f95700418a68fbc4ac050525261f05dc681ca1\fastutil-8.5.6.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\software\bernie\geckolib\geckolib-fabric-1.19\3.1.12\geckolib-fabric-1.19-3.1.12.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-api\0.59.0+1.19.2\fabric-api-0.59.0+1.19.2.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-transfer-api-v1\2.0.10+83a8659290\fabric-transfer-api-v1-2.0.10+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-api-lookup-api-v1\1.6.8+9ff28f4090\fabric-api-lookup-api-v1-1.6.8+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-blockrenderlayer-v1\1.1.19+9ff28f4090\fabric-blockrenderlayer-v1-1.1.19+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-client-tags-api-v1\1.0.0+b35fea8390\fabric-client-tags-api-v1-1.0.0+b35fea8390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-command-api-v2\2.1.6+0c17ea9690\fabric-command-api-v2-2.1.6+0c17ea9690.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-content-registries-v0\3.2.2+83a8659290\fabric-content-registries-v0-3.2.2+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-convention-tags-v1\1.1.0+7cd20a1490\fabric-convention-tags-v1-1.1.0+7cd20a1490.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-data-generation-api-v1\5.1.7+a680b9b490\fabric-data-generation-api-v1-5.1.7+a680b9b490.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-dimensions-v1\2.1.29+a6d2f78590\fabric-dimensions-v1-2.1.29+a6d2f78590.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-entity-events-v1\1.4.17+9ff28f4090\fabric-entity-events-v1-1.4.17+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-events-interaction-v0\0.4.27+9ff28f4090\fabric-events-interaction-v0-0.4.27+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-gametest-api-v1\1.0.34+e62f51a390\fabric-gametest-api-v1-1.0.34+e62f51a390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-item-api-v1\1.5.6+35a03c4390\fabric-item-api-v1-1.5.6+35a03c4390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-item-groups-v0\0.3.27+6bee109e90\fabric-item-groups-v0-0.3.27+6bee109e90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-mining-level-api-v1\2.1.13+33fbc73890\fabric-mining-level-api-v1-2.1.13+33fbc73890.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-lifecycle-events-v1\2.1.1+83a8659290\fabric-lifecycle-events-v1-2.1.1+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-loot-api-v2\1.1.2+83a8659290\fabric-loot-api-v2-1.1.2+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-message-api-v1\5.0.2+176380a290\fabric-message-api-v1-5.0.2+176380a290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-models-v0\0.3.16+9ff28f4090\fabric-models-v0-0.3.16+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-registry-sync-v0\0.9.23+23c4cfef90\fabric-registry-sync-v0-0.9.23+23c4cfef90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-screen-handler-api-v1\1.2.12+9ff28f4090\fabric-screen-handler-api-v1-1.2.12+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-networking-api-v1\1.2.3+5eb68ef290\fabric-networking-api-v1-1.2.3+5eb68ef290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-object-builder-api-v1\4.0.10+7675279690\fabric-object-builder-api-v1-4.0.10+7675279690.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-particles-v1\1.0.9+dc39553a90\fabric-particles-v1-1.0.9+dc39553a90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-renderer-indigo\0.6.11+5187d39f90\fabric-renderer-indigo-0.6.11+5187d39f90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-renderer-api-v1\1.0.9+84f79e9d90\fabric-renderer-api-v1-1.0.9+84f79e9d90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-rendering-data-attachment-v1\0.3.13+9ff28f4090\fabric-rendering-data-attachment-v1-0.3.13+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-rendering-fluids-v1\3.0.6+9ff28f4090\fabric-rendering-fluids-v1-3.0.6+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-rendering-v1\1.10.15+9ff28f4090\fabric-rendering-v1-1.10.15+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-screen-api-v1\1.0.25+f05effaf90\fabric-screen-api-v1-1.0.25+f05effaf90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-textures-v0\1.0.19+9ff28f4090\fabric-textures-v0-1.0.19+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-api-base\0.4.10+e62f51a390\fabric-api-base-0.4.10+e62f51a390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-biome-api-v1\9.0.16+83a8659290\fabric-biome-api-v1-9.0.16+83a8659290.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-crash-report-info-v1\0.2.4+bd0a0d4a90\fabric-crash-report-info-v1-0.2.4+bd0a0d4a90.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-game-rule-api-v1\1.0.20+1899036190\fabric-game-rule-api-v1-1.0.20+1899036190.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-key-binding-api-v1\1.0.19+9ff28f4090\fabric-key-binding-api-v1-1.0.19+9ff28f4090.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-resource-conditions-api-v1\2.0.10+e62f51a390\fabric-resource-conditions-api-v1-2.0.10+e62f51a390.jar to classpath.
+[20:19:35] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-resource-loader-v0\0.6.0+6bee109e90\fabric-resource-loader-v0-0.6.0+6bee109e90.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\Desktop\AntsMod 1.19.2\.gradle\loom-cache\remapped_mods\net_fabricmc_yarn_1_19_2_1_19_2_build_1_v2\net\fabricmc\fabric-api\fabric-transitive-access-wideners-v1\1.2.0+1e232e1390\fabric-transitive-access-wideners-v1-1.2.0+1e232e1390.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.google.guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\b421526c5f297295adef1c886e5246c39d4ac629\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.checkerframework\checker-qual\3.12.0\d5692f0526415fcc6de94bb5bfbd3afd9dd3b3e5\checker-qual-3.12.0.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.google.errorprone\error_prone_annotations\2.7.1\458d9042f7aa6fa9a634df902b37f544e15aacac\error_prone_annotations-2.7.1.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\com.google.j2objc\j2objc-annotations\1.3\ba035118bc8bac37d7eff77700720999acd9986d\j2objc-annotations-1.3.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\net.fabricmc\dev-launch-injector\0.2.1+build.8\da8bef7e6e2f952da707f282bdb46882a0fce5e3\dev-launch-injector-0.2.1+build.8.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\ca.weblite\java-objc-bridge\1.1\1227f9e0666314f9de41477e3ec277e542ed7f7b\java-objc-bridge-1.1.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.jline\jline-reader\3.12.1\4382ab1382c7b6f379377ed5f665dc2f6e1218bc\jline-reader-3.12.1.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\modules-2\files-2.1\org.jline\jline-terminal\3.12.1\c777448314e050d980a6b697c140f3bfe9eb7416\jline-terminal-3.12.1.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Knot) Adding C:\Users\mastr\.gradle\caches\fabric-loom\1.19.2\net.fabricmc.yarn.1_19_2.1.19.2+build.1-v2\mappings.jar to classpath.
+[20:19:36] [main/DEBUG] (FabricLoader/Entrypoint) No subscribers for entrypoint 'preLaunch'
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing mixins for MixinEnvironment[DEFAULT]
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-dimensions-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-dimensions-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-crash-report-info-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-crash-report-info-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config geckolib3.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap geckolib-fabric-1.19-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-events-interaction-v0.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-events-interaction-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-events-interaction-v0.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-events-interaction-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-rendering-data-attachment-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-rendering-data-attachment-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-rendering-data-attachment-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-rendering-data-attachment-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-message-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-message-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-game-rule-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-game-rule-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-game-rule-api-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-game-rule-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-key-binding-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-key-binding-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-registry-sync-v0.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-registry-sync-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-registry-sync-v0.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-registry-sync-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-api-lookup-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-api-lookup-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-renderer-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-renderer-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-renderer-api-v1.debughud.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-renderer-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-networking-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-networking-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-networking-api-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-networking-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-command-api-v2.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-command-api-v2-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-command-api-v2.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-command-api-v2-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-object-builder-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-object-builder-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-object-builder-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-object-builder-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-data-generation-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-data-generation-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-data-generation-api-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-data-generation-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-item-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-item-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-item-api-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-item-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-screen-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-screen-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-blockrenderlayer-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-blockrenderlayer-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-screen-handler-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-screen-handler-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-entity-events-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-entity-events-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-entity-events-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-entity-events-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-item-groups-v0.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-item-groups-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-item-groups-v0.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-item-groups-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-transfer-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-transfer-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-lifecycle-events-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-lifecycle-events-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-lifecycle-events-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-lifecycle-events-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-particles-v1.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-particles-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-textures-v0.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-textures-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-loot-api-v2.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-loot-api-v2-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-renderer-indigo.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-renderer-indigo-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-models-v0.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-models-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-resource-loader-v0.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-resource-loader-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-resource-loader-v0.client.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-resource-loader-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config ants.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-biome-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-biome-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-mining-level-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-mining-level-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-gametest-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-gametest-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-rendering-fluids-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-rendering-fluids-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-resource-conditions-api-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-resource-conditions-api-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-rendering-v1.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap client-fabric-rendering-v1-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Selecting config fabric-content-registries-v0.mixins.json
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Remapping refMap fabric-content-registries-v0-refmap.json using remapper chain
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-dimensions-v1.mixins.json (4)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-crash-report-info-v1.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing geckolib3.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-events-interaction-v0.mixins.json (3)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) @Mixin target net/minecraft/server/network/ServerPlayNetworkHandler$1 is public in fabric-events-interaction-v0.mixins.json:MixinServerPlayNetworkHandler from mod fabric-events-interaction-v0 and should be specified in value
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-events-interaction-v0.client.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-rendering-data-attachment-v1.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-rendering-data-attachment-v1.client.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-message-api-v1.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-game-rule-api-v1.mixins.json (6)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) @Mixin target net/minecraft/server/command/GameRuleCommand$1 is public in fabric-game-rule-api-v1.mixins.json:GameRuleCommandVisitorMixin from mod fabric-game-rule-api-v1 and should be specified in value
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-game-rule-api-v1.client.mixins.json (3)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) @Mixin target net/minecraft/client/gui/screen/world/EditGameRulesScreen$RuleListWidget$1 is public in fabric-game-rule-api-v1.client.mixins.json:RuleListWidgetVisitorMixin from mod fabric-game-rule-api-v1 and should be specified in value
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-key-binding-api-v1.mixins.json (3)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-registry-sync-v0.mixins.json (12)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-registry-sync-v0.client.mixins.json (5)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-api-lookup-api-v1.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-renderer-api-v1.mixins.json (4)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-renderer-api-v1.debughud.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-networking-api-v1.mixins.json (10)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) @Mixin target net/minecraft/server/world/ThreadedAnvilChunkStorage$EntityTracker is public in fabric-networking-api-v1.mixins.json:accessor.EntityTrackerAccessor from mod fabric-networking-api-v1 and should be specified in value
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-networking-api-v1.client.mixins.json (5)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-command-api-v2.mixins.json (3)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-command-api-v2.client.mixins.json (3)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-object-builder-v1.mixins.json (9)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) @Mixin target net/minecraft/village/TradeOffers$TypeAwareBuyForOneEmeraldFactory is public in fabric-object-builder-v1.mixins.json:TypeAwareTradeMixin from mod fabric-object-builder-api-v1 and should be specified in value
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-object-builder-v1.client.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-data-generation-api-v1.mixins.json (5)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-data-generation-api-v1.client.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-item-api-v1.mixins.json (4)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-item-api-v1.client.mixins.json (3)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-screen-api-v1.mixins.json (6)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-blockrenderlayer-v1.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-screen-handler-api-v1.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-entity-events-v1.mixins.json (8)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-entity-events-v1.client.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-item-groups-v0.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-item-groups-v0.client.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-transfer-api-v1.mixins.json (10)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-lifecycle-events-v1.mixins.json (8)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) @Mixin target net/minecraft/server/world/ServerWorld$ServerEntityHandler is public in fabric-lifecycle-events-v1.mixins.json:ServerWorldEntityLoaderMixin from mod fabric-lifecycle-events-v1 and should be specified in value
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-lifecycle-events-v1.client.mixins.json (6)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) @Mixin target net/minecraft/client/world/ClientWorld$ClientEntityHandler is public in fabric-lifecycle-events-v1.client.mixins.json:ClientWorldEntityLoaderMixin from mod fabric-lifecycle-events-v1 and should be specified in value
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-particles-v1.client.mixins.json (3)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-textures-v0.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-loot-api-v2.mixins.json (5)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-renderer-indigo.mixins.json (4)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-models-v0.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-resource-loader-v0.mixins.json (16)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-resource-loader-v0.client.mixins.json (6)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) @Mixin target net/minecraft/client/font/FontManager$1 is public in fabric-resource-loader-v0.client.mixins.json:FontManagerResourceReloadListenerMixin from mod fabric-resource-loader-v0 and should be specified in value
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing ants.mixins.json (2)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-biome-api-v1.mixins.json (9)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-mining-level-api-v1.mixins.json (3)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-gametest-api-v1.mixins.json (7)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-rendering-fluids-v1.mixins.json (1)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-resource-conditions-api-v1.mixins.json (4)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-rendering-v1.mixins.json (14)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Preparing fabric-content-registries-v0.mixins.json (13)
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Registering new injector for @Inject with org.spongepowered.asm.mixin.injection.struct.CallbackInjectionInfo
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Registering new injector for @ModifyArg with org.spongepowered.asm.mixin.injection.struct.ModifyArgInjectionInfo
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Registering new injector for @ModifyArgs with org.spongepowered.asm.mixin.injection.struct.ModifyArgsInjectionInfo
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Registering new injector for @Redirect with org.spongepowered.asm.mixin.injection.struct.RedirectInjectionInfo
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Registering new injector for @ModifyVariable with org.spongepowered.asm.mixin.injection.struct.ModifyVariableInjectionInfo
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Registering new injector for @ModifyConstant with org.spongepowered.asm.mixin.injection.struct.ModifyConstantInjectionInfo
+[20:19:36] [main/DEBUG] (FabricLoader/Mixin) Prepared 229 mixins in 0,492 sec (2,1ms avg) (0ms load, 0ms transform, 0ms plugin)
+[20:19:36] [main/DEBUG] (io.netty.util.internal.logging.InternalLoggerFactory) Using SLF4J as the default logging framework
+[20:19:36] [main/DEBUG] (io.netty.util.ResourceLeakDetector) -Dio.netty.leakDetection.level: simple
+[20:19:36] [main/DEBUG] (io.netty.util.ResourceLeakDetector) -Dio.netty.leakDetection.targetRecords: 4
+[20:19:37] [main/DEBUG] (FabricLoader/Mixin) Mixing MixinCrashReport from fabric-crash-report-info-v1.mixins.json into net.minecraft.util.SystemDetails
+[20:19:37] [main/DEBUG] (FabricLoader/Mixin) fabric-crash-report-info-v1.mixins.json:MixinCrashReport from mod fabric-crash-report-info-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:37] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$appendMods$1(Lnet/fabricmc/loader/api/ModContainer;)Ljava/lang/String; to mddd24d9$lambda$appendMods$1$0 in fabric-crash-report-info-v1.mixins.json:MixinCrashReport from mod fabric-crash-report-info-v1
+[20:19:37] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$fillSystemDetails$0()Ljava/lang/String; to mddd24d9$lambda$fillSystemDetails$0$1 in fabric-crash-report-info-v1.mixins.json:MixinCrashReport from mod fabric-crash-report-info-v1
+[20:19:37] [main/DEBUG] (FabricLoader/Mixin) fabric-crash-report-info-v1.mixins.json:MixinCrashReport from mod fabric-crash-report-info-v1->@Inject::fillSystemDetails(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V doesn't use it's CallbackInfo
+[20:19:37] [main/DEBUG] (FabricLoader/Mixin) fabric-crash-report-info-v1.mixins.json:MixinCrashReport from mod fabric-crash-report-info-v1->@Inject::fillSystemDetails(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V has 0 override(s) in child classes
+[20:19:37] [main/DEBUG] (FabricLoader/Mixin) fabric-crash-report-info-v1.mixins.json:MixinCrashReport from mod fabric-crash-report-info-v1->@Inject::fillSystemDetails(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V won't be passed a CallbackInfo as a result
+[20:19:37] [main/WARN] (oshi.util.FileUtil) Configuration conflict: there is more than one oshi.properties file on the classpath
+[20:19:37] [main/WARN] (oshi.util.FileUtil) Configuration conflict: there is more than one oshi.architecture.properties file on the classpath
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing MixinBootstrap from fabric-registry-sync-v0.mixins.json into net.minecraft.Bootstrap
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinBootstrap from mod fabric-registry-sync-v0: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$initialize$1(Lnet/minecraft/fluid/Fluid;)Ljava/util/Collection; to mddd24d9$lambda$initialize$1$0 in fabric-registry-sync-v0.mixins.json:MixinBootstrap from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$initialize$0(Lnet/minecraft/block/Block;)Ljava/util/Collection; to mddd24d9$lambda$initialize$0$1 in fabric-registry-sync-v0.mixins.json:MixinBootstrap from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinBootstrap from mod fabric-registry-sync-v0->@Inject::initialize(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V doesn't use it's CallbackInfo
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing AccessorRegistry from fabric-registry-sync-v0.mixins.json into net.minecraft.util.registry.Registry
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:AccessorRegistry from mod fabric-registry-sync-v0: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming @Accessor method getROOT()Lnet/minecraft/util/registry/MutableRegistry; to getROOT_$md$dd24d9$0 in fabric-registry-sync-v0.mixins.json:AccessorRegistry from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing MixinRegistry from fabric-registry-sync-v0.mixins.json into net.minecraft.util.registry.Registry
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinRegistry from mod fabric-registry-sync-v0: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing MixinIdRegistry from fabric-registry-sync-v0.mixins.json into net.minecraft.util.registry.SimpleRegistry
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$new$5([Lnet/fabricmc/fabric/api/event/registry/RegistryIdRemapCallback;)Lnet/fabricmc/fabric/api/event/registry/RegistryIdRemapCallback; to mddd24d9$lambda$new$5$0 in fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$new$4([Lnet/fabricmc/fabric/api/event/registry/RegistryIdRemapCallback;Lnet/fabricmc/fabric/api/event/registry/RegistryIdRemapCallback$RemapState;)V to mddd24d9$lambda$new$4$1 in fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$new$3([Lnet/fabricmc/fabric/api/event/registry/RegistryEntryRemovedCallback;)Lnet/fabricmc/fabric/api/event/registry/RegistryEntryRemovedCallback; to mddd24d9$lambda$new$3$2 in fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$new$2([Lnet/fabricmc/fabric/api/event/registry/RegistryEntryRemovedCallback;ILnet/minecraft/util/Identifier;Ljava/lang/Object;)V to mddd24d9$lambda$new$2$3 in fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$new$1([Lnet/fabricmc/fabric/api/event/registry/RegistryEntryAddedCallback;)Lnet/fabricmc/fabric/api/event/registry/RegistryEntryAddedCallback; to mddd24d9$lambda$new$1$4 in fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$new$0([Lnet/fabricmc/fabric/api/event/registry/RegistryEntryAddedCallback;ILnet/minecraft/util/Identifier;Ljava/lang/Object;)V to mddd24d9$lambda$new$0$5 in fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing MixinSimpleRegistry from fabric-registry-sync-v0.mixins.json into net.minecraft.util.registry.SimpleRegistry
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinSimpleRegistry from mod fabric-registry-sync-v0: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0->@Inject::setPre(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V doesn't use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0->@Inject::setPre(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0->@Inject::setPre(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V won't be passed a CallbackInfoReturnable as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0->@Inject::setPost(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V doesn't use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0->@Inject::setPost(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinIdRegistry from mod fabric-registry-sync-v0->@Inject::setPost(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V won't be passed a CallbackInfoReturnable as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinSimpleRegistry from mod fabric-registry-sync-v0->@Inject::add(Lnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V doesn't use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinSimpleRegistry from mod fabric-registry-sync-v0->@Inject::add(Lnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinSimpleRegistry from mod fabric-registry-sync-v0->@Inject::add(Lnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V won't be passed a CallbackInfoReturnable as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinSimpleRegistry from mod fabric-registry-sync-v0->@Inject::set(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V doesn't use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinSimpleRegistry from mod fabric-registry-sync-v0->@Inject::set(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinSimpleRegistry from mod fabric-registry-sync-v0->@Inject::set(ILnet/minecraft/util/registry/RegistryKey;Ljava/lang/Object;Lcom/mojang/serialization/Lifecycle;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V won't be passed a CallbackInfoReturnable as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing FluidMixin from fabric-transfer-api-v1.mixins.json into net.minecraft.fluid.Fluid
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-transfer-api-v1.mixins.json:FluidMixin from mod fabric-transfer-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-transfer-api-v1.mixins.json:FluidMixin from mod fabric-transfer-api-v1->@Inject::hookGetBucketFillSound(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing AbstractBlockAccessor from fabric-object-builder-v1.mixins.json into net.minecraft.block.AbstractBlock
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-object-builder-v1.mixins.json:AbstractBlockAccessor from mod fabric-object-builder-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing WorldMixin from fabric-lifecycle-events-v1.mixins.json into net.minecraft.world.World
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-lifecycle-events-v1.mixins.json:WorldMixin from mod fabric-lifecycle-events-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing MixinViewableWorld from fabric-rendering-data-attachment-v1.mixins.json into net.minecraft.world.WorldView
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-rendering-data-attachment-v1.mixins.json:MixinViewableWorld from mod fabric-rendering-data-attachment-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing ServerWorldMixin from fabric-api-lookup-api-v1.mixins.json into net.minecraft.server.world.ServerWorld
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric-api-lookup-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$fabric_invalidateCache$5(Ljava/util/Map$Entry;)Z to mddd24d9$lambda$fabric_invalidateCache$5$0 in fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric-api-lookup-api-v1
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$fabric_invalidateCache$4(Ljava/lang/ref/WeakReference;)Z to mddd24d9$lambda$fabric_invalidateCache$4$1 in fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric-api-lookup-api-v1
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$fabric_invalidateCache$3(Ljava/lang/ref/WeakReference;)V to mddd24d9$lambda$fabric_invalidateCache$3$2 in fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric-api-lookup-api-v1
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$fabric_invalidateCache$2(Ljava/lang/ref/WeakReference;)Z to mddd24d9$lambda$fabric_invalidateCache$2$3 in fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric-api-lookup-api-v1
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$fabric_registerCache$1(Ljava/lang/ref/WeakReference;)Z to mddd24d9$lambda$fabric_registerCache$1$4 in fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric-api-lookup-api-v1
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming synthetic method lambda$fabric_registerCache$0(Lnet/minecraft/util/math/BlockPos;)Ljava/util/List; to mddd24d9$lambda$fabric_registerCache$0$5 in fabric-api-lookup-api-v1.mixins.json:ServerWorldMixin from mod fabric-api-lookup-api-v1
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing ServerWorldMixin from fabric-lifecycle-events-v1.mixins.json into net.minecraft.server.world.ServerWorld
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric-lifecycle-events-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric-lifecycle-events-v1->@Inject::startWorldTick(Ljava/util/function/BooleanSupplier;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V doesn't use it's CallbackInfo
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric-lifecycle-events-v1->@Inject::startWorldTick(Ljava/util/function/BooleanSupplier;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric-lifecycle-events-v1->@Inject::startWorldTick(Ljava/util/function/BooleanSupplier;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V won't be passed a CallbackInfo as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric-lifecycle-events-v1->@Inject::endWorldTick(Ljava/util/function/BooleanSupplier;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V doesn't use it's CallbackInfo
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric-lifecycle-events-v1->@Inject::endWorldTick(Ljava/util/function/BooleanSupplier;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-lifecycle-events-v1.mixins.json:ServerWorldMixin from mod fabric-lifecycle-events-v1->@Inject::endWorldTick(Ljava/util/function/BooleanSupplier;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V won't be passed a CallbackInfo as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing EntityMixin from fabric-dimensions-v1.mixins.json into net.minecraft.entity.Entity
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-dimensions-v1.mixins.json:EntityMixin from mod fabric-dimensions-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing EntityMixin from fabric-entity-events-v1.mixins.json into net.minecraft.entity.Entity
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:EntityMixin from mod fabric-entity-events-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-dimensions-v1.mixins.json:EntityMixin from mod fabric-dimensions-v1->@Inject::getTeleportTarget(Lnet/minecraft/server/world/ServerWorld;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:EntityMixin from mod fabric-entity-events-v1->@Inject::afterWorldChanged(Lnet/minecraft/server/world/ServerWorld;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:EntityMixin from mod fabric-entity-events-v1->@Inject::afterWorldChanged(Lnet/minecraft/server/world/ServerWorld;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:EntityMixin from mod fabric-entity-events-v1->@Inject::afterWorldChanged(Lnet/minecraft/server/world/ServerWorld;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing elytra.PlayerEntityMixin from fabric-entity-events-v1.mixins.json into net.minecraft.entity.player.PlayerEntity
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:elytra.PlayerEntityMixin from mod fabric-entity-events-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing PlayerEntityMixin from fabric-entity-events-v1.mixins.json into net.minecraft.entity.player.PlayerEntity
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:PlayerEntityMixin from mod fabric-entity-events-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:elytra.PlayerEntityMixin from mod fabric-entity-events-v1->@Inject::injectElytraCheck(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:PlayerEntityMixin from mod fabric-entity-events-v1->@Inject::onTrySleep(Lnet/minecraft/util/math/BlockPos;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:PlayerEntityMixin from mod fabric-entity-events-v1->@Inject::onIsSleepingLongEnough(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing LivingEntityMixin from fabric-item-api-v1.mixins.json into net.minecraft.entity.LivingEntity
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-item-api-v1.mixins.json:LivingEntityMixin from mod fabric-item-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing elytra.LivingEntityMixin from fabric-entity-events-v1.mixins.json into net.minecraft.entity.LivingEntity
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:elytra.LivingEntityMixin from mod fabric-entity-events-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing LivingEntityMixin from fabric-entity-events-v1.mixins.json into net.minecraft.entity.LivingEntity
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-item-api-v1.mixins.json:LivingEntityMixin from mod fabric-item-api-v1->@Inject::onGetPreferredEquipmentSlot(Lnet/minecraft/item/ItemStack;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;Lnet/minecraft/item/Item;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:elytra.LivingEntityMixin from mod fabric-entity-events-v1->@Inject::injectElytraTick(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V does use it's CallbackInfo
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onEntityKilledOther(Lnet/minecraft/entity/damage/DamageSource;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lnet/minecraft/entity/Entity;)V doesn't use it's CallbackInfo
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onEntityKilledOther(Lnet/minecraft/entity/damage/DamageSource;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lnet/minecraft/entity/Entity;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onEntityKilledOther(Lnet/minecraft/entity/damage/DamageSource;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lnet/minecraft/entity/Entity;)V won't be passed a CallbackInfo as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onSleep(Lnet/minecraft/util/math/BlockPos;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V doesn't use it's CallbackInfo
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onSleep(Lnet/minecraft/util/math/BlockPos;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onSleep(Lnet/minecraft/util/math/BlockPos;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V won't be passed a CallbackInfo as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onWakeUp(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V doesn't use it's CallbackInfo
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onWakeUp(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onWakeUp(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V won't be passed a CallbackInfo as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onIsSleepingInBed(Lnet/minecraft/util/math/BlockPos;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-entity-events-v1.mixins.json:LivingEntityMixin from mod fabric-entity-events-v1->@Inject::onGetSleepingDirection(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;Lnet/minecraft/util/math/BlockPos;)V does use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing ItemMixin from fabric-item-api-v1.mixins.json into net.minecraft.item.Item
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-item-api-v1.mixins.json:ItemMixin from mod fabric-item-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing ItemMixin from fabric-transfer-api-v1.mixins.json into net.minecraft.item.Item
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-transfer-api-v1.mixins.json:ItemMixin from mod fabric-transfer-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-item-api-v1.mixins.json:ItemMixin from mod fabric-item-api-v1->@Inject::onConstruct(Lnet/minecraft/item/Item$Settings;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V doesn't use it's CallbackInfo
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-item-api-v1.mixins.json:ItemMixin from mod fabric-item-api-v1->@Inject::onConstruct(Lnet/minecraft/item/Item$Settings;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V has 0 override(s) in child classes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-item-api-v1.mixins.json:ItemMixin from mod fabric-item-api-v1->@Inject::onConstruct(Lnet/minecraft/item/Item$Settings;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V won't be passed a CallbackInfo as a result
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing BlockEntityTypeAccessor from fabric-api-lookup-api-v1.mixins.json into net.minecraft.block.entity.BlockEntityType
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-api-lookup-api-v1.mixins.json:BlockEntityTypeAccessor from mod fabric-api-lookup-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing ArgumentTypesAccessor from fabric-command-api-v2.mixins.json into net.minecraft.command.argument.ArgumentTypes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-command-api-v2.mixins.json:ArgumentTypesAccessor from mod fabric-command-api-v2: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming @Accessor method fabric_getClassMap()Ljava/util/Map; to fabric_getClassMap_$md$dd24d9$0 in fabric-command-api-v2.mixins.json:ArgumentTypesAccessor from mod fabric-command-api-v2
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing ArgumentTypesMixin from fabric-gametest-api-v1.mixins.json into net.minecraft.command.argument.ArgumentTypes
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-gametest-api-v1.mixins.json:ArgumentTypesMixin from mod fabric-gametest-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-gametest-api-v1.mixins.json:ArgumentTypesMixin from mod fabric-gametest-api-v1->@Inject::register(Lnet/minecraft/util/registry/Registry;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V doesn't use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing TreeDecoratorTypeInvoker from ants.mixins.json into net.minecraft.world.gen.treedecorator.TreeDecoratorType
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming @Invoker method callRegister(Ljava/lang/String;Lcom/mojang/serialization/Codec;)Lnet/minecraft/world/gen/treedecorator/TreeDecoratorType; to callRegister_$md$dd24d9$0 in ants.mixins.json:TreeDecoratorTypeInvoker from mod ants
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing MixinDynamicRegistryManager from fabric-registry-sync-v0.mixins.json into net.minecraft.util.registry.DynamicRegistryManager
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinDynamicRegistryManager from mod fabric-registry-sync-v0: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Mixing DynamicRegistryManagerAccessor from fabric-data-generation-api-v1.mixins.json into net.minecraft.util.registry.DynamicRegistryManager
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-data-generation-api-v1.mixins.json:DynamicRegistryManagerAccessor from mod fabric-data-generation-api-v1: Class version 61 required is higher than the class version supported by the current version of Mixin (JAVA_16 supports class version 60)
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) Renaming @Accessor method getInfos()Ljava/util/Map; to getInfos_$md$dd24d9$0 in fabric-data-generation-api-v1.mixins.json:DynamicRegistryManagerAccessor from mod fabric-data-generation-api-v1
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinDynamicRegistryManager from mod fabric-registry-sync-v0->@Inject::onCreateImpl(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;Lnet/minecraft/util/registry/DynamicRegistryManager$Mutable;)V doesn't use it's CallbackInfoReturnable
+[20:19:38] [main/DEBUG] (FabricLoader/Mixin) fabric-registry-sync-v0.mixins.json:MixinDynamicRegistryManager from mod fabric-registry-sync-v0->@Inject::setupBuiltInSync(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V does use it's CallbackInfoReturnable

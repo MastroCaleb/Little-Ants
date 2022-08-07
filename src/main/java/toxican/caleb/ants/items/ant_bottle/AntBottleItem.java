@@ -16,7 +16,6 @@ import net.minecraft.nbt.NbtHelper;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
@@ -99,10 +98,10 @@ extends Item {
         NbtCompound nbtCompound;
         BlockState blockState = null;
         if ((nbtCompound = stack.getNbt()) != null && nbtCompound.contains("HasClay")) {
-            tooltip.add(new LiteralText("Has Clay: true").formatted(Formatting.DARK_GRAY));
+            tooltip.add(Text.literal("Has Clay: true").formatted(Formatting.DARK_GRAY));
             if (nbtCompound.contains("carriedLeaf", 10)) {
                 blockState = NbtHelper.toBlockState(nbtCompound.getCompound("carriedLeaf"));
-                tooltip.add(new LiteralText("Carrying Leaf of: " + I18n.translate(blockState.getBlock().asItem().getTranslationKey())).formatted(Formatting.DARK_GRAY));
+                tooltip.add(Text.literal("Carrying Leaf of: " + I18n.translate(blockState.getBlock().asItem().getTranslationKey())).formatted(Formatting.DARK_GRAY));
             }
         }
     }

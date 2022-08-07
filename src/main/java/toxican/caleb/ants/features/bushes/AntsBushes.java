@@ -17,6 +17,7 @@ import toxican.caleb.ants.features.bushes.nest_decorator.RedNestTreeDecorator;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 
 public class AntsBushes {
@@ -90,13 +91,13 @@ public class AntsBushes {
 
     public static void init(){
 
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS, Biome.Category.FOREST),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST),
         GenerationStep.Feature.VEGETAL_DECORATION, OAK_BUSH_PLACED.getKey().get());
 
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.TAIGA, Biome.Category.ICY),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.TAIGA, BiomeKeys.SNOWY_TAIGA),
         GenerationStep.Feature.VEGETAL_DECORATION, SPRUCE_BUSH_PLACED.getKey().get());
 
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.SAVANNA, Biome.Category.EXTREME_HILLS),
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SAVANNA, BiomeKeys.SAVANNA_PLATEAU, BiomeKeys.WINDSWEPT_SAVANNA),
         GenerationStep.Feature.VEGETAL_DECORATION, ACACIA_BUSH_PLACED.getKey().get());
 
     }

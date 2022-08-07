@@ -4,10 +4,8 @@ import net.minecraft.block.sapling.SaplingGenerator;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import toxican.caleb.ants.features.bushes.AntsBushes;
-
+import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Random;
 
 public class OakBushSaplingGen extends SaplingGenerator {
     @Nullable

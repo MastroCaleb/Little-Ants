@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all":"ants:block/sand_ant_nest"
+    }
+}

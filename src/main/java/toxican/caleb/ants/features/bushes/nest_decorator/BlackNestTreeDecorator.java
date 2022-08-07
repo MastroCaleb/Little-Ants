@@ -45,7 +45,7 @@ public class BlackNestTreeDecorator extends TreeDecorator {
             return;
         }
             for (BlockPos logPosition : var4) {
-                if (var3.nextInt(4) == 0) {
+                if (var3.nextInt(8) == 0) {
                     int sideRaw = var3.nextInt(4);
                     Direction side = switch (sideRaw) {
                         case 0 -> Direction.NORTH;
@@ -71,7 +71,7 @@ public class BlackNestTreeDecorator extends TreeDecorator {
                 }
                 var2.accept(optional.get(), (BlockState)AntsBlocks.DIRT_ANT_NEST.getDefaultState().with(AntNestBlock.FACING, BEE_NEST_FACE));
                 var1.getBlockEntity(optional.get(), AntsBlocks.NEST_BLOCK_ENTITY).ifPresent(blockEntity -> {
-                    int k = 2 + var3.nextInt(2);
+                    int k = 1 + var3.nextInt(2);
                     for (int j = 0; j < k; ++j) {
                         NbtCompound nbtCompound = new NbtCompound();
                         nbtCompound.putString("id", Registry.ENTITY_TYPE.getId(AntsEntities.BLACK_ANT).toString());

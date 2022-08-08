@@ -22,13 +22,14 @@ public class NestTag {
     //Vanilla Leaves: (Maybe you want to use a vanilla one idk)
 
     public static final TagKey<Block> OAK_LEAF_FOOD = NestTag.registerBlock("food/vanilla/oak_leaf_food"); //Every block that should display an Oak Leaf in the ant's mouth
-    public static final TagKey<Block> DARK_OAK_LEAF_FOOD = NestTag.registerBlock("food/vanilla/dark_oak_leaf_food"); //Every block that should display an Dark Oak Leaf in the ant's mouth
+    public static final TagKey<Block> DARK_OAK_LEAF_FOOD = NestTag.registerBlock("food/vanilla/dark_oak_leaf_food"); //Every block that should display a Dark Oak Leaf in the ant's mouth
     public static final TagKey<Block> ACACIA_LEAF_FOOD = NestTag.registerBlock("food/vanilla/acacia_leaf_food"); //Every block that should display an Acacia Leaf in the ant's mouth
-    public static final TagKey<Block> SPRUCE_LEAF_FOOD = NestTag.registerBlock("food/vanilla/spruce_leaf_food"); //Every block that should display an Spruce Leaf in the ant's mouth
-    public static final TagKey<Block> BIRCH_LEAF_FOOD = NestTag.registerBlock("food/vanilla/birch_leaf_food"); //Every block that should display an Birch Leaf in the ant's mouth
-    public static final TagKey<Block> JUNGLE_LEAF_FOOD = NestTag.registerBlock("food/vanilla/jungle_leaf_food"); //Every block that should display an Jungle Leaf in the ant's mouth
-    public static final TagKey<Block> FLOWERING_AZALEA_LEAF_FOOD = NestTag.registerBlock("food/vanilla/flowering_azalea_leaf_food"); //Every block that should display an Flowring Azalea Leaf in the ant's mouth
+    public static final TagKey<Block> SPRUCE_LEAF_FOOD = NestTag.registerBlock("food/vanilla/spruce_leaf_food"); //Every block that should display a Spruce Leaf in the ant's mouth
+    public static final TagKey<Block> BIRCH_LEAF_FOOD = NestTag.registerBlock("food/vanilla/birch_leaf_food"); //Every block that should display a Birch Leaf in the ant's mouth
+    public static final TagKey<Block> JUNGLE_LEAF_FOOD = NestTag.registerBlock("food/vanilla/jungle_leaf_food"); //Every block that should display a Jungle Leaf in the ant's mouth
+    public static final TagKey<Block> FLOWERING_AZALEA_LEAF_FOOD = NestTag.registerBlock("food/vanilla/flowering_azalea_leaf_food"); //Every block that should display a Flowring Azalea Leaf in the ant's mouth
     public static final TagKey<Block> AZALEA_LEAF_FOOD = NestTag.registerBlock("food/vanilla/azalea_leaf_food"); //Every block that should display an Azalea Leaf in the ant's mouth
+    public static final TagKey<Block> MANGROVE_LEAF_FOOD = NestTag.registerBlock("food/vanilla/mangrove_leaf_food"); //Every block that should display a Mangrove Leaf in the ant's mouth
 
     //Colored Leaves: (Mainly for Spectrum compatibility[love ya DaFuqs] but also for other Mods with colored leaves)
 

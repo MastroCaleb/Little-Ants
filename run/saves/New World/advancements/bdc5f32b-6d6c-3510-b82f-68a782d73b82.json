@@ -1,0 +1,16 @@
+{
+  "ants:husbandry/dirt_colony": {
+    "criteria": {
+      "dirt_colony": "2022-08-07 23:11:17 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:savanna": "2022-08-07 23:10:03 +0200",
+      "minecraft:plains": "2022-08-07 23:10:29 +0200"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

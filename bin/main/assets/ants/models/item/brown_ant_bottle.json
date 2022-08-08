@@ -1,6 +1,0 @@
-{
-    "parent": "minecraft:item/generated",
-    "textures": {
-      "layer0": "ants:item/brown_ant_bottle"
-    }
-  }

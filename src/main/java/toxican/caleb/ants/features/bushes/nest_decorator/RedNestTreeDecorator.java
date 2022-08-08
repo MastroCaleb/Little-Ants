@@ -33,7 +33,7 @@ public class RedNestTreeDecorator extends TreeDecorator {
  
     @Override
     protected TreeDecoratorType<?> getType() {
-        return AntsDecorations.BLACK_NEST_DECORATOR;
+        return AntsDecorations.RED_NEST_DECORATOR;
     }
 
     @Override
@@ -72,6 +72,7 @@ public class RedNestTreeDecorator extends TreeDecorator {
                     int k = 1 + generator.getRandom().nextInt(2);
                     for (int j = 0; j < k; ++j) {
                         NbtCompound nbtCompound = new NbtCompound();
+                        
                         nbtCompound.putString("id", Registry.ENTITY_TYPE.getId(AntsEntities.RED_ANT).toString());
                         blockEntity.addAnt(nbtCompound, generator.getRandom().nextInt(599), false);
                     }

@@ -2,6 +2,7 @@
     "replace": false,
     "values": [
       "ants:dirt_ant_nest",
-      "ants:sand_ant_nest"
+      "ants:sand_ant_nest",
+      "ants:mud_ant_nest"
     ]
   }

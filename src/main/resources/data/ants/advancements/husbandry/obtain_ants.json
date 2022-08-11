@@ -63,6 +63,18 @@
           }
         ]
       }
+    },
+    "ants:muddy_ant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "ants:muddy_ant_bottle"
+            ]
+          }
+        ]
+      }
     }
   },
   "requirements": [
@@ -77,6 +89,9 @@
     ],
     [
       "ants:gold_ant"
+    ],
+    [
+      "ants:muddy_ant"
     ]
   ]
 }

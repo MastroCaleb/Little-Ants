@@ -12,6 +12,7 @@ import toxican.caleb.ants.AntsMain;
 import toxican.caleb.ants.entities.black_ant.BlackAntEntity;
 import toxican.caleb.ants.entities.brown_ant.BrownAntEntity;
 import toxican.caleb.ants.entities.gold_ant.GoldAntEntity;
+import toxican.caleb.ants.entities.muddy_ant.MuddyAntEntity;
 import toxican.caleb.ants.entities.red_ant.RedAntEntity;
 
 public class AntsEntities {
@@ -32,6 +33,10 @@ public class AntsEntities {
         Registry.ENTITY_TYPE, new Identifier(AntsMain.MOD_ID, "gold_ant"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, GoldAntEntity::new).dimensions(GoldAntEntity.STANDING_DIMENSIONS).specificSpawnBlocks(Blocks.DIRT, Blocks.GRASS).build()
     );
 
+    public static final EntityType<MuddyAntEntity> MUDDY_ANT = Registry.register(
+        Registry.ENTITY_TYPE, new Identifier(AntsMain.MOD_ID, "muddy_ant"), FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MuddyAntEntity::new).dimensions(BrownAntEntity.STANDING_DIMENSIONS).specificSpawnBlocks(Blocks.DIRT, Blocks.GRASS).build()
+    );
+
     public final static TagKey<EntityType<?>> ANTS = AntsEntities.register("ants");
 
     private static TagKey<EntityType<?>> register(String id) {
@@ -43,6 +48,7 @@ public class AntsEntities {
         FabricDefaultAttributeRegistry.register(RED_ANT, AntEntity.createAntAttributes());
         FabricDefaultAttributeRegistry.register(BLACK_ANT, AntEntity.createAntAttributes());
         FabricDefaultAttributeRegistry.register(GOLD_ANT, AntEntity.createAntAttributes());
+        FabricDefaultAttributeRegistry.register(MUDDY_ANT, AntEntity.createAntAttributes());
     }
     
 }

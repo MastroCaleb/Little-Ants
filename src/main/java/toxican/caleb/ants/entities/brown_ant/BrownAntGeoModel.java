@@ -45,6 +45,9 @@ public class BrownAntGeoModel extends AnimatedGeoModel<BrownAntEntity>{
             else if(object.getLeaf().isIn(NestTag.JUNGLE_LEAF_FOOD)){
                 return new Identifier(AntsMain.MOD_ID, "textures/entity/brown_ant/brown_ant_jungle.png");
             }
+            else if(object.getLeaf().isIn(NestTag.MANGROVE_LEAF_FOOD)){
+                return new Identifier(AntsMain.MOD_ID, "textures/entity/brown_ant/brown_ant_mangrove.png");
+            }
             else if(object.getLeaf().getBlock() == AntsBlocks.WINDY_DANDELION){
                 return new Identifier(AntsMain.MOD_ID, "textures/entity/brown_ant/brown_ant_dandelion.png");
             }

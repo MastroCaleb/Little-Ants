@@ -21,6 +21,7 @@ public class AntsItems {
     public static final Item RED_ANT_BOTTLE = new AntBottleItem(AntsEntities.RED_ANT, SoundEvents.ITEM_BOTTLE_EMPTY,new Item.Settings().maxCount(1).group(ItemGroup.MISC));
     public static final Item BLACK_ANT_BOTTLE = new AntBottleItem(AntsEntities.BLACK_ANT, SoundEvents.ITEM_BOTTLE_EMPTY,new Item.Settings().maxCount(1).group(ItemGroup.MISC));
     public static final Item GOLD_ANT_BOTTLE = new AntBottleItem(AntsEntities.GOLD_ANT, SoundEvents.ITEM_BOTTLE_EMPTY,new Item.Settings().maxCount(1).group(ItemGroup.MISC));
+    public static final Item MUDDY_ANT_BOTTLE = new AntBottleItem(AntsEntities.MUDDY_ANT, SoundEvents.ITEM_BOTTLE_EMPTY,new Item.Settings().maxCount(1).group(ItemGroup.MISC));
 
     public static final SpawnEggItem BROWN_ANT_SPAWN_EGG = new SpawnEggItem(AntsEntities.BROWN_ANT, 0x745434, 0x3b2717, new Item.Settings().maxCount(1).group(ItemGroup.MISC));
     public static final SpawnEggItem BLACK_ANT_SPAWN_EGG = new SpawnEggItem(AntsEntities.BLACK_ANT, 0x3b332c, 0x2c2c24, new Item.Settings().maxCount(1).group(ItemGroup.MISC));
@@ -34,6 +35,7 @@ public class AntsItems {
         Registry.register(Registry.ITEM, new Identifier(AntsMain.MOD_ID, "red_ant_bottle"), RED_ANT_BOTTLE);
         Registry.register(Registry.ITEM, new Identifier(AntsMain.MOD_ID, "black_ant_bottle"), BLACK_ANT_BOTTLE);
         Registry.register(Registry.ITEM, new Identifier(AntsMain.MOD_ID, "gold_ant_bottle"), GOLD_ANT_BOTTLE);
+        Registry.register(Registry.ITEM, new Identifier(AntsMain.MOD_ID, "muddy_ant_bottle"), MUDDY_ANT_BOTTLE);
 
         Registry.register(Registry.ITEM, new Identifier(AntsMain.MOD_ID, "brown_ant_egg"), BROWN_ANT_SPAWN_EGG);
         Registry.register(Registry.ITEM, new Identifier(AntsMain.MOD_ID, "red_ant_egg"), RED_ANT_SPAWN_EGG);

@@ -36,7 +36,7 @@ public class AntsMain implements ModInitializer {
 		LOGGER.info("Loading particles...");
 		AntsParticles.init();
 		LOGGER.info("Loading points of interest...");
-		NEST = PointOfInterestHelper.register(new Identifier("ants", "nest"), 0, 1, AntsBlocks.DIRT_ANT_NEST, AntsBlocks.SAND_ANT_NEST);
+		NEST = PointOfInterestHelper.register(new Identifier("ants", "nest"), 0, 1, AntsBlocks.DIRT_ANT_NEST, AntsBlocks.SAND_ANT_NEST, AntsBlocks.MUD_ANT_NEST);
 		LOGGER.info("Loading sounds...");
 		AntsSounds.init();
 		LOGGER.info("Loading bushes...");

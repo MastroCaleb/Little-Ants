@@ -45,6 +45,9 @@ public class GoldAntGeoModel extends AnimatedGeoModel<GoldAntEntity>{
             else if(object.getLeaf().isIn(NestTag.JUNGLE_LEAF_FOOD)){
                 return new Identifier(AntsMain.MOD_ID, "textures/entity/gold_ant/gold_ant_jungle.png");
             }
+            else if(object.getLeaf().isIn(NestTag.MANGROVE_LEAF_FOOD)){
+                return new Identifier(AntsMain.MOD_ID, "textures/entity/gold_ant/gold_ant_mangrove.png");
+            }
             else if(object.getLeaf().getBlock() == AntsBlocks.WINDY_DANDELION){
                 return new Identifier(AntsMain.MOD_ID, "textures/entity/gold_ant/gold_ant_dandelion.png");
             }

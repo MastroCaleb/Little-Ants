@@ -1,0 +1,28 @@
+{
+  "ants:husbandry/friend_now": {
+    "criteria": {
+      "ants:friend_now": "2022-08-11 22:02:49 +0200"
+    },
+    "done": true
+  },
+  "ants:husbandry/obtain_ants": {
+    "criteria": {
+      "ants:muddy_ant": "2022-08-11 22:02:49 +0200"
+    },
+    "done": false
+  },
+  "ants:husbandry/mud_colony": {
+    "criteria": {
+      "dirt_colony": "2022-08-11 22:04:14 +0200"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2022-08-11 22:02:40 +0200",
+      "minecraft:savanna": "2022-08-11 22:02:52 +0200"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

@@ -45,6 +45,9 @@ public class RedAntGeoModel extends AnimatedGeoModel<RedAntEntity>{
             else if(object.getLeaf().isIn(NestTag.JUNGLE_LEAF_FOOD)){
                 return new Identifier(AntsMain.MOD_ID, "textures/entity/red_ant/red_ant_jungle.png");
             }
+            else if(object.getLeaf().isIn(NestTag.MANGROVE_LEAF_FOOD)){
+                return new Identifier(AntsMain.MOD_ID, "textures/entity/red_ant/red_ant_mangrove.png");
+            }
             else if(object.getLeaf().getBlock() == AntsBlocks.WINDY_DANDELION){
                 return new Identifier(AntsMain.MOD_ID, "textures/entity/red_ant/red_ant_dandelion.png");
             }

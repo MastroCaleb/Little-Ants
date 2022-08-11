@@ -12,6 +12,7 @@ import toxican.caleb.ants.entities.AntsEntities;
 import toxican.caleb.ants.entities.black_ant.BlackAntRenderer;
 import toxican.caleb.ants.entities.brown_ant.BrownAntRenderer;
 import toxican.caleb.ants.entities.gold_ant.GoldAntRenderer;
+import toxican.caleb.ants.entities.muddy_ant.MuddyAntRenderer;
 import toxican.caleb.ants.entities.red_ant.RedAntRenderer;
 import toxican.caleb.ants.particles.AntsParticles;
 import toxican.caleb.ants.particles.dandelion.WindyDandelionParticle;
@@ -25,6 +26,7 @@ public class AntsClient implements ClientModInitializer{
         EntityRendererRegistry.register(AntsEntities.RED_ANT, RedAntRenderer::new);
         EntityRendererRegistry.register(AntsEntities.BLACK_ANT, BlackAntRenderer::new);
         EntityRendererRegistry.register(AntsEntities.GOLD_ANT, GoldAntRenderer::new);
+        EntityRendererRegistry.register(AntsEntities.MUDDY_ANT, MuddyAntRenderer::new);
         BlockRenderLayerMap.INSTANCE.putBlock(AntsBlocks.POTTED_WINDY_DANDELION, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(AntsBlocks.WINDY_DANDELION, RenderLayer.getCutout());
         ParticleFactoryRegistry.getInstance().register(AntsParticles.WINDY_DANDELION_PARTICLE, WindyDandelionParticle.Factory::new);

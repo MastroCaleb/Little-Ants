@@ -20,6 +20,7 @@ import toxican.caleb.ants.blocks.nest.AntNestEntity;
 
 public class AntsBlocks {
 
+    public static AntNestBlock MUD_ANT_NEST;
     public static AntNestBlock DIRT_ANT_NEST;
     public static AntNestBlock SAND_ANT_NEST;
     public static BlockEntityType<AntNestEntity> NEST_BLOCK_ENTITY;
@@ -31,10 +32,12 @@ public class AntsBlocks {
         Registry.register(Registry.ITEM, new Identifier("ants", "dirt_ant_nest"), new BlockItem(DIRT_ANT_NEST, new Item.Settings().group(ItemGroup.DECORATIONS)));
         SAND_ANT_NEST = Registry.register(Registry.BLOCK, new Identifier("ants", "sand_ant_nest"), new AntNestBlock(FabricBlockSettings.copyOf(Blocks.SAND)));
         Registry.register(Registry.ITEM, new Identifier("ants", "sand_ant_nest"), new BlockItem(SAND_ANT_NEST, new Item.Settings().group(ItemGroup.DECORATIONS)));
+        MUD_ANT_NEST = Registry.register(Registry.BLOCK, new Identifier("ants", "mud_ant_nest"), new AntNestBlock(FabricBlockSettings.copyOf(Blocks.MUD)));
+        Registry.register(Registry.ITEM, new Identifier("ants", "mud_ant_nest"), new BlockItem(MUD_ANT_NEST, new Item.Settings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("ants", "windy_dandelion"), WINDY_DANDELION);
         Registry.register(Registry.ITEM, new Identifier("ants", "windy_dandelion"), new DandelionFlowerBlockItem(WINDY_DANDELION, new Item.Settings().group(ItemGroup.DECORATIONS)));
         Registry.register(Registry.BLOCK, new Identifier("ants", "potted_windy_dandelion"), POTTED_WINDY_DANDELION);
-        NEST_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier("ants", "nest"), FabricBlockEntityTypeBuilder.create(AntNestEntity::new, DIRT_ANT_NEST, SAND_ANT_NEST).build(null));
+        NEST_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier("ants", "nest"), FabricBlockEntityTypeBuilder.create(AntNestEntity::new, DIRT_ANT_NEST, SAND_ANT_NEST, MUD_ANT_NEST).build(null));
     }
     
 }

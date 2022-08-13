@@ -181,10 +181,10 @@ implements Angerable, IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if(event.isMoving()){
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ant.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("ant.walk", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ant.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("ant.idle", true));
         return PlayState.CONTINUE;
     }
 

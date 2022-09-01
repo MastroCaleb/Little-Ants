@@ -23,7 +23,6 @@ public class MuddyNestTreeDecorator extends TreeDecorator {
     public static final MuddyNestTreeDecorator INSTANCE = new MuddyNestTreeDecorator(0.1f);
     private static final Direction BEE_NEST_FACE = Direction.SOUTH;
     private static final Direction[] GENERATE_DIRECTIONS = (Direction[])Direction.Type.HORIZONTAL.stream().filter(direction -> direction != BEE_NEST_FACE.getOpposite()).toArray(Direction[]::new);
-    // Our constructor doesn't have any arguments, so we create a unit codec that returns the singleton instance
     public static final Codec<MuddyNestTreeDecorator> CODEC = Codec.unit(() -> INSTANCE);
     private final float probability;
 
@@ -33,7 +32,7 @@ public class MuddyNestTreeDecorator extends TreeDecorator {
  
     @Override
     protected TreeDecoratorType<?> getType() {
-        return AntsDecorations.BROWN_NEST_DECORATOR;
+        return AntsDecorations.MUDDY_NEST_DECORATOR;
     }
 
     @Override
@@ -55,7 +54,7 @@ public class MuddyNestTreeDecorator extends TreeDecorator {
      
                     BlockPos targetPosition = logPosition.offset(side, 1);
      
-                    generator.replace(targetPosition, AntsBlocks.DIRT_ANT_NEST.getDefaultState());
+                    generator.replace(targetPosition, AntsBlocks.MUD_ANT_NEST.getDefaultState());
                 }
                 int i = !generator.getLeavesPositions().isEmpty() ? Math.max(generator.getLeavesPositions().get(0).getY() - 1, generator.getLogPositions().get(0).getY() + 1) : Math.min(generator.getLogPositions().get(0).getY() + 1 + generator.getRandom().nextInt(3), generator.getLogPositions().get(generator.getLogPositions().size() - 1).getY());
                 List list = generator.getLogPositions().stream().filter(pos -> pos.getY() == i).flatMap(pos -> Stream.of(GENERATE_DIRECTIONS).map(pos::offset)).collect(Collectors.toList());
@@ -67,7 +66,7 @@ public class MuddyNestTreeDecorator extends TreeDecorator {
                 if (optional.isEmpty()) {
                     return;
                 }
-                generator.replace(optional.get(), (BlockState)AntsBlocks.DIRT_ANT_NEST.getDefaultState().with(AntNestBlock.FACING, BEE_NEST_FACE));
+                generator.replace(optional.get(), (BlockState)AntsBlocks.MUD_ANT_NEST.getDefaultState().with(AntNestBlock.FACING, BEE_NEST_FACE));
                 generator.getWorld().getBlockEntity(optional.get(), AntsBlocks.NEST_BLOCK_ENTITY).ifPresent(blockEntity -> {
                     int k = 1 + generator.getRandom().nextInt(2);
                     for (int j = 0; j < k; ++j) {

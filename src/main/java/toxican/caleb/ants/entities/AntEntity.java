@@ -76,7 +76,6 @@ import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
-import toxican.caleb.ants.AntsMain;
 import toxican.caleb.ants.blocks.AntsBlocks;
 import toxican.caleb.ants.blocks.NestTag;
 import toxican.caleb.ants.blocks.nest.AntNestEntity;
@@ -182,10 +181,10 @@ implements Angerable, IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         if(event.isMoving()){
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ant.walk", true));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("ant.walk", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.ant.idle", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("ant.idle", true));
         return PlayState.CONTINUE;
     }
 

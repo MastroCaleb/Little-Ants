@@ -13,6 +13,7 @@ import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.trunk.StraightTrunkPlacer;
 import toxican.caleb.ants.features.bushes.nest_decorator.BlackNestTreeDecorator;
 import toxican.caleb.ants.features.bushes.nest_decorator.BrownNestTreeDecorator;
+import toxican.caleb.ants.features.bushes.nest_decorator.MuddyNestTreeDecorator;
 import toxican.caleb.ants.features.bushes.nest_decorator.RedNestTreeDecorator;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -88,6 +89,29 @@ public class AntsBushes {
         ACACIA_SPAWN, VegetationPlacedFeatures.modifiers(
         PlacedFeatures.createCountExtraModifier(1, 0.0001f, 2)));
 
+    //----------
+
+    public static final RegistryEntry<ConfiguredFeature<TreeFeatureConfig, ?>> MANGROVE_BUSH =
+        ConfiguredFeatures.register("mangrove_bush", Feature.TREE, new TreeFeatureConfig.Builder(
+            BlockStateProvider.of(Blocks.MANGROVE_LOG),
+            new StraightTrunkPlacer(2, 0, 0),
+            BlockStateProvider.of(Blocks.MANGROVE_LEAVES),
+            new BlobFoliagePlacer(ConstantIntProvider.create(2), ConstantIntProvider.create(0), 1),
+            new TwoLayersFeatureSize(1, 0, 1)).decorators(Collections.singletonList(MuddyNestTreeDecorator.INSTANCE)).build());
+
+    public static final RegistryEntry<PlacedFeature> MANGROVE_CHECKED =
+            PlacedFeatures.register("mangrove_bush_checked", MANGROVE_BUSH,
+            PlacedFeatures.wouldSurvive(Blocks.MANGROVE_PROPAGULE));
+        
+    public static final RegistryEntry<ConfiguredFeature<RandomFeatureConfig, ?>> MANGROVE_SPAWN =
+        ConfiguredFeatures.register("mangrove_bush_spawn", Feature.RANDOM_SELECTOR,
+        new RandomFeatureConfig(List.of(new RandomFeatureEntry(MANGROVE_CHECKED, 0.5f)),
+        MANGROVE_CHECKED));
+
+    public static final RegistryEntry<PlacedFeature> MANGROVE_BUSH_PLACED = PlacedFeatures.register("mangrove_bush_placed",
+        MANGROVE_SPAWN, VegetationPlacedFeatures.modifiers(
+        PlacedFeatures.createCountExtraModifier(1, 0.0001f, 2)));
+
     public static void init(){
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST),
@@ -98,6 +122,9 @@ public class AntsBushes {
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SAVANNA, BiomeKeys.SAVANNA_PLATEAU, BiomeKeys.WINDSWEPT_SAVANNA),
         GenerationStep.Feature.VEGETAL_DECORATION, ACACIA_BUSH_PLACED.getKey().get());
+
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SWAMP, BiomeKeys.MANGROVE_SWAMP),
+        GenerationStep.Feature.VEGETAL_DECORATION, MANGROVE_BUSH_PLACED.getKey().get());
 
     }
 }

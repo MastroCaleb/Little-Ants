@@ -1,0 +1,49 @@
+{
+    "item.ants.brown_ant_bottle": "棕蚁瓶",
+    "item.ants.red_ant_bottle": "红蚁瓶",
+    "item.ants.black_ant_bottle": "黑蚁瓶",
+    "item.ants.gold_ant_bottle": "金蚁瓶",
+    "item.ants.random_ant_bottle.tooltip": "仅创造",
+    "item.ants.clay_bottle": "粘土瓶",
+
+    "item.ants.brown_ant_egg": "棕蚁刷怪蛋",
+    "item.ants.red_ant_egg": "红蚁刷怪蛋",
+    "item.ants.black_ant_egg": "黑蚁刷怪蛋",
+    "item.ants.gold_ant_egg": "金蚁刷怪蛋",
+
+    "block.ants.dirt_ant_nest": "土蚁巢",
+    "block.ants.sand_ant_nest": "沙蚁巢",
+    "block.ants.windy_dandelion": "风蒲公英",
+
+    "entity.ants.brown_ant": "棕蚁",
+    "entity.ants.red_ant": "红蚁",
+    "entity.ants.black_ant": "黑蚁",
+    "entity.ants.gold_ant": "金蚁",
+
+    "subtitles.ants.ant_sound": "蚂蚁：喊叫",
+    "subtitles.ants.ant_hurt": "蚂蚁：受伤",
+    "subtitles.ants.enter_nest": "蚂蚁：进入巢穴",
+    "subtitles.ants.exit_nest": "蚂蚁：离开巢穴",
+
+    "enchantment.ants.ant_resistance": "蚁巢抗性",
+
+    "death.attack.nest": "%1$s被脚下的蚁群吞噬了",
+    "death.attack.nest.player": "%1$s被脚下的蚁群吞噬了",
+
+    "death.attack.clay_bottle": "%1$s喝了粘土，恶心",
+    "death.attack.nest.clay_bottle": "%1$s，为什么要喝粘土？",
+
+    "advancements.husbandry.dirt_colony.title": "它不该伤害你吗？",
+    "advancements.husbandry.dirt_colony.description": "获得土蚁巢",
+    "advancements.husbandry.sand_colony.title": "现在更漂亮了吗？",
+    "advancements.husbandry.sand_colony.description": "合成出沙蚁巢",
+    "advancements.husbandry.clay_bottle.title": "你为什么要喝它？",
+    "advancements.husbandry.clay_bottle.description": "你应该为自己感到羞耻，老兄，这粘土简直恶心死了",
+    "advancements.husbandry.friend_now.title": "你现在是我朋友了",
+    "advancements.husbandry.friend_now.description": "使用玻璃瓶收集蚂蚁",
+    "advancements.husbandry.obtain_ants.title": "我是无法避开的",
+    "advancements.husbandry.obtain_ants.description": "获得每种类型的蚂蚁",
+    "advancements.husbandry.mighty_gold.title": "现在，它正闪闪发光！",
+    "advancements.husbandry.mighty_gold.description": "繁殖蚂蚁时以0.5%的几率获得金蚁"
+
+}

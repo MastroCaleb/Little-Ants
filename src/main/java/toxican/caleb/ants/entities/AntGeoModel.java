@@ -4,6 +4,7 @@ import net.minecraft.util.Identifier;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 import toxican.caleb.ants.AntsMain;
 import toxican.caleb.ants.more_ants_api.AntRegistry;
+import toxican.caleb.ants.more_ants_api.AntVariant;
 
 public class AntGeoModel extends AnimatedGeoModel<AntEntity>{
 
@@ -19,7 +20,9 @@ public class AntGeoModel extends AnimatedGeoModel<AntEntity>{
 
     @Override
     public Identifier getTextureResource(AntEntity object) {
-        String variant = AntRegistry.ANT_VARIANT.getId(object.getVariant()).getPath();
-        return new Identifier(AntsMain.MOD_ID, "textures/entity/"+variant+"_ant/"+variant+"_ant.png");
+        AntVariant variant = object.getVariant();
+        String namespace = AntRegistry.ANT_VARIANT.getId(object.getVariant()).getNamespace();
+        String path = AntRegistry.ANT_VARIANT.getId(variant).getPath();
+        return new Identifier(namespace, "textures/entity/"+path+"_ant/"+path+"_ant.png");
     }
 }

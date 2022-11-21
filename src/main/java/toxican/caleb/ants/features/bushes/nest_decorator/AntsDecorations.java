@@ -19,5 +19,4 @@ public class AntsDecorations {
         BLACK_NEST_DECORATOR = TreeDecoratorTypeInvoker.callRegister("black_nest_decorator", BlackNestTreeDecorator.CODEC);
         MUDDY_NEST_DECORATOR = TreeDecoratorTypeInvoker.callRegister("muddy_nest_decorator", MuddyNestTreeDecorator.CODEC);
     }
-
 }

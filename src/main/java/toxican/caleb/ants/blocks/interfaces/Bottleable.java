@@ -28,7 +28,6 @@ public interface Bottleable {
 
     public SoundEvent getBottledSound();
 
-    @Deprecated
     public static void copyDataToStack(MobEntity entity, ItemStack stack) {
         NbtCompound nbtCompound = stack.getOrCreateNbt();
         if (entity.hasCustomName()) {
@@ -52,7 +51,6 @@ public interface Bottleable {
         nbtCompound.putFloat("Health", entity.getHealth());
     }
 
-    @Deprecated
     public static void copyDataFromNbt(MobEntity entity, NbtCompound nbt) {
         if (nbt.contains("NoAI")) {
             entity.setAiDisabled(nbt.getBoolean("NoAI"));

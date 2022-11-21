@@ -46,7 +46,7 @@ import toxican.caleb.ants.blocks.AntsBlocks;
 import toxican.caleb.ants.blocks.NestTag;
 import toxican.caleb.ants.damage.AntsDamageSource;
 import toxican.caleb.ants.enchantment.AntHelper;
-import toxican.caleb.ants.entities.AntEntity;
+import toxican.caleb.ants.entities.AbstractAntEntity;
 import toxican.caleb.ants.recipes.ColonyHarvestingRecipe;
 import toxican.caleb.ants.recipes.ColonyShovelingRecipe;
 import java.util.List;
@@ -78,7 +78,7 @@ public class AntNestBlock extends BlockWithEntity {
     }
 
     public boolean checkAnt(Entity entity){
-        if(entity instanceof AntEntity){
+        if(entity instanceof AbstractAntEntity){
             return true;
         }
         else{
@@ -111,11 +111,11 @@ public class AntNestBlock extends BlockWithEntity {
     }
 
     private void angerNearbyAnts(World world, BlockPos pos) {
-        List<AntEntity> list = world.getNonSpectatingEntities(AntEntity.class, new Box(pos).expand(8.0, 6.0, 8.0));
+        List<AbstractAntEntity> list = world.getNonSpectatingEntities(AbstractAntEntity.class, new Box(pos).expand(8.0, 6.0, 8.0));
         if (!list.isEmpty()) {
             List<PlayerEntity> list2 = world.getNonSpectatingEntities(PlayerEntity.class, new Box(pos).expand(8.0, 6.0, 8.0));
             int i = list2.size();
-            for (AntEntity antEntity : list) {
+            for (AbstractAntEntity antEntity : list) {
                 if (antEntity.getTarget() != null) continue;
                 antEntity.setTarget(list2.get(world.random.nextInt(i)));
             }

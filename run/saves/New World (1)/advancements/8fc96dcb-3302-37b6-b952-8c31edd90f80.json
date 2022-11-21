@@ -1,0 +1,14 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:lukewarm_ocean": "2022-11-18 17:16:46 +0100",
+      "minecraft:stony_shore": "2022-11-18 17:16:45 +0100",
+      "minecraft:forest": "2022-11-18 17:15:05 +0100",
+      "minecraft:deep_lukewarm_ocean": "2022-11-18 17:16:48 +0100",
+      "minecraft:savanna": "2022-11-18 17:15:59 +0100",
+      "minecraft:plains": "2022-11-18 17:16:23 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

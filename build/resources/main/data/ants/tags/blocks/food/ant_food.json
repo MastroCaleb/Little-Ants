@@ -1,0 +1,32 @@
+{
+    "_comment": "THIS IS NOT WHERE YOU ADD THINGS. Add them in one of the sub-tags, please",
+    "values": [
+        "#minecraft:leaves",
+        "#minecraft:saplings",
+        "#ants:food/vanilla/acacia_leaf_food",
+        "#ants:food/vanilla/azalea_leaf_food",
+        "#ants:food/vanilla/birch_leaf_food",
+        "#ants:food/vanilla/dark_oak_leaf_food",
+        "#ants:food/vanilla/flowering_azalea_leaf_food",
+        "#ants:food/vanilla/jungle_leaf_food",
+        "#ants:food/vanilla/oak_leaf_food",
+        "#ants:food/vanilla/spruce_leaf_food",
+        "#ants:food/vanilla/mangrove_leaf_food",
+        "#ants:food/colored/oak_black_leaf_food",
+        "#ants:food/colored/oak_blue_leaf_food",
+        "#ants:food/colored/oak_brown_leaf_food",
+        "#ants:food/colored/oak_cyan_leaf_food",
+        "#ants:food/colored/oak_gray_leaf_food",
+        "#ants:food/colored/oak_green_leaf_food",
+        "#ants:food/colored/oak_light_blue_leaf_food",
+        "#ants:food/colored/oak_light_gray_leaf_food",
+        "#ants:food/colored/oak_lime_leaf_food",
+        "#ants:food/colored/oak_magenta_leaf_food",
+        "#ants:food/colored/oak_orange_leaf_food",
+        "#ants:food/colored/oak_pink_leaf_food",
+        "#ants:food/colored/oak_purple_leaf_food",
+        "#ants:food/colored/oak_red_leaf_food",
+        "#ants:food/colored/oak_white_leaf_food",
+        "#ants:food/colored/oak_yellow_leaf_food"
+    ]
+}

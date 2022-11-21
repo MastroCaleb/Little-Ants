@@ -1,0 +1,24 @@
+{
+  "ants:husbandry/friend_now": {
+    "criteria": {
+      "ants:friend_now": "2022-11-18 18:54:51 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/obtain_ants": {
+    "criteria": {
+      "ants:red_ant": "2022-11-18 18:54:51 +0100"
+    },
+    "done": false
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:river": "2022-11-18 18:55:15 +0100",
+      "minecraft:stony_shore": "2022-11-18 18:55:14 +0100",
+      "minecraft:desert": "2022-11-18 18:54:53 +0100",
+      "minecraft:jungle": "2022-11-18 18:55:21 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

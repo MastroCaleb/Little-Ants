@@ -1,0 +1,27 @@
+{
+  "ants:husbandry/friend_now": {
+    "criteria": {
+      "ants:friend_now": "2022-11-19 21:37:52 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/obtain_ants": {
+    "criteria": {
+      "ants:all_ants": "2022-11-19 21:37:52 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/dirt_colony": {
+    "criteria": {
+      "dirt_colony": "2022-11-19 21:37:52 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:desert": "2022-11-19 21:37:53 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

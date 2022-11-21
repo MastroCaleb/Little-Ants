@@ -13,6 +13,6 @@ extends AbstractTagProvider<EntityType<?>> {
 
     @Override
     protected void configure() {
-        this.getOrCreateTagBuilder(AntsEntities.ANTS).add(AntsEntities.BROWN_ANT, AntsEntities.RED_ANT, AntsEntities.BLACK_ANT, AntsEntities.GOLD_ANT);
+        this.getOrCreateTagBuilder(AntsEntities.ANTS).add(AntsEntities.ANT);
     }
 }

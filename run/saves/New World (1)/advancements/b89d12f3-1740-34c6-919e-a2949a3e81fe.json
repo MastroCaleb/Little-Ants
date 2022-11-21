@@ -1,0 +1,16 @@
+{
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:sunflower_plains": "2022-11-20 15:17:52 +0100",
+      "minecraft:windswept_hills": "2022-11-20 15:17:48 +0100",
+      "minecraft:beach": "2022-11-20 15:17:08 +0100",
+      "minecraft:river": "2022-11-20 15:17:30 +0100",
+      "minecraft:swamp": "2022-11-20 15:16:57 +0100",
+      "minecraft:windswept_savanna": "2022-11-20 15:17:45 +0100",
+      "minecraft:flower_forest": "2022-11-20 15:17:55 +0100",
+      "minecraft:plains": "2022-11-20 15:17:46 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

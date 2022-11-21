@@ -1,0 +1,32 @@
+{
+  "ants:husbandry/friend_now": {
+    "criteria": {
+      "ants:friend_now": "2022-11-18 17:32:05 +0100"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/breed_an_animal": {
+    "criteria": {
+      "bred": "2022-11-18 17:31:52 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/obtain_ants": {
+    "criteria": {
+      "ants:red_ant": "2022-11-18 17:32:05 +0100"
+    },
+    "done": false
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:beach": "2022-11-18 17:30:29 +0100",
+      "minecraft:lukewarm_ocean": "2022-11-18 17:30:30 +0100",
+      "minecraft:river": "2022-11-18 17:31:20 +0100",
+      "minecraft:stony_shore": "2022-11-18 17:31:19 +0100",
+      "minecraft:deep_lukewarm_ocean": "2022-11-18 17:30:39 +0100",
+      "minecraft:savanna": "2022-11-18 17:30:11 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

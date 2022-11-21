@@ -1,0 +1,35 @@
+{
+    "parent": "ants:husbandry/dirt_colony",
+    "display": {
+      "icon": {
+        "item": "ants:clay_bottle"
+      },
+      "title": {
+        "translate": "advancements.husbandry.clay_bottle.title"
+      },
+      "description": {
+        "translate": "advancements.husbandry.clay_bottle.description"
+      },
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true,
+      "hidden": true
+    },
+    "criteria": {
+      "clay_bottle": {
+        "conditions": {
+          "item": {
+            "items": [
+              "ants:clay_bottle"
+            ]
+          }
+        },
+        "trigger": "minecraft:consume_item"
+      }
+  },
+  "requirements": [
+    [
+      "clay_bottle"
+    ]
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "mappings": {
+    "toxican/caleb/ants/mixin/AntsMixin": {
+      "Lnet/minecraft/item/BoneMealItem;useOnFertilizable(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z": "Lnet/minecraft/class_1752;method_7720(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;)Z"
+    },
+    "toxican/caleb/ants/mixin/TreeDecoratorTypeInvoker": {
+      "register": "method_28895(Ljava/lang/String;Lcom/mojang/serialization/Codec;)Lnet/minecraft/class_4663;"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "toxican/caleb/ants/mixin/AntsMixin": {
+        "Lnet/minecraft/item/BoneMealItem;useOnFertilizable(Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;)Z": "Lnet/minecraft/class_1752;method_7720(Lnet/minecraft/class_1799;Lnet/minecraft/class_1937;Lnet/minecraft/class_2338;)Z"
+      },
+      "toxican/caleb/ants/mixin/TreeDecoratorTypeInvoker": {
+        "register": "method_28895(Ljava/lang/String;Lcom/mojang/serialization/Codec;)Lnet/minecraft/class_4663;"
+      }
+    }
+  }
+}

@@ -22,7 +22,7 @@
         "items": [
           {
             "items": [
-              "ants:brown_ant_bottle"
+              "ants:brown_ant_in_a_bottle"
             ]
           }
         ]
@@ -34,7 +34,7 @@
         "items": [
           {
             "items": [
-              "ants:red_ant_bottle"
+              "ants:red_ant_in_a_bottle"
             ]
           }
         ]
@@ -46,7 +46,7 @@
         "items": [
           {
             "items": [
-              "ants:black_ant_bottle"
+              "ants:black_ant_in_a_bottle"
             ]
           }
         ]
@@ -58,7 +58,7 @@
         "items": [
           {
             "items": [
-              "ants:gold_ant_bottle"
+              "ants:gold_ant_in_a_bottle"
             ]
           }
         ]
@@ -70,7 +70,7 @@
         "items": [
           {
             "items": [
-              "ants:muddy_ant_bottle"
+              "ants:muddy_ant_in_a_bottle"
             ]
           }
         ]

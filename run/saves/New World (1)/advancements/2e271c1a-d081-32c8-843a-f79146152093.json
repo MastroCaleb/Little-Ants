@@ -1,0 +1,31 @@
+{
+  "ants:husbandry/friend_now": {
+    "criteria": {
+      "ants:friend_now": "2022-11-19 18:34:13 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/obtain_ants": {
+    "criteria": {
+      "ants:red_ant": "2022-11-19 18:34:13 +0100",
+      "ants:muddy_ant": "2022-11-19 18:34:13 +0100",
+      "ants:gold_ant": "2022-11-19 18:34:13 +0100",
+      "ants:black_ant": "2022-11-19 18:34:13 +0100",
+      "ants:brown_ant": "2022-11-19 18:34:13 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/mighty_gold": {
+    "criteria": {
+      "gold": "2022-11-19 18:34:13 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:desert": "2022-11-19 18:34:16 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

@@ -2,7 +2,7 @@
   "parent": "ants:husbandry/friend_now",
   "display": {
     "icon": {
-      "item": "ants:gold_ant_bottle"
+      "item": "ants:gold_ant_in_a_bottle"
     },
     "title": {
       "translate": "advancements.husbandry.mighty_gold.title"
@@ -16,13 +16,13 @@
     "hidden": false
   },
   "criteria": {
-    "gold": {
+    "ants:gold": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "ants:gold_ant_bottle"
+              "ants:gold_ant_in_a_bottle"
             ]
           }
         ]
@@ -31,7 +31,7 @@
   },
   "requirements": [
     [
-      "gold"
+      "ants:gold"
     ]
   ]
 }

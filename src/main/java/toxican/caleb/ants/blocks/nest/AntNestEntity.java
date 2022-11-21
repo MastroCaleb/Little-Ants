@@ -25,8 +25,11 @@ import org.jetbrains.annotations.Nullable;
 import toxican.caleb.ants.blocks.AntsBlocks;
 import toxican.caleb.ants.blocks.NestTag;
 import toxican.caleb.ants.debug.DebugAntSender;
+import toxican.caleb.ants.entities.AbstractAntEntity;
 import toxican.caleb.ants.entities.AntEntity;
 import toxican.caleb.ants.entities.AntsEntities;
+import toxican.caleb.ants.more_ants_api.AntRegistry;
+import toxican.caleb.ants.more_ants_api.AntVariant;
 import toxican.caleb.ants.sounds.AntsSounds;
 
 import java.util.ArrayList;
@@ -41,6 +44,7 @@ extends BlockEntity {
     public static final String LEAF_POS_KEY = "LeavesPos";
     public static final String MIN_OCCUPATION_TICKS_KEY = "MinOccupationTicks";
     public static final String ENTITY_DATA_KEY = "EntityData";
+    public static final String VARIANT_KEY = "Variant";
     public static final String TICKS_IN_HIVE_KEY = "TicksInHive";
     public static final String HAS_CLAY_KEY = "HasClay";
     public static final String ANTS_KEY = "Ants";
@@ -91,8 +95,8 @@ extends BlockEntity {
         List<Entity> list = this.tryReleaseAnt(state, antState);
         if (player != null) {
             for (Entity entity : list) {
-                if (!(entity instanceof AntEntity)) continue;
-                AntEntity antEntity = (AntEntity)entity;
+                if (!(entity instanceof AbstractAntEntity)) continue;
+                AbstractAntEntity antEntity = (AbstractAntEntity)entity;
                 if (!(player.getPos().squaredDistanceTo(entity.getPos()) <= 16.0)) continue;
                 if (!this.isSmoked()) {
                     antEntity.setTarget(player);
@@ -112,8 +116,8 @@ extends BlockEntity {
         return list;
     }
 
-    public void tryEnterHive(Entity entity, boolean hasNectar) {
-        this.tryEnterHive(entity, hasNectar, 0);
+    public void tryEnterHive(Entity entity, boolean hasNectar, AntVariant antVariant, boolean isFromBottle) {
+        this.tryEnterHive(entity, hasNectar, 0, antVariant, isFromBottle);
     }
 
     @Debug
@@ -130,7 +134,7 @@ extends BlockEntity {
         return CampfireBlock.isLitCampfireInRange(this.world, this.getPos());
     }
 
-    public void tryEnterHive(Entity entity, boolean hasNectar, int ticksInNest) {
+    public void tryEnterHive(Entity entity, boolean hasNectar, int ticksInNest, AntVariant antVariant, boolean isFromBottle) {
         if (this.ants.size() >= 8) {
             return;
         }
@@ -138,10 +142,10 @@ extends BlockEntity {
         entity.removeAllPassengers();
         NbtCompound nbtCompound = new NbtCompound();
         entity.saveNbt(nbtCompound);
-        this.addAnt(nbtCompound, ticksInNest, hasNectar);
+        this.addAnt(nbtCompound, ticksInNest, hasNectar, antVariant, isFromBottle);
         if (this.world != null) {
-            AntEntity antEntity;
-            if (entity instanceof AntEntity && (antEntity = (AntEntity)entity).hasLeaves() && (!this.hasLeavesPos() || this.world.random.nextBoolean())) {
+            AbstractAntEntity antEntity;
+            if (entity instanceof AbstractAntEntity && (antEntity = (AbstractAntEntity)entity).hasLeaves() && (!this.hasLeavesPos() || this.world.random.nextBoolean())) {
                 this.leafPos = antEntity.getLeafPos();
             }
             BlockPos blockPos = this.getPos();
@@ -151,8 +155,8 @@ extends BlockEntity {
         super.markDirty();
     }
 
-    public void addAnt(NbtCompound nbtCompound, int ticksInNest, boolean hasNectar) {
-        this.ants.add(new Ant(nbtCompound, ticksInNest, hasNectar ? 2400 : 600));
+    public void addAnt(NbtCompound nbtCompound, int ticksInNest, boolean hasNectar, AntVariant antVariant, boolean isFromBottle) {
+        this.ants.add(new Ant(nbtCompound, ticksInNest, hasNectar ? 2400 : 600, antVariant, isFromBottle));
     }
 
     private static boolean releaseAnt(World world, BlockPos pos, AntNestEntity antNestEntity, BlockState state2, Ant ant, @Nullable List<Entity> entities, AntState antState, @Nullable BlockPos leafPos) {
@@ -165,7 +169,7 @@ extends BlockEntity {
         nbtCompound.put("HivePos", NbtHelper.fromBlockPos(pos));
         Direction direction = state2.get(AntNestBlock.FACING);
         BlockPos blockPos = pos.offset(direction);
-        boolean bl2 = bl = !world.getBlockState(blockPos).getCollisionShape(world, blockPos).isEmpty();
+        bl = !world.getBlockState(blockPos).getCollisionShape(world, blockPos).isEmpty();
         if (bl && antState != AntState.EMERGENCY) {
             return false;
         }
@@ -174,7 +178,7 @@ extends BlockEntity {
             if (!entity2.getType().isIn(AntsEntities.ANTS)) {
                 return false;
             }
-            if (entity2 instanceof AntEntity) {
+            if (entity2 instanceof AbstractAntEntity) {
                 AntEntity antEntity = (AntEntity)entity2;
                 if (leafPos != null && !antEntity.hasLeaves() && world.random.nextFloat() < 0.9f) {
                     antEntity.setLeafPos(leafPos);
@@ -184,7 +188,7 @@ extends BlockEntity {
                     deliverLeaf(antNestEntity, antEntity);
                     if (state2.isIn(NestTag.NEST, state -> state.contains(AntNestBlock.CLAY_LEVEL)) && (i = AntNestEntity.getClayLevel(state2)) < 5) {
                         int j;
-                        int n = j = world.random.nextInt(100) == 0 ? 2 : 1;
+                        j = world.random.nextInt(100) == 0 ? 2 : 1;
                         if (i + j > 5) {
                             --j;
                         }
@@ -209,7 +213,7 @@ extends BlockEntity {
         return false;
     }
     
-    private static void deliverLeaf(AntNestEntity antNestEntity, AntEntity antEntity) {
+    private static void deliverLeaf(AntNestEntity antNestEntity, AbstractAntEntity antEntity) {
         BlockState leafBlockState = antEntity.getLeaf();
         if(leafBlockState != null) {
             Item leafBlockItem = leafBlockState.getBlock().asItem();
@@ -226,7 +230,7 @@ extends BlockEntity {
         }
     }
 
-    private static void ageAnt(int ticks, AntEntity ant) {
+    private static void ageAnt(int ticks, AbstractAntEntity ant) {
         int i = ant.getBreedingAge();
         if (i < 0) {
             ant.setBreedingAge(Math.min(0, i + ticks));
@@ -247,7 +251,7 @@ extends BlockEntity {
             Ant ant = iterator.next();
             if (ant.ticksInNest > ant.minOccupationTicks) {
                 AntState antState;
-                AntState antState2 = antState = ant.entityData.getBoolean(HAS_CLAY_KEY) ? AntState.CLAY_DELIVERED : AntState.ANT_RELEASED;
+                antState = ant.entityData.getBoolean(HAS_CLAY_KEY) ? AntState.CLAY_DELIVERED : AntState.ANT_RELEASED;
                 if (AntNestEntity.releaseAnt(world, pos, blockEntity, state, ant, null, antState, leafPos)) {
                     bl = true;
                     iterator.remove();
@@ -278,7 +282,7 @@ extends BlockEntity {
         NbtList nbtList = nbt.getList(ANTS_KEY, 10);
         for (int i = 0; i < nbtList.size(); ++i) {
             NbtCompound nbtCompound = nbtList.getCompound(i);
-            Ant ant = new Ant(nbtCompound.getCompound(ENTITY_DATA_KEY), nbtCompound.getInt(TICKS_IN_HIVE_KEY), nbtCompound.getInt(MIN_OCCUPATION_TICKS_KEY));
+            Ant ant = new Ant(nbtCompound.getCompound(ENTITY_DATA_KEY), nbtCompound.getInt(TICKS_IN_HIVE_KEY), nbtCompound.getInt(MIN_OCCUPATION_TICKS_KEY), AntRegistry.ANT_VARIANT.get(Identifier.tryParse(nbtCompound.getString(VARIANT_KEY))), nbtCompound.getBoolean("FromBottle"));
             this.ants.add(ant);
         }
         this.leafPos = null;
@@ -332,9 +336,13 @@ extends BlockEntity {
         final NbtCompound entityData;
         int ticksInNest;
         final int minOccupationTicks;
+        final AntVariant antVariant;
+        final boolean isFromBottle;
 
-        Ant(NbtCompound entityData, int ticksInNest, int minOccupationTicks) {
+        Ant(NbtCompound entityData, int ticksInNest, int minOccupationTicks, AntVariant antVariant, boolean isFromBottle) {
             AntNestEntity.removeIrrelevantNbtKeys(entityData);
+            this.antVariant = antVariant;
+            this.isFromBottle = isFromBottle;
             this.entityData = entityData;
             this.ticksInNest = ticksInNest;
             this.minOccupationTicks = minOccupationTicks;

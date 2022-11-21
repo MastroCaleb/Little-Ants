@@ -5,6 +5,8 @@ import java.util.Map;
 import net.minecraft.advancement.criterion.Criterion;
 import net.minecraft.advancement.criterion.CriterionConditions;
 import net.minecraft.util.Identifier;
+import toxican.caleb.ants.items.criteria.AllVariantsCriterion;
+
 import org.jetbrains.annotations.Nullable;
 
 //I dont think i even use this class but might be helpful in the near future

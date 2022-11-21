@@ -1,0 +1,41 @@
+{
+  "ants:husbandry/friend_now": {
+    "criteria": {
+      "ants:friend_now": "2022-11-21 16:54:24 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/obtain_ants": {
+    "criteria": {
+      "ants:black_ant": "2022-11-21 17:00:38 +0100",
+      "ants:brown_ant": "2022-11-21 16:54:24 +0100"
+    },
+    "done": false
+  },
+  "ants:husbandry/dirt_colony": {
+    "criteria": {
+      "dirt_colony": "2022-11-21 16:59:49 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:birch_forest": "2022-11-21 16:56:56 +0100",
+      "minecraft:windswept_hills": "2022-11-21 16:55:05 +0100",
+      "minecraft:beach": "2022-11-21 16:54:27 +0100",
+      "minecraft:dark_forest": "2022-11-21 16:56:12 +0100",
+      "minecraft:sparse_jungle": "2022-11-21 16:55:33 +0100",
+      "minecraft:river": "2022-11-21 16:54:43 +0100",
+      "minecraft:swamp": "2022-11-21 16:57:34 +0100",
+      "minecraft:forest": "2022-11-21 16:54:35 +0100",
+      "minecraft:jungle": "2022-11-21 16:55:46 +0100",
+      "minecraft:ocean": "2022-11-21 16:58:11 +0100",
+      "minecraft:windswept_savanna": "2022-11-21 16:55:06 +0100",
+      "minecraft:old_growth_birch_forest": "2022-11-21 16:55:59 +0100",
+      "minecraft:savanna": "2022-11-21 16:55:17 +0100",
+      "minecraft:plains": "2022-11-21 16:55:10 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3120
+}

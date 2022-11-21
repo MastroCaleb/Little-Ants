@@ -1,0 +1,157 @@
+{
+  "minecraft:recipes/decorations/stone_brick_walls_from_stone_stonecutting": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_stairs_from_stone_stonecutting": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/dirt_colony": {
+    "criteria": {
+      "dirt_colony": "2022-11-18 17:13:02 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_stairs_from_stone_stonecutting": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_bricks": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_bricks_from_stone_stonecutting": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:husbandry/breed_an_animal": {
+    "criteria": {
+      "bred": "2022-11-18 17:13:47 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/mighty_gold": {
+    "criteria": {
+      "gold": "2022-11-18 17:12:23 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/stonecutter": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_stairs": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2022-11-18 17:12:13 +0100"
+    },
+    "done": false
+  },
+  "minecraft:recipes/decorations/composter": {
+    "criteria": {
+      "has_wood_slab": "2022-11-18 17:13:28 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/smooth_stone": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_slab_from_stone_stonecutting": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/chiseled_stone_bricks_stone_from_stonecutting": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/barrel": {
+    "criteria": {
+      "has_wood_slab": "2022-11-18 17:13:28 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/sand_colony": {
+    "criteria": {
+      "sand_colony": "2022-11-18 17:13:13 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/stone_button": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/friend_now": {
+    "criteria": {
+      "ants:friend_now": "2022-11-18 17:12:11 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/obtain_ants": {
+    "criteria": {
+      "ants:red_ant": "2022-11-18 17:12:24 +0100",
+      "ants:muddy_ant": "2022-11-18 17:12:11 +0100",
+      "ants:gold_ant": "2022-11-18 17:12:23 +0100",
+      "ants:black_ant": "2022-11-18 17:12:24 +0100",
+      "ants:brown_ant": "2022-11-18 17:12:25 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_slab": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2022-11-18 17:14:11 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/redstone/stone_pressure_plate": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/stone_brick_slab_from_stone_stonecutting": {
+    "criteria": {
+      "has_stone": "2022-11-18 17:13:57 +0100"
+    },
+    "done": true
+  },
+  "ants:husbandry/mud_colony": {
+    "criteria": {
+      "dirt_colony": "2022-11-18 17:13:14 +0100"
+    },
+    "done": true
+  },
+  "DataVersion": 3120
+}

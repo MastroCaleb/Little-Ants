@@ -21,8 +21,6 @@ import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 import toxican.caleb.ants.blocks.nest.AntNestDestoyedCriterion.Conditions;
 
-//I dont think i even use this class but might be helpful in the near future
-
 public class AntNestDestoyedCriterion
 extends AbstractCriterion<Conditions> {
     static final Identifier ID = new Identifier("ant_nest_destroyed");

@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.tag.BiomeTags;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.gen.feature.*;
@@ -114,17 +115,16 @@ public class AntsBushes {
 
     public static void init(){
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FOREST),
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_FOREST),
         GenerationStep.Feature.VEGETAL_DECORATION, OAK_BUSH_PLACED.getKey().get());
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.TAIGA, BiomeKeys.SNOWY_TAIGA),
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_TAIGA),
         GenerationStep.Feature.VEGETAL_DECORATION, SPRUCE_BUSH_PLACED.getKey().get());
 
-        BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SAVANNA, BiomeKeys.SAVANNA_PLATEAU, BiomeKeys.WINDSWEPT_SAVANNA),
+        BiomeModifications.addFeature(BiomeSelectors.tag(BiomeTags.IS_SAVANNA),
         GenerationStep.Feature.VEGETAL_DECORATION, ACACIA_BUSH_PLACED.getKey().get());
 
         BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.SWAMP, BiomeKeys.MANGROVE_SWAMP),
         GenerationStep.Feature.VEGETAL_DECORATION, MANGROVE_BUSH_PLACED.getKey().get());
-
     }
 }

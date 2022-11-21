@@ -57,5 +57,4 @@ public class ColonyHarvestingRecipeSerializer implements RecipeSerializer<Colony
 	public interface RecipeFactory<ColonyHarvestingRecipe> {
 		ColonyHarvestingRecipe create(Identifier id, String group, Ingredient hiveIngredient, Ingredient handIngredient, int handIngredientCount, ItemStack output);
 	}
-	
 }

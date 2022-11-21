@@ -4,7 +4,6 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BucketItem;
@@ -28,20 +27,23 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.event.GameEvent;
 import toxican.caleb.ants.blocks.interfaces.Bottleable;
+import toxican.caleb.ants.entities.AntEntity;
+import toxican.caleb.ants.entities.AntsEntities;
+import toxican.caleb.ants.more_ants_api.AntRegistry;
+import toxican.caleb.ants.more_ants_api.AntVariant;
 import net.minecraft.world.RaycastContext;
 
 import java.util.List;
 
 import org.jetbrains.annotations.Nullable;
 
-public class AntBottleItem
-extends Item {
-    private final EntityType<?> entityType;
+public class AntBottleItem extends Item {
+    private AntVariant antVariant;
     private final SoundEvent emptyingSound;
 
-    public AntBottleItem(EntityType<?> type, SoundEvent emptyingSound, Item.Settings settings) {
+    public AntBottleItem(AntVariant antVariant, SoundEvent emptyingSound, Item.Settings settings) {
         super(settings);
-        this.entityType = type;
+        this.antVariant = antVariant;
         this.emptyingSound = emptyingSound;
     }
 
@@ -77,12 +79,28 @@ extends Item {
         }
     }
 
+    public static AntVariant getAntVariant(ItemStack stack){
+        if(stack.getItem() instanceof AntBottleItem bottle){
+            return bottle.getVariant();
+        }
+        return AntVariant.BROWN;
+    }
+
+    public AntVariant getVariant(){
+        return this.antVariant;
+    }
+
+    public void setVariant(AntVariant antVariant){
+        this.antVariant = antVariant;
+    }
+
     protected void playEmptyingSound(@Nullable PlayerEntity player, WorldAccess world, BlockPos pos) {
         world.playSound(player, pos, this.emptyingSound, SoundCategory.NEUTRAL, 1.0f, 1.0f);
     }
 
-    private void spawnEntity(ServerWorld world, ItemStack stack, BlockPos pos) {
-        Entity entity = this.entityType.spawnFromItemStack(world, stack, null, pos, SpawnReason.BUCKET, true, false);
+    private void spawnEntity(ServerWorld world, ItemStack stack, BlockPos pos) { 
+        AntEntity entity = (AntEntity) AntsEntities.ANT.spawnFromItemStack(world, stack, null, pos, SpawnReason.BUCKET, true, false);
+        entity.setVariant(this.antVariant);
         if (entity instanceof Bottleable) {
             Bottleable bottleable = (Bottleable)((Object)entity);
             if (stack.hasCustomName()) {
@@ -97,11 +115,16 @@ extends Item {
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         NbtCompound nbtCompound;
         BlockState blockState = null;
-        if ((nbtCompound = stack.getNbt()) != null && nbtCompound.contains("HasClay")) {
-            tooltip.add(Text.literal("Has Clay: true").formatted(Formatting.DARK_GRAY));
-            if (nbtCompound.contains("carriedLeaf", 10)) {
-                blockState = NbtHelper.toBlockState(nbtCompound.getCompound("carriedLeaf"));
-                tooltip.add(Text.literal("Carrying Leaf of: " + I18n.translate(blockState.getBlock().asItem().getTranslationKey())).formatted(Formatting.DARK_GRAY));
+        if ((nbtCompound = stack.getNbt()) != null) {
+            String variantName = AntRegistry.ANT_VARIANT.getId(this.getVariant()).getPath().toUpperCase();
+            tooltip.add(Text.literal("Variant: " + variantName).formatted(Formatting.DARK_GRAY));
+
+            if(nbtCompound.contains("HasClay")){
+                tooltip.add(Text.literal("Has Food").formatted(Formatting.DARK_GRAY));
+                if (nbtCompound.contains("carriedLeaf", 10)) {
+                    blockState = NbtHelper.toBlockState(nbtCompound.getCompound("carriedLeaf"));
+                    tooltip.add(Text.literal("Carrying Food from: " + I18n.translate(blockState.getBlock().asItem().getTranslationKey())).formatted(Formatting.DARK_GRAY));
+                }
             }
         }
     }

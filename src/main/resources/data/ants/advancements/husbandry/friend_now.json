@@ -1,8 +1,7 @@
 {
-  "parent": "ants:husbandry/dirt_colony",
   "display": {
     "icon": {
-      "item": "ants:brown_ant_bottle"
+      "item": "ants:brown_ant_in_a_bottle"
     },
     "title": {
       "translate": "advancements.husbandry.friend_now.title"
@@ -15,6 +14,7 @@
     "announce_to_chat": true,
     "hidden": false
   },
+  "parent": "ants:husbandry/dirt_colony",
   "criteria": {
     "ants:friend_now": {
       "trigger": "minecraft:inventory_changed",
@@ -22,11 +22,11 @@
         "items": [
           {
             "items": [
-              "ants:brown_ant_bottle",
-              "ants:red_ant_bottle",
-              "ants:black_ant_bottle",
-              "ants:gold_ant_bottle",
-              "ants:muddy_ant_bottle"
+              "ants:brown_ant_in_a_bottle",
+              "ants:red_ant_in_a_bottle",
+              "ants:black_ant_in_a_bottle",
+              "ants:gold_ant_in_a_bottle",
+              "ants:muddy_ant_in_a_bottle"
             ]
           }
         ]

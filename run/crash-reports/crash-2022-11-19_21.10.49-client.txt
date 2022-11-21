@@ -1,0 +1,215 @@
+---- Minecraft Crash Report ----
+// Don't do that.
+
+Time: 2022-11-19 21:10:49
+Description: Rendering entity in world
+
+java.lang.NullPointerException: Cannot read field "locals" because "this.currentStatement" is null
+	at software.bernie.shadowed.eliotlash.molang.MolangParser.getVariable(MolangParser.java:87)
+	at software.bernie.shadowed.eliotlash.molang.MolangParser.setValue(MolangParser.java:73)
+	at software.bernie.geckolib3.model.AnimatedGeoModel.setMolangQueries(AnimatedGeoModel.java:125)
+	at software.bernie.geckolib3.core.processor.AnimationProcessor.preAnimationSetup(AnimationProcessor.java:275)
+	at software.bernie.geckolib3.model.AnimatedGeoModel.setLivingAnimations(AnimatedGeoModel.java:74)
+	at software.bernie.geckolib3.model.AnimatedGeoModel.setLivingAnimations(AnimatedGeoModel.java:30)
+	at software.bernie.geckolib3.renderers.geo.GeoReplacedEntityRenderer.render(GeoReplacedEntityRenderer.java:161)
+	at software.bernie.geckolib3.renderers.geo.GeoReplacedEntityRenderer.render(GeoReplacedEntityRenderer.java:80)
+	at net.minecraft.client.render.entity.EntityRenderDispatcher.render(EntityRenderDispatcher.java:141)
+	at net.minecraft.client.render.WorldRenderer.renderEntity(WorldRenderer.java:1568)
+	at net.minecraft.client.render.WorldRenderer.render(WorldRenderer.java:1316)
+	at net.minecraft.client.render.GameRenderer.renderWorld(GameRenderer.java:1039)
+	at net.minecraft.client.render.GameRenderer.render(GameRenderer.java:816)
+	at net.minecraft.client.MinecraftClient.render(MinecraftClient.java:1177)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:768)
+	at net.minecraft.client.main.Main.main(Main.java:244)
+	at net.minecraft.client.main.Main.main(Main.java:51)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at software.bernie.shadowed.eliotlash.molang.MolangParser.getVariable(MolangParser.java:87)
+	at software.bernie.shadowed.eliotlash.molang.MolangParser.setValue(MolangParser.java:73)
+	at software.bernie.geckolib3.model.AnimatedGeoModel.setMolangQueries(AnimatedGeoModel.java:125)
+	at software.bernie.geckolib3.core.processor.AnimationProcessor.preAnimationSetup(AnimationProcessor.java:275)
+	at software.bernie.geckolib3.model.AnimatedGeoModel.setLivingAnimations(AnimatedGeoModel.java:74)
+	at software.bernie.geckolib3.model.AnimatedGeoModel.setLivingAnimations(AnimatedGeoModel.java:30)
+	at software.bernie.geckolib3.renderers.geo.GeoReplacedEntityRenderer.render(GeoReplacedEntityRenderer.java:161)
+	at software.bernie.geckolib3.renderers.geo.GeoReplacedEntityRenderer.render(GeoReplacedEntityRenderer.java:80)
+	at net.minecraft.client.render.entity.EntityRenderDispatcher.render(EntityRenderDispatcher.java:141)
+	at net.minecraft.client.render.WorldRenderer.renderEntity(WorldRenderer.java:1568)
+	at net.minecraft.client.render.WorldRenderer.render(WorldRenderer.java:1316)
+	at net.minecraft.client.render.GameRenderer.renderWorld(GameRenderer.java:1039)
+
+-- Entity being rendered --
+Details:
+	Entity Type: minecraft:creeper (net.minecraft.entity.mob.CreeperEntity)
+	Entity ID: 211
+	Entity Name: Creeper
+	Entity's Exact location: 13907.86, 61.00, 125216.18
+	Entity's Block location: World: (13907,61,125216), Section: (at 3,13,0 in 869,3,7826; chunk contains blocks 13904,-64,125216 to 13919,319,125231), Region: (27,244; contains chunks 864,7808 to 895,7839, blocks 13824,-64,124928 to 14335,319,125439)
+	Entity's Momentum: 0.00, 0.00, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.client.render.entity.EntityRenderDispatcher.render(EntityRenderDispatcher.java:141)
+	at net.minecraft.client.render.WorldRenderer.renderEntity(WorldRenderer.java:1568)
+	at net.minecraft.client.render.WorldRenderer.render(WorldRenderer.java:1316)
+	at net.minecraft.client.render.GameRenderer.renderWorld(GameRenderer.java:1039)
+	at net.minecraft.client.render.GameRenderer.render(GameRenderer.java:816)
+	at net.minecraft.client.MinecraftClient.render(MinecraftClient.java:1177)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:768)
+	at net.minecraft.client.main.Main.main(Main.java:244)
+	at net.minecraft.client.main.Main.main(Main.java:51)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+
+-- Renderer details --
+Details:
+	Assigned renderer: software.bernie.example.client.renderer.entity.ReplacedCreeperRenderer@60786bcf
+	Location: 63.16,-10.54,24.63 - World: (63,-11,24), Section: (at 15,5,8 in 3,-1,1; chunk contains blocks 48,-64,16 to 63,319,31), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Rotation: 47.8125
+	Delta: 0.039965272
+Stacktrace:
+	at net.minecraft.client.render.entity.EntityRenderDispatcher.render(EntityRenderDispatcher.java:141)
+	at net.minecraft.client.render.WorldRenderer.renderEntity(WorldRenderer.java:1568)
+	at net.minecraft.client.render.WorldRenderer.render(WorldRenderer.java:1316)
+	at net.minecraft.client.render.GameRenderer.renderWorld(GameRenderer.java:1039)
+	at net.minecraft.client.render.GameRenderer.render(GameRenderer.java:816)
+	at net.minecraft.client.MinecraftClient.render(MinecraftClient.java:1177)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:768)
+	at net.minecraft.client.main.Main.main(Main.java:244)
+	at net.minecraft.client.main.Main.main(Main.java:51)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['Player866'/60, l='ClientLevel', x=13844.71, y=69.92, z=125191.55]]
+	Chunk stats: 961, 612
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-160,67,80), Section: (at 0,3,0 in -10,4,5; chunk contains blocks -160,-64,80 to -145,319,95), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,-64,0 to -1,319,511)
+	Level time: 13837 game time, 13837 day time
+	Server brand: fabric
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.addDetailsToCrashReport(ClientWorld.java:453)
+	at net.minecraft.client.MinecraftClient.addDetailsToCrashReport(MinecraftClient.java:2341)
+	at net.minecraft.client.MinecraftClient.run(MinecraftClient.java:787)
+	at net.minecraft.client.main.Main.main(Main.java:244)
+	at net.minecraft.client.main.Main.main(Main.java:51)
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:461)
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74)
+	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23)
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86)
+
+-- Last reload --
+Details:
+	Reload number: 2
+	Reload reason: manual
+	Finished: No
+	Packs: Default, Fabric Mods
+
+-- System Details --
+Details:
+	Minecraft Version: 1.19.2
+	Minecraft Version ID: 1.19.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.1, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode, sharing), Eclipse Adoptium
+	Memory: 1801383768 bytes (1717 MiB) / 3388997632 bytes (3232 MiB) up to 4273995776 bytes (4076 MiB)
+	CPUs: 12
+	Processor Vendor: AuthenticAMD
+	Processor Name: AMD Ryzen 5 3600 6-Core Processor              
+	Identifier: AuthenticAMD Family 23 Model 113 Stepping 0
+	Microarchitecture: unknown
+	Frequency (GHz): 3.59
+	Number of physical packages: 1
+	Number of physical CPUs: 6
+	Number of logical CPUs: 12
+	Graphics card #0 name: NVIDIA GeForce GTX 1660 SUPER
+	Graphics card #0 vendor: NVIDIA (0x10de)
+	Graphics card #0 VRAM (MB): 4095.00
+	Graphics card #0 deviceId: 0x21c4
+	Graphics card #0 versionInfo: DriverVersion=31.0.15.1659
+	Memory slot #0 capacity (MB): 16384.00
+	Memory slot #0 clockSpeed (GHz): 2.67
+	Memory slot #0 type: DDR4
+	Virtual memory max (MB): 20289.46
+	Virtual memory used (MB): 17643.38
+	Swap memory total (MB): 3988.75
+	Swap memory used (MB): 99.27
+	JVM Flags: 4 total; -Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,address=localhost:49734,server=n,suspend=y -XX:+ShowCodeDetailsInExceptionMessages
+	Fabric Mods: 
+		ants: Little Ants ${version}
+		fabric-api: Fabric API 0.59.0+1.19.2
+		fabric-api-base: Fabric API Base 0.4.10+e62f51a390
+		fabric-api-lookup-api-v1: Fabric API Lookup API (v1) 1.6.8+9ff28f4090
+		fabric-biome-api-v1: Fabric Biome API (v1) 9.0.16+83a8659290
+		fabric-blockrenderlayer-v1: Fabric BlockRenderLayer Registration (v1) 1.1.19+9ff28f4090
+		fabric-client-tags-api-v1: Fabric Client Tags 1.0.0+b35fea8390
+		fabric-command-api-v2: Fabric Command API (v2) 2.1.6+0c17ea9690
+		fabric-content-registries-v0: Fabric Content Registries (v0) 3.2.2+83a8659290
+		fabric-convention-tags-v1: Fabric Convention Tags 1.1.0+7cd20a1490
+		fabric-crash-report-info-v1: Fabric Crash Report Info (v1) 0.2.4+bd0a0d4a90
+		fabric-data-generation-api-v1: Fabric Data Generation API (v1) 5.1.7+a680b9b490
+		fabric-dimensions-v1: Fabric Dimensions API (v1) 2.1.29+a6d2f78590
+		fabric-entity-events-v1: Fabric Entity Events (v1) 1.4.17+9ff28f4090
+		fabric-events-interaction-v0: Fabric Events Interaction (v0) 0.4.27+9ff28f4090
+		fabric-game-rule-api-v1: Fabric Game Rule API (v1) 1.0.20+1899036190
+		fabric-gametest-api-v1: Fabric Game Test API (v1) 1.0.34+e62f51a390
+		fabric-item-api-v1: Fabric Item API (v1) 1.5.6+35a03c4390
+		fabric-item-groups-v0: Fabric Item Groups (v0) 0.3.27+6bee109e90
+		fabric-key-binding-api-v1: Fabric Key Binding API (v1) 1.0.19+9ff28f4090
+		fabric-lifecycle-events-v1: Fabric Lifecycle Events (v1) 2.1.1+83a8659290
+		fabric-loot-api-v2: Fabric Loot API (v2) 1.1.2+83a8659290
+		fabric-message-api-v1: Fabric Message API (v1) 5.0.2+176380a290
+		fabric-mining-level-api-v1: Fabric Mining Level API (v1) 2.1.13+33fbc73890
+		fabric-models-v0: Fabric Models (v0) 0.3.16+9ff28f4090
+		fabric-networking-api-v1: Fabric Networking API (v1) 1.2.3+5eb68ef290
+		fabric-object-builder-api-v1: Fabric Object Builder API (v1) 4.0.10+7675279690
+		fabric-particles-v1: Fabric Particles (v1) 1.0.9+dc39553a90
+		fabric-registry-sync-v0: Fabric Registry Sync (v0) 0.9.23+23c4cfef90
+		fabric-renderer-api-v1: Fabric Renderer API (v1) 1.0.9+84f79e9d90
+		fabric-renderer-indigo: Fabric Renderer - Indigo 0.6.11+5187d39f90
+		fabric-rendering-data-attachment-v1: Fabric Rendering Data Attachment (v1) 0.3.13+9ff28f4090
+		fabric-rendering-fluids-v1: Fabric Rendering Fluids (v1) 3.0.6+9ff28f4090
+		fabric-rendering-v1: Fabric Rendering (v1) 1.10.15+9ff28f4090
+		fabric-resource-conditions-api-v1: Fabric Resource Conditions API (v1) 2.0.10+e62f51a390
+		fabric-resource-loader-v0: Fabric Resource Loader (v0) 0.6.0+6bee109e90
+		fabric-screen-api-v1: Fabric Screen API (v1) 1.0.25+f05effaf90
+		fabric-screen-handler-api-v1: Fabric Screen Handler API (v1) 1.2.12+9ff28f4090
+		fabric-textures-v0: Fabric Textures (v0) 1.0.19+9ff28f4090
+		fabric-transfer-api-v1: Fabric Transfer API (v1) 2.0.10+83a8659290
+		fabric-transitive-access-wideners-v1: Fabric Transitive Access Wideners (v1) 1.2.0+1e232e1390
+		fabricloader: Fabric Loader 0.14.9
+		geckolib3: Geckolib 3.1.12
+		java: OpenJDK 64-Bit Server VM 17
+		minecraft: Minecraft 1.19.2
+	Launched Version: Fabric
+	Backend library: LWJGL version 3.3.1 SNAPSHOT
+	Backend API: NVIDIA GeForce GTX 1660 SUPER/PCIe/SSE2 GL version 3.2.0 NVIDIA 516.59, NVIDIA Corporation
+	Window size: 854x480
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'fabric'; Server brand changed to 'fabric'
+	Type: Integrated Server (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: Fabric Mods
+	Current Language: English (US)
+	CPU: 12x AMD Ryzen 5 3600 6-Core Processor 
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayerEntity['Player866'/60, l='ServerLevel[New World]', x=13844.71, y=69.92, z=125191.55]]
+	Data Packs: vanilla, Fabric Mods
+	World Generation: Stable

@@ -11,7 +11,8 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 public class AntRenderer extends GeoEntityRenderer<AntEntity> {
     public AntRenderer(EntityRendererFactory.Context renderManager) {
         super(renderManager, new AntGeoModel());
-        this.addLayer(new AntGeoLayer(this));
+        this.addLayer(new AntLeafGeoLayer(this));
+        this.addLayer(new AntAngryGeoLayer(this));
     }
 
     @Override

@@ -1,0 +1,46 @@
+{
+    "item.ants.brown_ant_in_a_bottle": "Bottiglia con formica marrone",
+    "item.ants.red_ant_in_a_bottle": "Bottiglia con formica rossa",
+    "item.ants.black_ant_in_a_bottle": "Bottiglia con formica nera",
+    "item.ants.gold_ant_in_a_bottle": "Bottiglia con formica d'oro",
+    "item.ants.muddy_ant_in_a_bottle": "Bottiglia con formica fangosa",
+    "item.ants.clay_bottle": "Bottiglia di argilla",
+
+    "item.ants.ant_egg": "Uovo generatore di formica",
+
+    "block.ants.dirt_ant_nest": "Formicaio di terra",
+    "block.ants.sand_ant_nest": "Formicaio di sabbia",
+    "block.ants.mud_ant_nest": "Formicaio di fango",
+    "block.ants.windy_dandelion": "Soffione",
+
+    "entity.ants.ant": "Formica",
+
+    "subtitles.ants.ant_sound": "Stridio di formiche",
+    "subtitles.ants.ant_hurt": "Formica prende danno",
+    "subtitles.ants.enter_nest": "Formica entra il formicaio",
+    "subtitles.ants.exit_nest": "Formica esce il formicaio",
+
+    "enchantment.ants.ant_resistance": "Resistenza ai formicai",
+
+    "death.attack.nest": "%1$s era sopra ad un formicaio",
+    "death.attack.nest.player": "%1$s era sopra ad un formicaio",
+
+    "death.attack.clay_bottle": "%1$s ha bevuto argilla, che schifo",
+    "death.attack.nest.clay_bottle": "%1$s ha bevuto argilla, perchè?",
+
+    "advancements.husbandry.dirt_colony.title": "Non dovrebbe farti male?",
+    "advancements.husbandry.dirt_colony.description": "Ottieni un Formicaio di terra",
+    "advancements.husbandry.sand_colony.title": "È più carino ora?",
+    "advancements.husbandry.sand_colony.description": "Fabbrica un Formicaio di sabbia",
+    "advancements.husbandry.mud_colony.title": "Sembra una situazione appiccicosa",
+    "advancements.husbandry.mud_colony.description": "Ottieni un Formicaio di fango",
+    "advancements.husbandry.clay_bottle.title": "Perchè l'hai bevuto?",
+    "advancements.husbandry.clay_bottle.description": "Dovresti vergognarti, è letteralmente argilla vez che schifo",
+    "advancements.husbandry.friend_now.title": "Ora sei mio amico",
+    "advancements.husbandry.friend_now.description": "Raccogli una Formica con una bottiglia",
+    "advancements.husbandry.obtain_ants.title": "Io sono inevitabile",
+    "advancements.husbandry.obtain_ants.description": "Ottieni ogni tipo di formica",
+    "advancements.husbandry.mighty_gold.title": "Questa si che brilla!",
+    "advancements.husbandry.mighty_gold.description": "Ottieni una Formica d'oro"
+
+}

@@ -11,10 +11,10 @@ import software.bernie.geckolib3.renderers.geo.IGeoRenderer;
 import toxican.caleb.ants.AntsMain;
 import toxican.caleb.ants.blocks.NestTag;
 
-public class AntGeoLayer extends GeoLayerRenderer<AntEntity> {
+public class AntLeafGeoLayer extends GeoLayerRenderer<AntEntity> {
     private static final Identifier MODEL = new Identifier(AntsMain.MOD_ID, "geo/ants.geo.json");
 
-    public AntGeoLayer(IGeoRenderer<AntEntity> entityRendererIn) {
+    public AntLeafGeoLayer(IGeoRenderer<AntEntity> entityRendererIn) {
         super(entityRendererIn);
     }
 

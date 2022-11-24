@@ -1,0 +1,17 @@
+{
+  "type": "ants:colony_harvesting",
+  "ant_variant": {
+    "variant": "ants:gold"
+  },
+  "hive_ingredient": {
+    "item": "minecraft:flowering_azalea_leaves"
+  },
+  "hand_ingredient": {
+    "item": "minecraft:glass_bottle"
+  },
+  "hand_ingredient_count": 1,
+  "result" : {
+    "item": "ants:clay_bottle",
+	"count": 3
+  }
+}

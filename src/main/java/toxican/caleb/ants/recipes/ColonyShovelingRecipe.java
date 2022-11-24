@@ -9,6 +9,8 @@ import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import toxican.caleb.ants.blocks.AntsBlocks;
+import toxican.caleb.ants.more_ants_api.AntVariant;
+import toxican.caleb.ants.more_ants_api.AntVariantPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,27 +24,29 @@ import java.util.List;
 **/
 public class ColonyShovelingRecipe implements Recipe<Inventory> {
 
-	// specifying a recipe with an empty ingredient marks it as the default recipe
+	// specifying a recipe with an empty ingredient and ant variant marks it as the default recipe
 	// if no special recipe matches, this one is used as default
 	protected static ColonyShovelingRecipe defaultRecipe;
-	protected static List<ColonyShovelingRecipe> specialRecipes = new ArrayList();
+	protected static List<ColonyShovelingRecipe> conditionalRecipes = new ArrayList<>();
 
 	protected final Identifier id;
 	protected final String group;
 	
+	protected final AntVariantPredicate antVariantPredicate;
 	protected final Ingredient hiveIngredient;
 	protected final ItemStack output;
 	
-	public ColonyShovelingRecipe(Identifier id, String group, Ingredient hiveIngredient, ItemStack output) {
+	public ColonyShovelingRecipe(Identifier id, String group, AntVariantPredicate antVariantPredicate, Ingredient hiveIngredient, ItemStack output) {
 		this.id = id;
 		this.group = group;
+		this.antVariantPredicate = antVariantPredicate;
 		this.hiveIngredient = hiveIngredient;
 		this.output = output;
 		
-		if(this.hiveIngredient == Ingredient.EMPTY) {
+		if(this.hiveIngredient == Ingredient.EMPTY && this.antVariantPredicate == AntVariantPredicate.ANY) {
 			defaultRecipe = this;
 		} else {
-			specialRecipes.add(this);
+			conditionalRecipes.add(this);
 		}
 	}
 	
@@ -101,9 +105,9 @@ public class ColonyShovelingRecipe implements Recipe<Inventory> {
 		return AntsRecipeTypes.COLONY_SHOVELING;
 	}
 	
-	public static ColonyShovelingRecipe getRecipeFor(ItemStack hiveStack) {
-		for(ColonyShovelingRecipe recipe : specialRecipes) {
-			if(recipe.hiveIngredient.test(hiveStack)) {
+	public static ColonyShovelingRecipe getRecipeFor(AntVariant antVariant, ItemStack hiveStack) {
+		for(ColonyShovelingRecipe recipe : conditionalRecipes) {
+			if(recipe.antVariantPredicate.test(antVariant) && (recipe.hiveIngredient.isEmpty() || recipe.hiveIngredient.test(hiveStack))) {
 				return recipe;
 			}
 		}

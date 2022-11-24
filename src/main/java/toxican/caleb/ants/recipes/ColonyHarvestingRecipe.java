@@ -8,7 +8,11 @@ import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
+import toxican.caleb.ants.AntsMain;
 import toxican.caleb.ants.blocks.AntsBlocks;
+import toxican.caleb.ants.more_ants_api.AntRegistry;
+import toxican.caleb.ants.more_ants_api.AntVariant;
+import toxican.caleb.ants.more_ants_api.AntVariantPredicate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +22,7 @@ import java.util.Optional;
  * Specifies the drop a player gets when using a shovel on a completely filled colony
  * id: the recipes identifier
  * group: internal group string (mainly used for the recipe book or other mechanisms that group recipes
+ * antVariant: the variant of ant that the recipe matches, like in java.toxican.caleb.ants.more_ants_api.AntVariant
  * hiveIngredient: the last food the ants collected in that colony, or one per random
  * handIngredient: the item the player has to hold in their hand
  * int handIngredientCount: the amount of items the player has to hold in their hand. This amount gets consumed
@@ -25,31 +30,33 @@ import java.util.Optional;
 **/
 public class ColonyHarvestingRecipe implements Recipe<Inventory> {
 
-	// specifying a recipe with an empty ingredient marks it as the default recipe
+	// specifying a recipe with an empty ingredient and ant variant marks it as the default recipe
 	// if no special recipe matches, this one is used as default
 	protected static ColonyHarvestingRecipe defaultRecipe;
-	protected static List<ColonyHarvestingRecipe> specialRecipes = new ArrayList<>();
+	protected static List<ColonyHarvestingRecipe> conditionalRecipes = new ArrayList<>();
 
 	protected final Identifier id;
 	protected final String group;
 	
+	protected final AntVariantPredicate antVariantPredicate;
 	protected final Ingredient hiveIngredient;
 	protected final Ingredient handIngredient;
 	protected final int handIngredientCount;
 	protected final ItemStack output;
 	
-	public ColonyHarvestingRecipe(Identifier id, String group, Ingredient hiveIngredient, Ingredient handIngredient, int handIngredientCount, ItemStack output) {
+	public ColonyHarvestingRecipe(Identifier id, String group, AntVariantPredicate antVariantPredicate, Ingredient hiveIngredient, Ingredient handIngredient, int handIngredientCount, ItemStack output) {
 		this.id = id;
 		this.group = group;
+		this.antVariantPredicate = antVariantPredicate;
 		this.hiveIngredient = hiveIngredient;
 		this.handIngredient = handIngredient;
 		this.handIngredientCount = handIngredientCount;
 		this.output = output;
 		
-		if(this.hiveIngredient == Ingredient.EMPTY) {
+		if(this.hiveIngredient == Ingredient.EMPTY && this.antVariantPredicate == AntVariantPredicate.ANY) {
 			defaultRecipe = this;
 		} else {
-			specialRecipes.add(this);
+			conditionalRecipes.add(this);
 		}
 	}
 	
@@ -108,9 +115,9 @@ public class ColonyHarvestingRecipe implements Recipe<Inventory> {
 		return AntsRecipeTypes.COLONY_HARVESTING;
 	}
 	
-	public static Optional<ColonyHarvestingRecipe> getRecipeFor(ItemStack hiveStack, ItemStack handStack) {
-		for(ColonyHarvestingRecipe recipe : specialRecipes) {
-			if(recipe.hiveIngredient.test(hiveStack) && (recipe.handIngredient.isEmpty() || recipe.handIngredient.test(handStack))) {
+	public static Optional<ColonyHarvestingRecipe> getRecipeFor(AntVariant antVariant, ItemStack hiveStack, ItemStack handStack) {
+		for(ColonyHarvestingRecipe recipe : conditionalRecipes) {
+			if(recipe.antVariantPredicate.test(antVariant) && (recipe.hiveIngredient.isEmpty() || recipe.hiveIngredient.test(hiveStack)) && (recipe.handIngredient.isEmpty() || recipe.handIngredient.test(handStack))) {
 				return Optional.of(recipe);
 			}
 		}

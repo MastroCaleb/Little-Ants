@@ -23,6 +23,7 @@ import toxican.caleb.ants.items.AntsItems;
 import toxican.caleb.ants.items.criteria.AllVariantsCriterion;
 import toxican.caleb.ants.more_ants_api.AntRegistry;
 import toxican.caleb.ants.more_ants_api.AntVariant;
+import toxican.caleb.ants.more_ants_api.AntVariantTags;
 import toxican.caleb.ants.particles.AntsParticles;
 import toxican.caleb.ants.recipes.AntsRecipeTypes;
 import toxican.caleb.ants.sounds.AntsSounds;
@@ -45,6 +46,10 @@ public class AntsMain implements ModInitializer {
 		GeckoLib.initialize();
 		LOGGER.info("Loading ants...");
 		AntsEntities.init();
+		LOGGER.info("Loading ant variants...");
+		AntVariant.init();
+		LOGGER.info("Loading ant tags...");
+		AntVariantTags.init();
 		LOGGER.info("Loading items...");
 		AntsItems.init();
 		LOGGER.info("Loading blocks...");

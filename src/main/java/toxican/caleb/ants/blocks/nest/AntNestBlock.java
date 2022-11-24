@@ -47,6 +47,7 @@ import toxican.caleb.ants.blocks.NestTag;
 import toxican.caleb.ants.damage.AntsDamageSource;
 import toxican.caleb.ants.enchantment.AntHelper;
 import toxican.caleb.ants.entities.AbstractAntEntity;
+import toxican.caleb.ants.more_ants_api.AntVariant;
 import toxican.caleb.ants.recipes.ColonyHarvestingRecipe;
 import toxican.caleb.ants.recipes.ColonyShovelingRecipe;
 import java.util.List;
@@ -62,7 +63,7 @@ public class AntNestBlock extends BlockWithEntity {
 
     public AntNestBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)((BlockState)this.stateManager.getDefaultState()).with(CLAY_LEVEL, 0)).with(FACING, Direction.NORTH));
+        this.setDefaultState(this.stateManager.getDefaultState().with(CLAY_LEVEL, 0).with(FACING, Direction.NORTH));
     }
 
     @Override
@@ -126,6 +127,9 @@ public class AntNestBlock extends BlockWithEntity {
         BlockEntity blockEntity = world.getBlockEntity(pos);
         if(blockEntity instanceof AntNestEntity antNestEntity) {
             Identifier id = antNestEntity.getLastHarvestedLeafID();
+            if(id == null) {
+                return ItemStack.EMPTY;
+            }
             Item item = Registry.ITEM.get(id);
             if(item != Items.AIR) {
                 return item.getDefaultStack();
@@ -133,14 +137,24 @@ public class AntNestBlock extends BlockWithEntity {
         }
         return ItemStack.EMPTY;
     }
+    
+    public static AntVariant getLastAntVariant(World world, BlockPos pos) {
+        BlockEntity blockEntity = world.getBlockEntity(pos);
+        if(blockEntity instanceof AntNestEntity antNestEntity) {
+            return antNestEntity.getLastAntVariant();
+        }
+        return null;
+    }
 
     public static void dropHoneycomb(World world, BlockPos pos) {
         ItemStack leavesStack = getLastLeavesStack(world, pos);
         if(leavesStack.isEmpty()) {
             return;
         }
+        
+        AntVariant antVariant = getLastAntVariant(world, pos);
     
-        ColonyShovelingRecipe recipe = ColonyShovelingRecipe.getRecipeFor(leavesStack);
+        ColonyShovelingRecipe recipe = ColonyShovelingRecipe.getRecipeFor(antVariant, leavesStack);
         if(recipe != null) { // someone might have removed the default recipe? => weird flex, but ok. No drop for you, then
             AntNestBlock.dropStack(world, pos, recipe.getOutput().copy());
         }
@@ -151,8 +165,10 @@ public class AntNestBlock extends BlockWithEntity {
         if(leavesStack.isEmpty()) {
             return false;
         }
+    
+        AntVariant antVariant = getLastAntVariant(world, pos);
         
-        Optional<ColonyHarvestingRecipe> recipe = ColonyHarvestingRecipe.getRecipeFor(leavesStack, handStack);
+        Optional<ColonyHarvestingRecipe> recipe = ColonyHarvestingRecipe.getRecipeFor(antVariant, leavesStack, handStack);
         if(recipe.isEmpty()) {
             return false;
         }
@@ -205,12 +221,7 @@ public class AntNestBlock extends BlockWithEntity {
     }
 
     public boolean isPlayer(Entity entity){
-        if(entity instanceof PlayerEntity){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return entity instanceof PlayerEntity;
     }
 
     private boolean hasAnts(World world, BlockPos pos) {
@@ -232,7 +243,7 @@ public class AntNestBlock extends BlockWithEntity {
     }
 
     public void takeHoney(World world, BlockState state, BlockPos pos) {
-        world.setBlockState(pos, (BlockState)state.with(CLAY_LEVEL, 0), Block.NOTIFY_ALL);
+        world.setBlockState(pos, state.with(CLAY_LEVEL, 0), Block.NOTIFY_ALL);
     }
 
     @Override

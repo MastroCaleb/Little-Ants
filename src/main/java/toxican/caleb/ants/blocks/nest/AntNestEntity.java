@@ -49,7 +49,7 @@ extends BlockEntity {
     public static final String HAS_CLAY_KEY = "HasClay";
     public static final String ANTS_KEY = "Ants";
     public static final String LAST_HARVESTED_LEAF_ID_KEY = "LastHarvestedLeafID";
-    public static final String LAST_VARIANT_ID_KEY = "LastVariantID";
+    public static final String LAST_VARIANT_KEY = "LastVariant";
     private static final List<String> IRRELEVANT_ANT_NBT_KEYS = Arrays.asList("Air", "ArmorDropChances", "ArmorItems", "Brain", "CanPickUpLoot", "DeathTime", "FallDistance", "FallFlying", "Fire", "HandDropChances", "HandItems", "HurtByTimestamp", "HurtTime", "LeftHanded", "Motion", "OnGround", "PortalCooldown", "Pos", "Rotation", "CannotEnterHiveTicks", "TicksSinceNutrition", "HivePos", "Passengers", "Leash", "UUID");
     public static final int MAX_ANT_COUNT = 8;
     private static final int ANGERED_CANNOT_ENTER_HIVE_TICKS = 400;
@@ -61,7 +61,7 @@ extends BlockEntity {
     @Nullable
     public Identifier lastHarvestedLeafID = null;
     @Nullable
-    public Identifier lastVariantID = null;
+    public AntVariant lastVariant = null;
     
     public AntNestEntity(BlockPos pos, BlockState state) {
         super(AntsBlocks.NEST_BLOCK_ENTITY, pos, state);
@@ -224,7 +224,7 @@ extends BlockEntity {
             if(leafBlockItem != null && leafBlockItem != Items.AIR) {
                 antNestEntity.lastHarvestedLeafID = Registry.ITEM.getId(leafBlockItem);
             }
-            antNestEntity.lastVariantID = AntRegistry.ANT_VARIANT.getId(antVariant);
+            antNestEntity.lastVariant = antVariant;
         }
         antEntity.onLeafDelivered();
     }
@@ -298,9 +298,9 @@ extends BlockEntity {
         if(nbt.contains(LAST_HARVESTED_LEAF_ID_KEY, NbtElement.STRING_TYPE)) {
             this.lastHarvestedLeafID = Identifier.tryParse(nbt.getString(LAST_HARVESTED_LEAF_ID_KEY));
         }
-        this.lastVariantID = null;
-        if(nbt.contains(LAST_VARIANT_ID_KEY, NbtElement.STRING_TYPE)) {
-            this.lastVariantID = Identifier.tryParse(nbt.getString(LAST_VARIANT_ID_KEY));
+        this.lastVariant = null;
+        if(nbt.contains(LAST_VARIANT_KEY, NbtElement.STRING_TYPE)) {
+            this.lastVariant = AntRegistry.ANT_VARIANT.get(Identifier.tryParse(nbt.getString(LAST_VARIANT_KEY)));
         }
     }
 
@@ -314,19 +314,19 @@ extends BlockEntity {
         if(this.lastHarvestedLeafID != null) {
             nbt.putString(LAST_HARVESTED_LEAF_ID_KEY, this.lastHarvestedLeafID.toString());
         }
-        if(this.lastVariantID != null) {
-            nbt.putString(LAST_VARIANT_ID_KEY, this.lastVariantID.toString());
+        if(this.lastVariant != null) {
+            nbt.putString(LAST_VARIANT_KEY, AntRegistry.ANT_VARIANT.getId(this.lastVariant).toString());
         }
     }
     
     public @Nullable Identifier getLastHarvestedLeafID() {
         return this.lastHarvestedLeafID;
     }
-
-    public @Nullable Identifier getLastVariantID() {
-        return this.lastHarvestedLeafID;
+    
+    public AntVariant getLastAntVariant() {
+        return this.lastVariant;
     }
-
+    
     public NbtList getAnts() {
         NbtList nbtList = new NbtList();
         for (Ant ant : this.ants) {
@@ -340,7 +340,7 @@ extends BlockEntity {
         }
         return nbtList;
     }
-
+    
     public static enum AntState {
         CLAY_DELIVERED,
         ANT_RELEASED,

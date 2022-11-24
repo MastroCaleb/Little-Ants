@@ -186,8 +186,8 @@ public class AntEntity extends AbstractAntEntity implements Bottleable{
         RegistryEntry<Biome> biome = world.getBiome(this.getBlockPos());
         if(!this.isFromBottle()){
             for(int i = 0; i<variants.size(); i++){
-                if(variants.get(i).spawnBiomeTag() != null){
-                    if(biome.isIn(variants.get(i).spawnBiomeTag())){
+                if(variants.get(i).getSpawnBiomeTag() != null){
+                    if(biome.isIn(variants.get(i).getSpawnBiomeTag())){
                         this.setVariant(variants.get(i));
                     }
                 }

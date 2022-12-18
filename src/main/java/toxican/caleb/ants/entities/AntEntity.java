@@ -130,32 +130,38 @@ public class AntEntity extends AbstractAntEntity implements Bottleable{
         List<AntVariant> rare = variants.stream().filter(t -> t.getRarity().equals(Rarity.RARE)).toList();
         List<AntVariant> epic = variants.stream().filter(t -> t.getRarity().equals(Rarity.EPIC)).toList();
         AntEntity antEntity = AntsEntities.ANT.create(world);
-        if(rarityChance<(int)(99/(this.getVariant().getRarity().ordinal()+1))){
+        if(rarityChance<(int)(88/(this.getVariant().getRarity().ordinal()+1))){
             antEntity.setVariant(this.getVariant());
         }
         else{
             rarityChance = rand.nextInt(100);
             int choice = 0;
-            if(rarityChance<80){
+            if(rarityChance<60){
                 if(uncommon.isEmpty()){
                     antEntity.setVariant(this.getVariant());
                 }
-                choice = rand.nextInt(uncommon.size());
-                antEntity.setVariant(uncommon.get(choice));
+                else{
+                    choice = rand.nextInt(uncommon.size());
+                    antEntity.setVariant(uncommon.get(choice));
+                }
             }
-            else if(rarityChance>=80 && rarityChance<95){
+            else if(rarityChance>=60 && rarityChance<85){
                 if(rare.isEmpty()){
                     antEntity.setVariant(this.getVariant());
                 }
-                choice = rand.nextInt(rare.size());
-                antEntity.setVariant(rare.get(choice));
+                else{
+                    choice = rand.nextInt(rare.size());
+                    antEntity.setVariant(rare.get(choice));
+                }
             }
             else{
                 if(epic.isEmpty()){
                     antEntity.setVariant(this.getVariant());
                 }
-                choice = rand.nextInt(epic.size());
-                antEntity.setVariant(epic.get(choice));
+                else{
+                    choice = rand.nextInt(epic.size());
+                    antEntity.setVariant(epic.get(choice));
+                }
             }
         }
         return antEntity;

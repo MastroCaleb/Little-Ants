@@ -27,6 +27,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.world.LocalDifficulty;
@@ -124,13 +125,39 @@ public class AntEntity extends AbstractAntEntity implements Bottleable{
     @Override
     public AbstractAntEntity createChild(ServerWorld world, PassiveEntity passiveEntity) {
         Random rand = new Random();
+        int rarityChance = rand.nextInt(100);
+        List<AntVariant> uncommon = variants.stream().filter(t -> t.getRarity().equals(Rarity.UNCOMMON)).toList();
+        List<AntVariant> rare = variants.stream().filter(t -> t.getRarity().equals(Rarity.RARE)).toList();
+        List<AntVariant> epic = variants.stream().filter(t -> t.getRarity().equals(Rarity.EPIC)).toList();
         AntEntity antEntity = AntsEntities.ANT.create(world);
-        int goldChance = rand.nextInt(200);
-        if(goldChance==46){
-            antEntity.setVariant(AntVariant.GOLD);
-            return antEntity;
+        if(rarityChance<(int)(99/(this.getVariant().getRarity().ordinal()+1))){
+            antEntity.setVariant(this.getVariant());
         }
-        antEntity.setVariant(this.getVariant());
+        else{
+            rarityChance = rand.nextInt(100);
+            int choice = 0;
+            if(rarityChance<80){
+                if(uncommon.isEmpty()){
+                    antEntity.setVariant(this.getVariant());
+                }
+                choice = rand.nextInt(uncommon.size());
+                antEntity.setVariant(uncommon.get(choice));
+            }
+            else if(rarityChance>=80 && rarityChance<95){
+                if(rare.isEmpty()){
+                    antEntity.setVariant(this.getVariant());
+                }
+                choice = rand.nextInt(rare.size());
+                antEntity.setVariant(rare.get(choice));
+            }
+            else{
+                if(epic.isEmpty()){
+                    antEntity.setVariant(this.getVariant());
+                }
+                choice = rand.nextInt(epic.size());
+                antEntity.setVariant(epic.get(choice));
+            }
+        }
         return antEntity;
     }
 

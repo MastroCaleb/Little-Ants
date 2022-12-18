@@ -7,7 +7,6 @@ import net.minecraft.network.PacketByteBuf;
 import net.minecraft.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
-import toxican.caleb.ants.AntsMain;
 
 import javax.annotation.Nullable;
 

@@ -21,6 +21,7 @@
     "subtitles.ants.exit_nest": "Ant exits nest",
 
     "enchantment.ants.ant_resistance": "Nest Resistance",
+    "enchantment.ants.ant_resistance.desc": "Prevents you from taking damage from ant colonies",
 
     "death.attack.nest": "%1$s stood on an Ant Colony",
     "death.attack.nest.player": "%1$s stood on an Ant Colony",

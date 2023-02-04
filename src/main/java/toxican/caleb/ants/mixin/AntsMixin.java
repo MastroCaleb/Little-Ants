@@ -22,7 +22,7 @@ public class AntsMixin {
 		BlockState blockState = world.getBlockState(pos);
 		if(blockState.getBlock() == Blocks.DANDELION && world instanceof ServerWorld){
 			world.setBlockState(pos, AntsBlocks.WINDY_DANDELION.getDefaultState(), Block.NOTIFY_ALL);
+			stack.decrement(1);
 		}
-		stack.decrement(1);
 	}
 }

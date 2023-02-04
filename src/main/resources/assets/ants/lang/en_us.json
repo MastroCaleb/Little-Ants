@@ -12,6 +12,7 @@
     "block.ants.sand_ant_nest": "Sand Ant Colony",
     "block.ants.mud_ant_nest": "Mud Ant Colony",
     "block.ants.windy_dandelion": "Windy Dandelion",
+    "block.ants.potted_windy_dandelion": "Potted Windy Dandelion",
 
     "entity.ants.ant": "Ant",
 
@@ -21,6 +22,7 @@
     "subtitles.ants.exit_nest": "Ant exits nest",
 
     "enchantment.ants.ant_resistance": "Nest Resistance",
+    "enchantment.ants.ant_resistance.desc": "Prevents you from taking damage from ant colonies",
 
     "death.attack.nest": "%1$s stood on an Ant Colony",
     "death.attack.nest.player": "%1$s stood on an Ant Colony",
